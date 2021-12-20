@@ -1,0 +1,15 @@
+@media (max-width: 576px) {
+  body {
+    background-color: #8fca8f;
+    color: #061b06;
+  }
+
+  .header__nav--banner li {
+    display: list-item;
+    list-style: none;
+  }
+  .header__nav--banner a {
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}/*# sourceMappingURL=style.css.map */

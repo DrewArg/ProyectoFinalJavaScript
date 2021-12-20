@@ -1,0 +1,24 @@
+@import "_variables.scss";
+
+@media (max-width: 576px) {
+    body {
+        background-color: $Fondo-Principal;
+        color: $Font-Color-Principal;
+    }
+
+    .header {
+        &__nav {
+            &--banner {
+                & li {
+                    display: list-item;
+                    list-style: none;
+                }
+
+                & a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
