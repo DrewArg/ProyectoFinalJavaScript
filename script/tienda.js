@@ -383,8 +383,9 @@ alert("¡Gracias por tu compra " + nombreUsuario + "!");
 
 function devolverNombreProductoPorId(productos, id) {
     alert("id: " + id);
-    alert("productos[id] " + productos[id].obtenerNombreProducto());
-    const productoActual = productos.find(producto => producto.id === id)
+    alert("productos[id] " + productos[id]);
+
+    const productoActual = productos.find(producto => producto.id == id)
     return productoActual.obtenerNombreProducto();
 
 }
