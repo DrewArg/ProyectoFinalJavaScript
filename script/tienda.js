@@ -1,69 +1,19 @@
 class Producto {
-    constructor(tipo, id) {
+    constructor(tipo, nombre, coste, id) {
         this.tipo = tipo;
+        this.nombre = nombre;
+        this.coste = coste;
         this.id = id;
-        this.nombre = "";
-    }
-
-    mostrarOpcionesProductoYDevolverSeleccion() {
-        let seleccionCorrecta = false;
-        switch (this.tipo) {
-            case 1:
-                let alimentos = ["Alimento Común", "Alimento Raro", "Alimento Legendario"];
-                let alimentoSeleccionado = parseInt(prompt(`¿Qué alimento deseas comprar?\n1. ${alimentos[0]}\n2. ${alimentos[1]}\n3. ${alimentos[2]}`));
-
-                while (!seleccionCorrecta) {
-                    if (verificarExistenciaProducto(alimentos, alimentoSeleccionado)) {
-                        seleccionCorrecta = true;
-                    } else {
-                        alimentoSeleccionado = parseInt(prompt(`Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué alimento deseas comprar?\n1. ${alimentos[0]}\n2. ${alimentos[1]}\n3. ${alimentos[2]}`));
-                    }
-                }
-                alimentoSeleccionado -= 1;
-                this.asignarNombreProducto(alimentos, alimentoSeleccionado);
-                return devolverProductoSeleccionado(alimentos, alimentoSeleccionado);
-
-            case 2:
-                let seleccion = parseInt(prompt("¿Qué animal deseas comprar?\n1. Lobo Gris\n2. Camaleón\n3. León"));
-
-                while (!seleccionCorrecta) {
-                    if (seleccion === 1 || seleccion === 2 || seleccion === 3) {
-                        seleccionCorrecta = true;
-                    } else {
-                        seleccion = parseInt(prompt("Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué animal deseas comprar?\n1. Lobo Gris\n2. Camaleón\n3. León"));
-                    }
-                }
-
-                switch (seleccion) {
-                    case 1:
-                        return "Lobo Gris";
-
-                    case 2:
-                        return "Camaleón";
-
-                    case 3:
-                        return "León";
-
-                    default:
-                        break;
-                }
-                break;
-
-            default:
-                break;
-        }
 
     }
 
-
-    asignarNombreProducto(productos, productoSeleccionado) {
-        this.nombre = productos[productoSeleccionado];
-    }
-
-    obtenerNombreProducto() {
+    getNombre() {
         return this.nombre;
     }
 
+    getCoste() {
+        return this.coste;
+    }
 }
 
 class Animal {
@@ -301,6 +251,7 @@ class Habitat {
 
 let nombreUsuario = prompt("Ingresa tu nombre de usuario.")
 let creditosDisponibles = 10;
+
 alert("Bienvenid@ " + nombreUsuario + " por ser un nuevo usuario, tienes un total de 10 créditos gratis.");
 
 let tiposDeCarta = ["Alimento", "Animal", "Habilitad", "Hábitat"];
@@ -329,12 +280,24 @@ while (!salir) {
 
         case 1:
 
-            productos.push(new Producto(tipoCartaAComprar, idProducto));
+            let nombreAlimento = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
+            let costeAlimento = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreAlimento);
 
-            let nombreProducto = devolverNombreProductoPorId(productos, idProducto);
-            alert(nombreProducto);
+            productos.push(new Producto(tipoCartaAComprar, nombreAlimento, costeAlimento, idProducto));
+
+            const alimento = devolverProductoPorId(productos, idProducto);
+
+
+            if (verificarCreditosDisponibles(creditosDisponibles, alimento.getCoste())) {
+                creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, alimento.getCoste());
+                alert("Has comprado un: " + alimento.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
+
+            } else {
+                alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
+            }
 
             idProducto++;
+            break;
 
 
         // case 2:
@@ -382,11 +345,7 @@ while (!salir) {
 alert("¡Gracias por tu compra " + nombreUsuario + "!");
 
 function devolverNombreProductoPorId(productos, id) {
-    alert("id: " + id);
-    alert("productos[id] " + productos[id]);
-
-    const productoActual = productos.find(producto => producto.id == id)
-    return productoActual.obtenerNombreProducto();
+    return productos[id].getNombre();
 
 }
 
@@ -400,8 +359,105 @@ function verificarExistenciaProducto(productos, seleccion) {
     return false;
 }
 
-function devolverProductoSeleccionado(productos, seleccion) {
-    return productos[seleccion];
+
+function mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar) {
+    let seleccionCorrecta = false;
+
+    switch (tipoCartaAComprar) {
+        case 1:
+            let alimentos = ["Alimento Común", "Alimento Raro", "Alimento Épico", "Alimento Legendario"];
+            let alimentoSeleccionado = parseInt(prompt(`¿Qué alimento deseas comprar?\n1. ${alimentos[0]}\n2. ${alimentos[1]}\n3. ${alimentos[2]}\n4. ${alimentos[3]}`));
+
+            while (!seleccionCorrecta) {
+                alimentoSeleccionado -= 1;
+
+                if (verificarExistenciaProducto(alimentos, alimentoSeleccionado)) {
+                    seleccionCorrecta = true;
+                } else {
+                    alimentoSeleccionado = parseInt(prompt(`Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué alimento deseas comprar?\n1. ${alimentos[0]}\n2. ${alimentos[1]}\n3. ${alimentos[2]}\n4. ${alimentos[3]}`));
+                }
+            }
+            return alimentos[alimentoSeleccionado];
+
+        case 2:
+            let seleccion = parseInt(prompt("¿Qué animal deseas comprar?\n1. Lobo Gris\n2. Camaleón\n3. León"));
+
+            while (!seleccionCorrecta) {
+                if (seleccion === 1 || seleccion === 2 || seleccion === 3) {
+                    seleccionCorrecta = true;
+                } else {
+                    seleccion = parseInt(prompt("Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué animal deseas comprar?\n1. Lobo Gris\n2. Camaleón\n3. León"));
+                }
+            }
+
+            switch (seleccion) {
+                case 1:
+                    return "Lobo Gris";
+
+                case 2:
+                    return "Camaleón";
+
+                case 3:
+                    return "León";
+
+                default:
+                    break;
+            }
+            break;
+
+        default:
+            break;
+    }
+
+}
+
+function devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreCarta) {
+
+    let tiposAlimento = ["Alimento Común", "Alimento Raro", "Alimento Épico", "Alimento Legendario"];
+    let costeCartaComun = 1;
+    let costeCartaRara = 3;
+    let costeCartaEpica = 6;
+    let costeCartaLegendaria = 10;
+
+    switch (tipoCartaAComprar) {
+        case 1:
+            switch (nombreCarta) {
+                case tiposAlimento[0]:
+                    return costeCartaComun;
+
+                case tiposAlimento[1]:
+                    return costeCartaRara;
+
+                case tiposAlimento[2]:
+                    return costeCartaEpica;
+
+                case tiposAlimento[3]:
+                    return costeCartaLegendaria;
+
+            }
+        default:
+            break;
+
+    }
+}
+
+function verificarCreditosDisponibles(creditosDisponibles, costeCarta) {
+    if (creditosDisponibles >= costeCarta) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+function descontarYDevolverCreditosDisponibles(creditosDisponibles, costeCarta) {
+    creditosDisponibles = creditosDisponibles - costeCarta;
+    return creditosDisponibles;
+}
+
+function devolverProductoPorId(productos, id) {
+    const producto = productos.find(p => p.id === id);
+    return producto;
 }
 
 
