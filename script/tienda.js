@@ -1,3 +1,5 @@
+//CLASES
+
 class Producto {
     constructor(tipo, nombre, coste, id) {
         this.tipo = tipo;
@@ -16,238 +18,7 @@ class Producto {
     }
 }
 
-class Animal {
-    constructor(rareza, descricpion, dano, coste, efecto) {
-        this.rareza = rareza;
-        this.descricpion = descricpion;
-        this.dano = dano;
-        this.coste = coste;
-        this.efecto = efecto;
-    }
-
-    mostrarOpcionesAnimalYDevolverSeleccion() {
-
-        let seleccionCorrecta = false;
-        let seleccion = parseInt(prompt("¿Qué animal deseas comprar?\n1. Lobo Gris\n2. Camaleón\n3. León"));
-
-        while (!seleccionCorrecta) {
-            if (seleccion === 1 || seleccion === 2 || seleccion === 3) {
-                seleccionCorrecta = true;
-            } else {
-                seleccion = parseInt(prompt("Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué animal deseas comprar?\n1. Lobo Gris\n2. Camaleón\n3. León"));
-            }
-        }
-
-        switch (seleccion) {
-            case 1:
-                return "Lobo Gris";
-
-            case 2:
-                return "Camaleón";
-
-            case 3:
-                return "León";
-
-            default:
-                break;
-        }
-    }
-
-    comprarAnimalYDevolverCreditosDisponibles(nombreCarta, creditosDisponibles) {
-        switch (nombreCarta) {
-            case "Lobo Gris":
-                if (creditosDisponibles >= 3) {
-                    creditosDisponibles -= 3;
-                    alert("Has comprado un " + nombreCarta);
-                } else {
-                    alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
-                }
-                return creditosDisponibles;
-
-            case "Camaleón":
-                if (creditosDisponibles >= 5) {
-                    creditosDisponibles -= 5;
-                    alert("Has comprado un " + nombreCarta);
-                } else {
-                    alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
-                }
-
-                return creditosDisponibles;
-
-
-            case "León":
-                if (creditosDisponibles >= 10) {
-                    creditosDisponibles -= 10;
-                    alert("Has comprado un " + nombreCarta);
-                } else {
-                    alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
-                }
-
-                return creditosDisponibles;
-
-            default:
-                break;
-        }
-    }
-
-
-}
-
-class Habilidad {
-    constructor(rareza, descricpion, coste, efecto) {
-
-        this.rareza = rareza;
-        this.descricpion = descricpion;
-        this.coste = coste;
-        this.efecto = efecto;
-    }
-
-    comprarHabilidadYDevolverCreditosDisponibles(nombreCarta, creditosDisponibles) {
-        switch (nombreCarta) {
-            case "Aullido":
-                if (creditosDisponibles >= 1) {
-                    creditosDisponibles -= 1;
-                    alert("Has comprado un " + nombreCarta);
-
-                } else {
-                    alert("Actulamente no tienes créditos suficientes para comprar esta carta.");
-                }
-
-                return creditosDisponibles;
-
-            case "Camuflaje":
-                if (creditosDisponibles >= 2) {
-                    creditosDisponibles -= 2;
-                    alert("Has comprado un " + nombreCarta);
-                } else {
-                    alert("Actulamente no tienes créditos suficientes para comprar esta carta.");
-                }
-                return creditosDisponibles;
-
-
-            case "Rugido":
-                if (creditosDisponibles >= 5) {
-                    creditosDisponibles -= 5;
-                    alert("Has comprado un " + nombreCarta);
-                } else {
-                    alert("Actulamente no tienes créditos suficientes para comprar esta carta.");
-                }
-                return creditosDisponibles;
-
-            default:
-                break;
-        }
-    }
-
-    mostrarOpcionesHabilidadYDevolverSeleccion() {
-
-        let seleccionCorrecta = false;
-        let seleccion = parseInt(prompt("¿Qué habilidad deseas comprar?\n1. Aullido\n2. Camuflaje\n3. Rugido"));
-
-        while (!seleccionCorrecta) {
-            if (seleccion === 1 || seleccion === 2 || seleccion === 3) {
-                seleccionCorrecta = true;
-            } else {
-                seleccion = parseInt(prompt("Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué habilidad deseas comprar?\n1. Aullido\n2. Camuflaje\n3. Rugido"));
-            }
-        }
-
-        switch (seleccion) {
-            case 1:
-                return "Aullido";
-
-            case 2:
-                return "Camuflaje";
-
-            case 3:
-                return "Rugido";
-
-            default:
-                break;
-        }
-    }
-}
-
-class Alimento {
-    constructor(rareza, descricpion) {
-
-        this.rareza = rareza;
-        this.descricpion = descricpion;
-    }
-}
-
-class Habitat {
-    constructor(rareza, descricpion, coste, efecto) {
-
-        this.rareza = rareza;
-        this.descricpion = descricpion;
-        this.coste = coste;
-        this.efecto = efecto;
-    }
-
-    mostrarOpcionesHabitatYDevolverSeleccion() {
-
-        let seleccionCorrecta = false;
-        let seleccion = parseInt(prompt("¿Qué hábitat deseas comprar?\n1. Cueva\n2. Árbol\n3. Sabana"));
-
-        while (!seleccionCorrecta) {
-            if (seleccion === 1 || seleccion === 2 || seleccion === 3) {
-                seleccionCorrecta = true;
-            } else {
-                seleccion = parseInt(prompt("Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué hábitat deseas comprar?\n1. Cueva\n2. Árbol\n3. Sabana"));
-            }
-        }
-
-        switch (seleccion) {
-            case 1:
-                return "Cueva";
-
-            case 2:
-                return "Árbol";
-
-            case 3:
-                return "Sabana";
-
-            default:
-                break;
-        }
-    }
-
-    comprarHabitatYDevolverCreditosDisponibles(nombreCarta, creditosDisponibles) {
-        switch (nombreCarta) {
-            case "Cueva":
-                if (creditosDisponibles >= 6) {
-                    creditosDisponibles -= 6;
-                    alert("Has comprado un " + nombreCarta);
-                } else {
-                    alert("Actulamente no tienes créditos suficientes para comprar esta carta.");
-                }
-                return creditosDisponibles;
-
-
-            case "Árbol":
-                if (creditosDisponibles >= 10) {
-                    creditosDisponibles -= 10;
-                    alert("Has comprado un " + nombreCarta);
-                } else {
-                    alert("Actulamente no tienes créditos suficientes para comprar esta carta.");
-                }
-                return creditosDisponibles;
-
-            case "Sabana":
-                if (creditosDisponibles >= 20) {
-                    creditosDisponibles -= 20;
-                    alert("Has comprado un " + nombreCarta);
-                } else {
-                    alert("Actulamente no tienes créditos suficientes para comprar esta carta.");
-                }
-                return creditosDisponibles;
-
-            default:
-                break;
-        }
-    }
-}
+// COMIENZO DE FLUJO
 
 let nombreUsuario = prompt("Ingresa tu nombre de usuario.")
 let creditosDisponibles = 10;
@@ -274,8 +45,6 @@ while (!salir) {
         }
     }
 
-
-
     switch (tipoCartaAComprar) {
 
         case 1:
@@ -299,42 +68,83 @@ while (!salir) {
             idProducto++;
             break;
 
+        case 2:
 
-        // case 2:
-        //     let nombreAnimal = mostrarOpcionesAnimalYDevolverSeleccion();
-        //     creditosDisponibles = comprarAnimalYDevolverCreditosDisponibles(nombreAnimal, creditosDisponibles);
+            let nombreAnimal = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
+            let costeAnimal = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreAnimal);
+
+            productos.push(new Producto(tipoCartaAComprar, nombreAnimal, costeAnimal, idProducto));
+
+            const animal = devolverProductoPorId(productos, idProducto);
 
 
-        //     break;
+            if (verificarCreditosDisponibles(creditosDisponibles, animal.getCoste())) {
+                creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, animal.getCoste());
+                alert("Has comprado un: " + animal.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
 
-        // case 3:
-        //     let nombreHabilidad = mostrarOpcionesHabilidadYDevolverSeleccion();
-        //     creditosDisponibles = comprarHabilidadYDevolverCreditosDisponibles(nombreHabilidad, creditosDisponibles);
+            } else {
+                alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
+            }
 
-        //     break;
+            idProducto++;
+            break;
 
-        // case 4:
-        //     let = nombreHabitat = mostrarOpcionesHabitatYDevolverSeleccion();
-        //     creditosDisponibles = comprarHabitatYDevolverCreditosDisponibles(nombreHabitat, creditosDisponibles);
-        //     break;
 
-        default:
+        case 3:
+
+            let nombreHabilidad = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
+            let costeHabilidad = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreHabilidad);
+
+            productos.push(new Producto(tipoCartaAComprar, nombreHabilidad, costeHabilidad, idProducto));
+
+            const habilidad = devolverProductoPorId(productos, idProducto);
+
+
+            if (verificarCreditosDisponibles(creditosDisponibles, habilidad.getCoste())) {
+                creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, habilidad.getCoste());
+                alert("Has comprado un: " + habilidad.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
+
+            } else {
+                alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
+            }
+
+            idProducto++;
+            break;
+
+
+
+        case 4:
+
+            let nombreHabitat = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
+            let costeHabitat = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreHabitat);
+
+            productos.push(new Producto(tipoCartaAComprar, nombreHabitat, costeHabitat, idProducto));
+
+            const habitat = devolverProductoPorId(productos, idProducto);
+
+
+            if (verificarCreditosDisponibles(creditosDisponibles, habitat.getCoste())) {
+                creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, habitat.getCoste());
+                alert("Has comprado un: " + habitat.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
+
+            } else {
+                alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
+            }
+
+            idProducto++;
             break;
 
     }
-
 
     if (creditosDisponibles === 0) {
         alert("Te has quedado sin créditos.")
         salir = true;
     } else {
-        alert("Aún tienes: " + creditosDisponibles + " créditos disponibles.");
-
         let continuarCompra = parseInt(prompt("¿Quiéres seguir comprando?\n1. Sí\n2. No"));
 
         if (continuarCompra === 1) {
             opcionCorrecta = false;
-            tipoCartaAComprar = parseInt(prompt("¿Qué deseas comprar? \n1. Animal\n2. Habilidad\n3. Hábitat\nIngresa el número de la opción deseada."));
+            tipoCartaAComprar = parseInt(prompt("¿Qué deseas comprar? \n1. Alimento\n2. Animal\n3. Habilidad\n4. Hábitat\nIngresa el número de la opción deseada."));
         } else {
             salir = true;
         }
@@ -342,23 +152,15 @@ while (!salir) {
 
 }
 
+alert("En esta oportunidad has comprado los siguientes productos: ");
+
+for (const producto of productos) {
+    alert("Nombre: " + producto.getNombre() + " \nCréditos Gastados: " + producto.getCoste())
+}
+
 alert("¡Gracias por tu compra " + nombreUsuario + "!");
 
-function devolverNombreProductoPorId(productos, id) {
-    return productos[id].getNombre();
-
-}
-
-function verificarExistenciaProducto(productos, seleccion) {
-    for (let index = 0; index < productos.length; index++) {
-        if (seleccion === index) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
+//FUNCIONES
 
 function mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar) {
     let seleccionCorrecta = false;
@@ -380,30 +182,50 @@ function mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar) {
             return alimentos[alimentoSeleccionado];
 
         case 2:
-            let seleccion = parseInt(prompt("¿Qué animal deseas comprar?\n1. Lobo Gris\n2. Camaleón\n3. León"));
+
+            let animales = ["Foca", "Liebre", "Lobo", "Oso Polar"];
+            let animalSeleccionado = parseInt(prompt(`¿Qué animal deseas comprar?\n1. ${animales[0]}\n2. ${animales[1]}\n3. ${animales[2]}\n4. ${animales[3]}`));
 
             while (!seleccionCorrecta) {
-                if (seleccion === 1 || seleccion === 2 || seleccion === 3) {
+                animalSeleccionado -= 1;
+
+                if (verificarExistenciaProducto(animales, animalSeleccionado)) {
                     seleccionCorrecta = true;
                 } else {
-                    seleccion = parseInt(prompt("Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué animal deseas comprar?\n1. Lobo Gris\n2. Camaleón\n3. León"));
+                    animalSeleccionado = parseInt(prompt(`Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué animal deseas comprar?\n1. ${animales[0]}\n2. ${animales[1]}\n3. ${animales[2]}\n4. ${animales[3]}`));
                 }
             }
+            return animales[animalSeleccionado];
 
-            switch (seleccion) {
-                case 1:
-                    return "Lobo Gris";
+        case 3:
+            let habilidades = ["Buceo", "Salto", "Aullido", "Rugido"];
+            let habilidadSeleccionada = parseInt(prompt(`¿Qué habilidad deseas comprar?\n1. ${habilidades[0]}\n2. ${habilidades[1]}\n3. ${habilidades[2]}\n4. ${habilidades[3]}`));
 
-                case 2:
-                    return "Camaleón";
+            while (!seleccionCorrecta) {
+                habilidadSeleccionada -= 1;
 
-                case 3:
-                    return "León";
-
-                default:
-                    break;
+                if (verificarExistenciaProducto(habilidades, habilidadSeleccionada)) {
+                    seleccionCorrecta = true;
+                } else {
+                    habilidadSeleccionada = parseInt(prompt(`Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué habilidad deseas comprar?\n1. ${habilidades[0]}\n2. ${habilidades[1]}\n3. ${habilidades[2]}\n4. ${habilidades[3]}`));
+                }
             }
-            break;
+            return habilidades[habilidadSeleccionada];
+
+        case 4:
+            let habitats = ["Glaciar", "Madrigera", "Cueva", "Polo Norte"];
+            let habitatSeleccionado = parseInt(prompt(`¿Qué hábitat deseas comprar?\n1. ${habitats[0]}\n2. ${habitats[1]}\n3. ${habitats[2]}\n4. ${habitats[3]}`));
+
+            while (!seleccionCorrecta) {
+                habitatSeleccionado -= 1;
+
+                if (verificarExistenciaProducto(habitats, habitatSeleccionado)) {
+                    seleccionCorrecta = true;
+                } else {
+                    habitatSeleccionado = parseInt(prompt(`Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué hábitat deseas comprar?\n1. ${habitats[0]}\n2. ${habitats[1]}\n3. ${habitats[2]}\n4. ${habitats[3]}`));
+                }
+            }
+            return habitats[habitatSeleccionado];
 
         default:
             break;
@@ -411,9 +233,23 @@ function mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar) {
 
 }
 
+function devolverNombreProductoPorId(productos, id) {
+    return productos[id].getNombre();
+
+}
+
+function devolverProductoPorId(productos, id) {
+    const producto = productos.find(p => p.id === id);
+    return producto;
+}
+
 function devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreCarta) {
 
     let tiposAlimento = ["Alimento Común", "Alimento Raro", "Alimento Épico", "Alimento Legendario"];
+    let tiposAnimal = ["Foca", "Liebre", "Lobo", "Oso Polar"];
+    let tiposHabilidad = ["Buceo", "Salto", "Aullido", "Rugido"];
+    let tiposHabitat = ["Glaciar", "Madrigera", "Cueva", "Polo Norte"];
+
     let costeCartaComun = 1;
     let costeCartaRara = 3;
     let costeCartaEpica = 6;
@@ -435,10 +271,66 @@ function devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreCarta) {
                     return costeCartaLegendaria;
 
             }
-        default:
-            break;
+        case 2:
+            switch (nombreCarta) {
+                case tiposAnimal[0]:
+                    return costeCartaComun;
 
+                case tiposAnimal[1]:
+                    return costeCartaRara;
+
+                case tiposAnimal[2]:
+                    return costeCartaEpica;
+
+                case tiposAnimal[3]:
+                    return costeCartaLegendaria;
+            }
+
+        case 3:
+            switch (nombreCarta) {
+                case tiposHabilidad[0]:
+                    return costeCartaComun;
+
+                case tiposHabilidad[1]:
+                    return costeCartaRara;
+
+                case tiposHabilidad[2]:
+                    return costeCartaEpica;
+
+                case tiposHabilidad[3]:
+                    return costeCartaLegendaria;
+            }
+
+        case 4:
+            switch (nombreCarta) {
+                case tiposHabitat[0]:
+                    return costeCartaComun;
+
+                case tiposHabitat[1]:
+                    return costeCartaRara;
+
+                case tiposHabitat[2]:
+                    return costeCartaEpica;
+
+                case tiposHabitat[3]:
+                    return costeCartaLegendaria;
+            }
     }
+}
+
+function descontarYDevolverCreditosDisponibles(creditosDisponibles, costeCarta) {
+    creditosDisponibles = creditosDisponibles - costeCarta;
+    return creditosDisponibles;
+}
+
+function verificarExistenciaProducto(productos, seleccion) {
+    for (let index = 0; index < productos.length; index++) {
+        if (seleccion === index) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 function verificarCreditosDisponibles(creditosDisponibles, costeCarta) {
@@ -450,15 +342,7 @@ function verificarCreditosDisponibles(creditosDisponibles, costeCarta) {
 
 }
 
-function descontarYDevolverCreditosDisponibles(creditosDisponibles, costeCarta) {
-    creditosDisponibles = creditosDisponibles - costeCarta;
-    return creditosDisponibles;
-}
 
-function devolverProductoPorId(productos, id) {
-    const producto = productos.find(p => p.id === id);
-    return producto;
-}
 
 
 
