@@ -52,12 +52,12 @@ while (!salir) {
             let nombreAlimento = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
             let costeAlimento = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreAlimento);
 
-            productos.push(new Producto(tipoCartaAComprar, nombreAlimento, costeAlimento, idProducto));
+            if (verificarCreditosDisponibles(creditosDisponibles, costeAlimento)) {
 
-            const alimento = devolverProductoPorId(productos, idProducto);
+                productos.push(new Producto(tipoCartaAComprar, nombreAlimento, costeAlimento, idProducto));
 
+                const alimento = devolverProductoPorId(productos, idProducto);
 
-            if (verificarCreditosDisponibles(creditosDisponibles, alimento.getCoste())) {
                 creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, alimento.getCoste());
                 alert("Has comprado un: " + alimento.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
 
@@ -73,12 +73,12 @@ while (!salir) {
             let nombreAnimal = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
             let costeAnimal = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreAnimal);
 
-            productos.push(new Producto(tipoCartaAComprar, nombreAnimal, costeAnimal, idProducto));
+            if (verificarCreditosDisponibles(creditosDisponibles, costeAnimal)) {
 
-            const animal = devolverProductoPorId(productos, idProducto);
+                productos.push(new Producto(tipoCartaAComprar, nombreAnimal, costeAnimal, idProducto));
 
+                const animal = devolverProductoPorId(productos, idProducto);
 
-            if (verificarCreditosDisponibles(creditosDisponibles, animal.getCoste())) {
                 creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, animal.getCoste());
                 alert("Has comprado un: " + animal.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
 
@@ -95,12 +95,11 @@ while (!salir) {
             let nombreHabilidad = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
             let costeHabilidad = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreHabilidad);
 
-            productos.push(new Producto(tipoCartaAComprar, nombreHabilidad, costeHabilidad, idProducto));
+            if (verificarCreditosDisponibles(creditosDisponibles, costeHabilidad)) {
+                productos.push(new Producto(tipoCartaAComprar, nombreHabilidad, costeHabilidad, idProducto));
 
-            const habilidad = devolverProductoPorId(productos, idProducto);
+                const habilidad = devolverProductoPorId(productos, idProducto);
 
-
-            if (verificarCreditosDisponibles(creditosDisponibles, habilidad.getCoste())) {
                 creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, habilidad.getCoste());
                 alert("Has comprado un: " + habilidad.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
 
@@ -118,12 +117,11 @@ while (!salir) {
             let nombreHabitat = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
             let costeHabitat = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreHabitat);
 
-            productos.push(new Producto(tipoCartaAComprar, nombreHabitat, costeHabitat, idProducto));
+            if (verificarCreditosDisponibles(creditosDisponibles, costeHabitat)) {
+                productos.push(new Producto(tipoCartaAComprar, nombreHabitat, costeHabitat, idProducto));
 
-            const habitat = devolverProductoPorId(productos, idProducto);
+                const habitat = devolverProductoPorId(productos, idProducto);
 
-
-            if (verificarCreditosDisponibles(creditosDisponibles, habitat.getCoste())) {
                 creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, habitat.getCoste());
                 alert("Has comprado un: " + habitat.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
 
