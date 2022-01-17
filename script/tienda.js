@@ -1,4 +1,4 @@
-//CLASES
+//CLASES // prueba
 
 class Producto {
     constructor(tipo, nombre, coste, id) {
