@@ -35,98 +35,37 @@
     </header>
 
     <main>
-
-        <h2>Tienda</h2>
-        <div>
-            <p>Aquí podrás comprar nuevas cartas y/o mazos.</p>
-        </div>
-
-
-
-        <h3>Busca tu carta</h3>
-        <div>
-            <input type="search" id="cartaBuscada" placeholder="Nombre de la carta">
-        </div>
-
-
-        <h4>¿Búscas alguna carta en particular?</h4>
-        <div>
-            <p>Nombre de la Carta:</p>
-            <input type="search" id="cartaBuscada" placeholder="Nombre">
-        </div>
-
-        <div id="agregarHtml"></div>
-
-        <div>
-            <p>Tipo de carta:</p>
-            <label for="tipoCarta">Tipo</label>
-            <select name="tipoCarta" id="tipoCarta">
-                <option value="Todos">Todos</option>
-                <option value="Alimento">Alimento</option>
-                <option value="Animal">Animal</option>
-                <option value="Habilidad">Habilidad</option>
-                <option value="Habitat">Hábitat</option>
-            </select>
-            <button id="btnBuscar">Buscar</button>
-        </div>
-
-        <div>
-            <h3>Animales</h3>
-            <div>
-                <p>Lobo Gris</p>
-                <p>Coste: 3</p>
-
-            </div>
-
-            <div>
-                <p>Camaleón</p>
-                <p>Coste: 5</p>
-            </div>
-
-            <div>
-                <p>León</p>
-                <p>Coste: 10</p>
-
+        <div class="titulo">
+            <h2>Tienda</h2>
+            <div class="titulo__subtitulo">
+                <p>Aquí podrás comprar nuevas cartas y/o mazos.</p>
             </div>
         </div>
 
-        <div>
-            <h3>Habilidades</h3>
+        <div class="filtro">
+            <div class="filtro__nombre">
+                <h3>¿Búscas alguna carta en particular?</h4>
 
-            <div>
-                <p>Aullido</p>
-                <p>Coste: 1</p>
+                    <div class="filtro__nombre--busqueda">
+                        <input type="search" id="cartaBuscada" placeholder="Nombre de la carta">
+                        <button id="btnNombre">Buscar</button>
+                    </div>
             </div>
 
-            <div>
-                <p>Camuflaje</p>
-                <p>Coste: 2</p>
-            </div>
-
-            <div>
-                <p>Rugido</p>
-                <p>Coste: 5</p>
-            </div>
-        </div>
-
-        <div>
-
-            <h3>Hábitats</h3>
-            <div>
-                <p>Cueva</p>
-                <p>Coste: 6</p>
-            </div>
-
-            <div>
-                <p>Árbol</p>
-                <p>Coste: 10</p>
-            </div>
-
-            <div>
-                <p>Sabana</p>
-                <p>Coste: 20</p>
+            <div class="filtro__tipo">
+                <h3>¿Algún tipo en particular?</h3>
+                <label for="tipoCarta"></label>
+                <select name="tipoCarta" id="tipoCarta">
+                    <option value="Todos">Todos</option>
+                    <option value="Alimento">Alimento</option>
+                    <option value="Animal">Animal</option>
+                    <option value="Habilidad">Habilidad</option>
+                    <option value="Habitat">Hábitat</option>
+                </select>
+                <button id="btnTipo">Buscar</button>
             </div>
         </div>
+
     </main>
     <footer>
 

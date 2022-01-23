@@ -99,6 +99,18 @@
     font-size: 3.5rem;
     text-align: center;
   }
+  .titulo h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 2rem;
+  }
+  .titulo h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 1.5rem;
+  }
   .titulo__subtitulo {
     text-align: center;
     font-size: 1.3rem;
@@ -119,6 +131,19 @@
   }
   .titulo__btnSalir {
     text-align: center;
+  }
+
+  .filtro {
+    text-align: center;
+    padding: 1.2rem;
+  }
+  .filtro__nombre {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.5rem;
   }
 
   .login {
