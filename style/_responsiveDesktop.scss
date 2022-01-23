@@ -14,7 +14,7 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            
+
             &--banner {
                 grid-area: lis;
 
@@ -70,57 +70,62 @@
         padding-right: 0.25rem;
     }
 
-    .titulo{
+    .titulo {
         padding: 1rem;
-        &__h1{
+        &__h1 {
             font-size: $FontSize-Title-Desktop;
             text-align: center;
         }
-        &__subtitulo{
+        &__subtitulo {
             text-align: center;
             font-size: 1.3rem;
         }
-        &__bienvenida{
+        &__bienvenida {
             text-align: center;
             font-size: 2.3rem;
             padding-top: 2rem;
-
         }
-        &__creditos{
+        &__creditos {
             text-align: center;
             font-size: 2.3rem;
             padding-top: 1rem;
             color: red;
         }
+
+        &__btnTienda {
+            text-align: center;
+        }
+
+        &__btnSalir {
+            text-align: center;
+        }
     }
 
-    .login{
+    .login {
         padding-top: 2rem;
         text-align: center;
 
-        &__bienvenida{
+        &__bienvenida {
             padding-bottom: 1rem;
         }
 
-        &__datosUsuario{
+        &__datosUsuario {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-bottom: 1.3rem;
 
-            &--nombre{
+            &--nombre {
                 margin-bottom: 1rem;
             }
-            
         }
 
-        &__botones{
+        &__botones {
             align-items: center;
             padding-bottom: 1rem;
-            
         }
 
-        &__mensajeError{
+        &__mensajeError {
             color: rgb(247, 65, 65);
             font-weight: 800;
             padding: 1rem;

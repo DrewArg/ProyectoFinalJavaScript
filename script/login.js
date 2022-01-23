@@ -34,17 +34,25 @@ if (baseDatosUsuarios === null || baseDatosUsuarios.length === 0) {
   localStorage.setItem("listaUsuarios", JSON.stringify(usuarios));
 }
 
-let btnIngreso = document.getElementById("btnIngreso");
-btnIngreso.addEventListener("click", validarUsuario);
+let usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+if (usuarioActivo !== null) {
+  let usuario = new Usuario(usuarioActivo.nombre, usuarioActivo.contrasena);
+  usuario.agregarCreditos(usuarioActivo.creditos);
 
-let btnCrearCuenta = document.getElementById("btnCrearCuenta");
-btnCrearCuenta.addEventListener("click", crearUsuario);
+  mostrarMensajeLoginExitoso(usuario);
+} else {
+  let btnIngreso = document.getElementById("btnIngreso");
+  btnIngreso.addEventListener("click", validarUsuario);
 
-let btnVerificar = document.getElementById("btnVerificar");
-btnVerificar.addEventListener("click", recorrerLocalStorage);
+  let btnCrearCuenta = document.getElementById("btnCrearCuenta");
+  btnCrearCuenta.addEventListener("click", crearUsuario);
 
-let btnReiniciar = document.getElementById("btnReiniciar");
-btnReiniciar.addEventListener("click", reiniciarLocalStorage);
+  let btnVerificar = document.getElementById("btnVerificar");
+  btnVerificar.addEventListener("click", recorrerLocalStorage);
+
+  let btnReiniciar = document.getElementById("btnReiniciar");
+  btnReiniciar.addEventListener("click", reiniciarLocalStorage);
+}
 
 function crearUsuario() {
   if (existeElementoPorClase("login__mensajeError")) {
@@ -82,7 +90,6 @@ function crearUsuario() {
     localStorage.setItem("usuarioActivo", JSON.stringify(nuevoUsuario));
 
     mostrarMensajeLoginExitoso(nuevoUsuario);
-
   } else {
     let login = document.getElementsByClassName("login")[0];
     let mensajeError = document.createElement("div");
@@ -119,6 +126,7 @@ function validarUsuario() {
       ) {
         //usuario validado
         usuarioLogeado = usuario;
+        localStorage.setItem("usuarioActivo", JSON.stringify(usuarioLogeado));
         mostrarMensajeLoginExitoso(usuarioLogeado);
         break;
       } else {
@@ -154,7 +162,6 @@ function removerTodosLosElementosPorClase(nombreClase) {
 
   for (let i = 0; i < elementos.length; i++) {
     elementos[i].parentNode.removeChild(elementos[i]);
-    
   }
 }
 
@@ -170,9 +177,27 @@ function mostrarMensajeLoginExitoso(usuarioIngresado) {
 
   let mensajeCreditos = document.createElement("div");
 
-  mensajeCreditos.innerHTML = `<h3 class = titulo__creditos>Créditos disponibles: ${usuarioIngresado.getCreditos()}`;
-  
+  mensajeCreditos.innerHTML = `<h3 class = "titulo__creditos">Créditos disponibles: ${usuarioIngresado.getCreditos()}`;
+
   titulo.appendChild(mensajeCreditos);
+
+  let btnAccesoTienda = document.createElement("div");
+
+  btnAccesoTienda.innerHTML = `<a href="./pages/tiendaOk.html"><button class = "titulo__btnTienda">Tienda</button></a>`;
+
+  titulo.appendChild(btnAccesoTienda);
+
+  let btnSalir = document.createElement("div");
+  btnSalir.innerHTML = `<button class = "titulo__btnSalir">Salir</button>`;
+
+  titulo.appendChild(btnSalir);
+
+  btnSalir.addEventListener("click", deslogueo);
+}
+
+function deslogueo() {
+  localStorage.removeItem("usuarioActivo");
+  window.location.reload();
 }
 
 function reiniciarLocalStorage() {

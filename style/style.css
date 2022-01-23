@@ -114,6 +114,12 @@
     padding-top: 1rem;
     color: red;
   }
+  .titulo__btnTienda {
+    text-align: center;
+  }
+  .titulo__btnSalir {
+    text-align: center;
+  }
 
   .login {
     padding-top: 2rem;
