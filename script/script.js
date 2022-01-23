@@ -21,25 +21,6 @@ class Usuario {
   }
 }
 
-class Producto {
-    constructor(tipo, nombre, coste, id) {
-      this.tipo = tipo;
-      this.nombre = nombre;
-      this.coste = coste;
-      this.id = id;
-    }
-  
-    getNombre() {
-      return this.nombre;
-    }
-  
-    getCoste() {
-      return this.coste;
-    }
-  }
-
-
-
 const usuarios = [];
 const baseDatosUsuarios = localStorage.getItem("listaUsuarios");
 
@@ -87,7 +68,8 @@ function crearUsuario() {
     listaNueva.push(new Usuario(usuarioActual));
     alert("Usuario " + usuarioActual + " agregado al sistema.");
     localStorage.setItem("listaUsuarios", JSON.stringify(listaNueva));
-    localStorage.setItem("usuarioActivo",JSON.stringify(usuarioEncontrado));
+    localStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
+    
   }
 }
 
@@ -100,11 +82,13 @@ function validarUsuario() {
     (usuario) => usuario.nombre === usuarioActual.toUpperCase()
   );
 
-    if (usuarioEncontrado !== undefined) {
-    localStorage.setItem("usuarioActivo",JSON.stringify(usuarioEncontrado));
+  if (usuarioEncontrado !== undefined) {
+    localStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
     alert("Bienvenido " + usuarioEncontrado.nombre);
-    alert("Recuerda que te quedan: " + usuarioEncontrado.creditos + " créditos");
-
+    alert(
+      "Recuerda que te quedan: " + usuarioEncontrado.creditos + " créditos"
+    );
+   
   } else {
     alert("Usuario inexistente.");
   }
