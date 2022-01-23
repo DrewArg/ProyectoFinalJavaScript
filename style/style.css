@@ -103,6 +103,17 @@
     text-align: center;
     font-size: 1.3rem;
   }
+  .titulo__bienvenida {
+    text-align: center;
+    font-size: 2.3rem;
+    padding-top: 2rem;
+  }
+  .titulo__creditos {
+    text-align: center;
+    font-size: 2.3rem;
+    padding-top: 1rem;
+    color: red;
+  }
 
   .login {
     padding-top: 2rem;

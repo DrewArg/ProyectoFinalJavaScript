@@ -80,6 +80,18 @@
             text-align: center;
             font-size: 1.3rem;
         }
+        &__bienvenida{
+            text-align: center;
+            font-size: 2.3rem;
+            padding-top: 2rem;
+
+        }
+        &__creditos{
+            text-align: center;
+            font-size: 2.3rem;
+            padding-top: 1rem;
+            color: red;
+        }
     }
 
     .login{

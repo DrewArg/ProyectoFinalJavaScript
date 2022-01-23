@@ -80,7 +80,9 @@ function crearUsuario() {
 
     localStorage.setItem("listaUsuarios", JSON.stringify(listaValidada));
     localStorage.setItem("usuarioActivo", JSON.stringify(nuevoUsuario));
-    
+
+    mostrarMensajeLoginExitoso(nuevoUsuario);
+
   } else {
     let login = document.getElementsByClassName("login")[0];
     let mensajeError = document.createElement("div");
@@ -117,9 +119,7 @@ function validarUsuario() {
       ) {
         //usuario validado
         usuarioLogeado = usuario;
-        alert("Usuario: " + usuarioLogeado.getNombre());
-        alert("Contraseña: " + usuarioLogeado.getContrasena());
-        alert("Créditos: " + usuarioLogeado.getCreditos());
+        mostrarMensajeLoginExitoso(usuarioLogeado);
         break;
       } else {
         usuarioLogeado = null;
@@ -147,6 +147,32 @@ function existeElementoPorClase(nombreClase) {
 function removerElementoPorClase(nombreClase) {
   let elemento = document.getElementsByClassName(nombreClase);
   elemento[0].parentNode.removeChild(elemento[0]);
+}
+
+function removerTodosLosElementosPorClase(nombreClase) {
+  let elementos = document.getElementsByClassName(nombreClase);
+
+  for (let i = 0; i < elementos.length; i++) {
+    elementos[i].parentNode.removeChild(elementos[i]);
+    
+  }
+}
+
+function mostrarMensajeLoginExitoso(usuarioIngresado) {
+  removerTodosLosElementosPorClase("login");
+
+  let titulo = document.getElementsByClassName("titulo")[0];
+
+  let mensajeBienvenida = document.createElement("div");
+
+  mensajeBienvenida.innerHTML = `<h3 class="titulo__bienvenida">¡Bienvenid@ ${usuarioIngresado.getNombre()}!`;
+  titulo.appendChild(mensajeBienvenida);
+
+  let mensajeCreditos = document.createElement("div");
+
+  mensajeCreditos.innerHTML = `<h3 class = titulo__creditos>Créditos disponibles: ${usuarioIngresado.getCreditos()}`;
+  
+  titulo.appendChild(mensajeCreditos);
 }
 
 function reiniciarLocalStorage() {
