@@ -41,15 +41,14 @@ const user = new Usuario(usuarioActivo.nombre);
 
 actualizarContenedor();
 
-function actualizarContenedor(){
-    let contenedor = document.createElement("div");
-    contenedor.innerHTML = `<h3>Usuario: ${user.nombre}</h3>
+function actualizarContenedor() {
+  let contenedor = document.createElement("div");
+  contenedor.innerHTML = `<h3>Usuario: ${user.nombre}</h3>
                             <h4>Créditos: ${user.creditos}</h4>`;
-    
-    let seleccionarTienda = document.getElementById("agregarHtml");
-    document.body.appendChild(contenedor);
-}
 
+  let seleccionarTienda = document.getElementById("agregarHtml");
+  document.body.appendChild(contenedor);
+}
 
 let btnBuscar = document.getElementById("btnBuscar");
 btnBuscar.addEventListener("click", cobrarCartaComun);
@@ -63,7 +62,7 @@ let tipo = seleccion.options[seleccion.selectedIndex].text;
 //   alert(tipo);
 // }
 
-function cobrarCartaComun(){
-user.descontarCredito(2);
-actualizarContenedor();
+function cobrarCartaComun() {
+  user.descontarCredito(2);
+  actualizarContenedor();
 }

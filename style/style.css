@@ -1,7 +1,7 @@
 @media (max-width: 576px) {
   body {
-    background-color: #a6dda9;
-    color: #061b06;
+    background-color: black;
+    color: white;
   }
 
   .header__nav--banner li {
@@ -15,8 +15,8 @@
 }
 @media (min-width: 577px) and (max-width: 991px) {
   body {
-    background-color: #a6dda9;
-    color: #061b06;
+    background-color: black;
+    color: white;
   }
 
   .header__nav--banner li {
@@ -30,8 +30,8 @@
 }
 @media (min-width: 992px) {
   body {
-    background-color: #a6dda9;
-    color: #061b06;
+    background-color: black;
+    color: white;
   }
 
   .header__nav {
@@ -58,12 +58,17 @@
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
-    color: darkgreen;
+    color: #161616;
+    background-color: #e4e4e4;
     font-size: 1.45rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1.6rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
   .header__nav--banner a:hover {
-    background-color: #3a8a3a;
-    color: darkgreen;
+    background-color: #161616;
+    color: #e4e4e4;
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
@@ -74,8 +79,8 @@
   }
 
   #header__nav--currentMenu {
-    background-color: #3a8a3a;
-    color: #061b06;
+    background-color: #161616;
+    color: #e4e4e4;
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
