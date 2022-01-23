@@ -17,14 +17,13 @@ class Usuario {
     return this.creditos;
   }
 
-    descontarCredito(descuento) {
+  descontarCredito(descuento) {
     this.creditos = this.creditos - descuento;
   }
 
   agregarCreditos(agregado) {
     this.creditos = this.creditos + agregado;
   }
-
 }
 
 const usuarios = [];
@@ -48,26 +47,46 @@ let btnReiniciar = document.getElementById("btnReiniciar");
 btnReiniciar.addEventListener("click", reiniciarLocalStorage);
 
 function crearUsuario() {
-  let usuarioActual = document.getElementById("nombreUsuario").value;
+  if (existeElementoPorClase("login__mensajeError")) {
+    removerElementoPorClase("login__mensajeError");
+  }
+
+  let usuarioActual = document
+    .getElementById("nombreUsuario")
+    .value.toUpperCase();
   let contrasenaActual = document.getElementById("contrasena").value;
 
   const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
-  const listaNueva = [];
+  const listaValidada = [];
 
-  const usuarioEncontrado = listaUsuarios.find(
-    (usuario) => usuario.nombre === usuarioActual.toUpperCase()
-  );
-
-  if (usuarioEncontrado !== undefined) {
-    alert("Usuario ya existente.");
-  } else {
-    for (const usuario of listaUsuarios) {
-      listaNueva.push(usuario);
+  for (const objeto of listaUsuarios) {
+    let usuario = new Usuario(objeto.nombre, objeto.contrasena);
+    usuario.agregarCreditos(objeto.creditos);
+    listaValidada.push(usuario);
+  }
+  let usuarioDisponible = true;
+  for (const usuario of listaValidada) {
+    if (usuario.getNombre() === usuarioActual) {
+      usuarioDisponible = false;
+      break;
     }
-    listaNueva.push(new Usuario(usuarioActual, contrasenaActual));
-    alert("Usuario " + usuarioActual + " agregado al sistema.");
-    localStorage.setItem("listaUsuarios", JSON.stringify(listaNueva));
-    localStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
+  }
+
+  if (usuarioDisponible) {
+    let nuevoUsuario = new Usuario(usuarioActual, contrasenaActual);
+    nuevoUsuario.agregarCreditos(10);
+
+    listaValidada.push(nuevoUsuario);
+
+    localStorage.setItem("listaUsuarios", JSON.stringify(listaValidada));
+    localStorage.setItem("usuarioActivo", JSON.stringify(nuevoUsuario));
+    
+  } else {
+    let login = document.getElementsByClassName("login")[0];
+    let mensajeError = document.createElement("div");
+    mensajeError.innerHTML = `<p class="login__mensajeError">Usuario ya existente.</p>`;
+
+    login.appendChild(mensajeError);
   }
 }
 
@@ -85,19 +104,13 @@ function validarUsuario() {
   const listaValidada = [];
 
   for (const objeto of listaUsuarios) {
-    let usuario = new Usuario(objeto.nombre,objeto.contrasena);
+    let usuario = new Usuario(objeto.nombre, objeto.contrasena);
     usuario.agregarCreditos(objeto.creditos);
     listaValidada.push(usuario);
   }
 
   if (listaValidada.length > 0) {
     for (const usuario of listaValidada) {
-      console.log("nombre usuario: " + usuario.getNombre());
-      console.log("contrasena usuario: " + usuario.getContrasena());
-      console.log("");
-      console.log("usuario actual: " + usuarioActual);
-      console.log("contraseña actual: " + contrasenaActual);
-      console.log("");
       if (
         usuario.getNombre() === usuarioActual &&
         usuario.getContrasena() === contrasenaActual
@@ -108,38 +121,19 @@ function validarUsuario() {
         alert("Contraseña: " + usuarioLogeado.getContrasena());
         alert("Créditos: " + usuarioLogeado.getCreditos());
         break;
-      }else{
+      } else {
         usuarioLogeado = null;
       }
     }
 
-    if(usuarioLogeado === null){
+    if (usuarioLogeado === null) {
       let login = document.getElementsByClassName("login")[0];
       let mensajeError = document.createElement("div");
       mensajeError.innerHTML = `<p class="login__mensajeError">Usuario y/o Contraseña incorrectos.</p>`;
-  
+
       login.appendChild(mensajeError);
     }
-    
   }
-
-  // const usuarioEncontrado = listaUsuarios.find(
-  //   (usuario) => usuario.nombre === usuarioActual.toUpperCase()
-  // );
-
-  // if (usuarioEncontrado !== undefined) {
-  //   localStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
-  //   alert("Bienvenido " + usuarioEncontrado.nombre);
-  //   alert(
-  //     "Recuerda que te quedan: " + usuarioEncontrado.creditos + " créditos"
-  //   );
-  // } else {
-  //   let login = document.getElementsByClassName("login")[0];
-  //   let mensajeError = document.createElement("div");
-  //   mensajeError.innerHTML = `<p class="login__mensajeError">Usuario y/o Contraseña incorrectos.</p>`;
-
-  //   login.appendChild(mensajeError);
-  // }
 }
 
 function existeElementoPorClase(nombreClase) {
