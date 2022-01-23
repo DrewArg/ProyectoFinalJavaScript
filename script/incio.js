@@ -25,8 +25,6 @@ const usuarios = [];
 
 localStorage.setItem("listaUsuarios",JSON.stringify(usuarios));
 
-let usuarioActual = document.getElementById("logueoUsuario").value;
-
 let btnIngreso = document.getElementById("btnIngreso");
 btnIngreso.addEventListener("click", validarUsuario);
 
@@ -54,15 +52,20 @@ function validarUsuario(e) {
   }
 }
 
-function crearUsuario(e,usuarioActual) {
+function crearUsuario(e) {
+    let usuarioActual = document.getElementById("logueoUsuario").value;
+
     const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
     const listaNueva = [];
 
-    const usuarioEncontrado = listaUsuarios.find(usuario=>usuario === usuarioActual);
+    const usuarioEncontrado = listaUsuarios.find(usuario=>usuario.nombre === usuarioActual.toUpperCase());
 
     if(usuarioEncontrado !== undefined){
         alert("Usuario ya existente");
     }else{
+        for (const usuario of listaUsuarios) {
+            listaNueva.push(usuario);
+        }
         listaNueva.push(new Usuario(usuarioActual))
         alert("Usuario, " + usuarioActual + " agregado al sistema.")
         localStorage.setItem("listaUsuarios",JSON.stringify(listaNueva));
