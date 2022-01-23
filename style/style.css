@@ -1,6 +1,6 @@
 @media (max-width: 576px) {
   body {
-    background-color: #8fca8f;
+    background-color: #a6dda9;
     color: #061b06;
   }
 
@@ -15,7 +15,7 @@
 }
 @media (min-width: 577px) and (max-width: 991px) {
   body {
-    background-color: #8fca8f;
+    background-color: #a6dda9;
     color: #061b06;
   }
 
@@ -30,16 +30,16 @@
 }
 @media (min-width: 992px) {
   body {
-    background-color: #8fca8f;
+    background-color: #a6dda9;
     color: #061b06;
   }
 
   .header__nav {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    grid-template-areas: lis lis lis lis;
-    height: 3.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
   .header__nav--banner {
     grid-area: lis;
@@ -60,5 +60,35 @@
     text-decoration: none;
     color: darkgreen;
     font-size: 1.45rem;
+  }
+  .header__nav--banner a:hover {
+    background-color: #3a8a3a;
+    color: darkgreen;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-top: 0.5rem;
+    padding-bottom: 1.6rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  #header__nav--currentMenu {
+    background-color: #3a8a3a;
+    color: #061b06;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-top: 0.5rem;
+    padding-bottom: 1.6rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  main {
+    display: flex;
+    word-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   }
 }/*# sourceMappingURL=style.css.map */

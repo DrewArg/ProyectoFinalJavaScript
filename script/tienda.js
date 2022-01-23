@@ -1,4 +1,4 @@
-//CLASES // prueba
+//CLASES
 
 class Producto {
     constructor(tipo, nombre, coste, id) {
@@ -24,6 +24,13 @@ let nombreUsuario = prompt("Ingresa tu nombre de usuario.")
 let creditosDisponibles = 10;
 
 alert("Bienvenid@ " + nombreUsuario + " por ser un nuevo usuario, tienes un total de 10 créditos gratis.");
+
+localStorage.setItem('prueba: ',20);
+
+let local = localStorage.getItem('prueba');
+
+console.log(typeof local);
+console.log(local);
 
 let tiposDeCarta = ["Alimento", "Animal", "Habilitad", "Hábitat"];
 
