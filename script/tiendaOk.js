@@ -54,9 +54,6 @@ if(usuarioActivo !== null){
 
 
 }
-//   let seleccionarTienda = document.getElementById("agregarHtml");
-//   document.body.appendChild(contenedor);
-// }
 
 // let btnBuscar = document.getElementById("btnBuscar");
 // btnBuscar.addEventListener("click", cobrarCartaComun);
