@@ -21,6 +21,25 @@ class Usuario {
   }
 }
 
+class Producto {
+    constructor(tipo, nombre, coste, id) {
+      this.tipo = tipo;
+      this.nombre = nombre;
+      this.coste = coste;
+      this.id = id;
+    }
+  
+    getNombre() {
+      return this.nombre;
+    }
+  
+    getCoste() {
+      return this.coste;
+    }
+  }
+
+
+
 const usuarios = [];
 const baseDatosUsuarios = localStorage.getItem("listaUsuarios");
 
@@ -29,7 +48,7 @@ if (baseDatosUsuarios === null || baseDatosUsuarios.length === 0) {
 }
 
 let btnIngreso = document.getElementById("btnIngreso");
-btnIngreso.addEventListener("click", reiniciarLocalStorage);
+btnIngreso.addEventListener("click", validarUsuario);
 
 let btnCrearCuenta = document.getElementById("btnCrearCuenta");
 btnCrearCuenta.addEventListener("click", crearUsuario);
@@ -49,13 +68,7 @@ function recorrerLocalStorage(e) {
   }
 }
 
-function validarUsuario(e) {
-  if (localStorage.getItem("usuario") !== null) {
-    for (let i = 0; i < localStorage.length; i++) {}
-  }
-}
-
-function crearUsuario(e) {
+function crearUsuario() {
   let usuarioActual = document.getElementById("logueoUsuario").value;
 
   const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
@@ -66,13 +79,33 @@ function crearUsuario(e) {
   );
 
   if (usuarioEncontrado !== undefined) {
-    alert("Usuario ya existente");
+    alert("Usuario ya existente.");
   } else {
     for (const usuario of listaUsuarios) {
       listaNueva.push(usuario);
     }
     listaNueva.push(new Usuario(usuarioActual));
-    alert("Usuario, " + usuarioActual + " agregado al sistema.");
+    alert("Usuario " + usuarioActual + " agregado al sistema.");
     localStorage.setItem("listaUsuarios", JSON.stringify(listaNueva));
+    localStorage.setItem("usuarioActivo",JSON.stringify(usuarioEncontrado));
+  }
+}
+
+function validarUsuario() {
+  let usuarioActual = document.getElementById("logueoUsuario").value;
+
+  const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
+
+  const usuarioEncontrado = listaUsuarios.find(
+    (usuario) => usuario.nombre === usuarioActual.toUpperCase()
+  );
+
+    if (usuarioEncontrado !== undefined) {
+    localStorage.setItem("usuarioActivo",JSON.stringify(usuarioEncontrado));
+    alert("Bienvenido " + usuarioEncontrado.nombre);
+    alert("Recuerda que te quedan: " + usuarioEncontrado.creditos + " créditos");
+
+  } else {
+    alert("Usuario inexistente.");
   }
 }
