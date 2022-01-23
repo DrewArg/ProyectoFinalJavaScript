@@ -26,7 +26,7 @@ class Usuario {
     this.creditos = this.creditos + agregado;
   }
 }
-class Producto {
+class Carta {
   constructor(tipo, nombre, coste, id) {
     this.tipo = tipo;
     this.nombre = nombre;
@@ -41,33 +41,48 @@ class Producto {
   getCoste() {
     return this.coste;
   }
+
+  getId() {
+    return this.id;
+  }
 }
+
+const cartas = [];
+
+cartas.push(new Carta("Animal", "Lobo Gris", 3, 1));
+cartas.push(new Carta("Animal", "Camaleón", 3, 2));
+cartas.push(new Carta("Animal", "Tortuga Marina", 3, 3));
+cartas.push(new Carta("Animal", "Pez Payaso", 1, 5));
+cartas.push(new Carta("Habilidad", "Coraza", 2, 6));
+cartas.push(new Carta("Habilidad", "Captura", 3, 7));
+cartas.push(new Carta("Habilidada", "Aullido", 2, 8));
+cartas.push(new Carta("Hábitat", "Alcantarilla", 3, 9));
+cartas.push(new Carta("Hábitat", "Costa", 6, 10));
+cartas.push(new Carta("Alimento", "Alimento", 0, 11));
 
 let usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-if(usuarioActivo !== null){
-  let usuario = new Usuario(usuarioActivo.nombre,usuarioActivo.contrasena);
+if (usuarioActivo !== null) {
+  let usuario = new Usuario(usuarioActivo.nombre, usuarioActivo.contrasena);
   usuario.agregarCreditos(usuarioActivo.creditos);
 
   let titulo = document.getElementById("tituloCambiante");
-  titulo.innerHTML=`${usuario.getNombre()}, tienes ${usuario.getCreditos()} créditos disponibles.`;
-
-
+  titulo.innerHTML = `${usuario.getNombre()}, tienes ${usuario.getCreditos()} créditos disponibles.`;
 }
 
-// let btnBuscar = document.getElementById("btnBuscar");
-// btnBuscar.addEventListener("click", cobrarCartaComun);
+let btnBuscarNombre = document.getElementById("btnNombre");
+btnBuscarNombre.addEventListener("click", filtrarNombre);
 
-// let seleccion = document.getElementById("tipoCarta");
+function filtrarNombre() {
+  let cartaBuscada = document.getElementById("cartaBuscada").value;
 
-// let tipo = seleccion.options[seleccion.selectedIndex].text;
+  for (const carta of cartas) {
+    if (cartaBuscada.toUpperCase() === (carta.getNombre()).toUpperCase()) {
+      let idCarta = document.getElementsByClassName("carta__id")[0];
+      idCarta.innerHTML = `[${carta.getId()}]`;
 
-// // function actualizarTipo(e) {
-// //   tipo = seleccion.options[seleccion.selectedIndex].text;
-// //   alert(tipo);
-// // }
-
-// function cobrarCartaComun() {
-//   user.descontarCredito(2);
-//   actualizarContenedor();
-// }
+      let nombreCarta = document.getElementsByClassName("carta__nombre")[0];
+      nombreCarta.innerHTML = `${carta.getNombre()}`;
+    }
+  }
+}

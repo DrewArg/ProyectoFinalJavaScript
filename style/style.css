@@ -156,12 +156,22 @@
     text-align: center;
     max-width: 20%;
   }
-  .carta__nombre {
+  .carta__pl {
+    display: flex;
+    flex-direction: row;
+  }
+  .carta__pl--id {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-right: 3rem;
+  }
+  .carta__pl--nombre {
     font-size: 1.5rem;
     font-weight: 800;
   }
   .carta img {
     max-width: 100%;
+    border-radius: 5px;
   }
   .carta__efecto {
     text-align: left;
@@ -185,6 +195,7 @@
   }
   .carta:hover img {
     max-width: 100%;
+    border-radius: 5px;
   }
   .carta:hover__efecto {
     text-align: left;
