@@ -50,7 +50,8 @@ function recorrerLocalStorage(e) {
 }
 
 function crearUsuario() {
-  let usuarioActual = document.getElementById("logueoUsuario").value;
+  let usuarioActual = document.getElementById("nombreUsuario").value;
+  let contrasenaActual = document.getElementById("contrasena").value;
 
   const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
   const listaNueva = [];
@@ -69,12 +70,21 @@ function crearUsuario() {
     alert("Usuario " + usuarioActual + " agregado al sistema.");
     localStorage.setItem("listaUsuarios", JSON.stringify(listaNueva));
     localStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
-    
   }
 }
 
 function validarUsuario() {
-  let usuarioActual = document.getElementById("logueoUsuario").value;
+  let existeError = document.body.contains(document.getElementsByClassName("login__mensajeError")[0]);
+
+  console.log(existeError);
+ 
+  if (existeError) {
+    let errorAnterior = document.getElementsByClassName("login__mensajeError");
+    errorAnterior[0].parentNode.removeChild(errorAnterior[0]);
+  }
+
+  let usuarioActual = document.getElementById("nombreUsuario").value;
+  let contrasenaActual = document.getElementById("contrasena").value;
 
   const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
 
@@ -88,8 +98,11 @@ function validarUsuario() {
     alert(
       "Recuerda que te quedan: " + usuarioEncontrado.creditos + " créditos"
     );
-   
   } else {
-    alert("Usuario inexistente.");
+    let login = document.getElementsByClassName("login")[0];
+    let mensajeError = document.createElement("div");
+    mensajeError.innerHTML = `<p class="login__mensajeError">Usuario y/o Contraseña incorrectos.</p>`;
+
+    login.appendChild(mensajeError);
   }
 }

@@ -29,9 +29,11 @@
   }
 }
 @media (min-width: 992px) {
-  body {
+  .body {
     background-color: black;
     color: white;
+    padding: 0px;
+    margin: 0px;
   }
 
   .header__nav {
@@ -58,7 +60,7 @@
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
-    color: #161616;
+    color: #242424;
     background-color: #e4e4e4;
     font-size: 1.45rem;
     padding-top: 0.5rem;
@@ -67,7 +69,7 @@
     padding-right: 0.25rem;
   }
   .header__nav--banner a:hover {
-    background-color: #161616;
+    background-color: #242424;
     color: #e4e4e4;
     font-weight: 600;
     text-transform: uppercase;
@@ -79,7 +81,7 @@
   }
 
   #header__nav--currentMenu {
-    background-color: #161616;
+    background-color: #242424;
     color: #e4e4e4;
     font-weight: 600;
     text-transform: uppercase;
@@ -90,10 +92,41 @@
     padding-right: 0.25rem;
   }
 
-  main {
+  .titulo {
+    padding: 1rem;
+  }
+  .titulo__h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  .titulo__subtitulo {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .login {
+    padding-top: 2rem;
+    text-align: center;
+  }
+  .login__bienvenida {
+    padding-bottom: 1rem;
+  }
+  .login__datosUsuario {
     display: flex;
-    word-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 1.3rem;
+  }
+  .login__datosUsuario--nombre {
+    margin-bottom: 1rem;
+  }
+  .login__botones {
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+  .login__mensajeError {
+    color: #f74141;
+    font-weight: 800;
+    padding: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
