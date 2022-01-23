@@ -1,5 +1,31 @@
 //CLASES
+class Usuario {
+  constructor(nombre, contrasena) {
+    this.nombre = nombre.toUpperCase();
+    this.contrasena = contrasena;
+    this.creditos = 0;
+  }
 
+  getNombre() {
+    return this.nombre;
+  }
+
+  getContrasena() {
+    return this.contrasena;
+  }
+
+  getCreditos() {
+    return this.creditos;
+  }
+
+  descontarCredito(descuento) {
+    this.creditos = this.creditos - descuento;
+  }
+
+  agregarCreditos(agregado) {
+    this.creditos = this.creditos + agregado;
+  }
+}
 class Producto {
   constructor(tipo, nombre, coste, id) {
     this.tipo = tipo;
@@ -17,35 +43,17 @@ class Producto {
   }
 }
 
-// // let usuario = prompt("Ingresa tu nombre");
-// let creditos = 10;
+let usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-// class Usuario {
-//   constructor(nombre) {
-//     this.nombre = nombre.toUpperCase();
-//     this.creditos = 10;
-//   }
+if(usuarioActivo !== null){
+  let usuario = new Usuario(usuarioActivo.nombre,usuarioActivo.contrasena);
+  usuario.agregarCreditos(usuarioActivo.creditos);
 
-//   descontarCredito(descuento) {
-//     this.creditos = this.creditos - descuento;
-//   }
+  let titulo = document.getElementById("tituloCambiante");
+  titulo.innerHTML=`${usuario.getNombre()}, tienes ${usuario.getCreditos()} créditos disponibles.`;
 
-//   agregarCreditos(agregado) {
-//     this.creditos = this.creditos + agregado;
-//   }
-// }
 
-// const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
-
-// const user = new Usuario(usuarioActivo.nombre);
-
-// actualizarContenedor();
-
-// function actualizarContenedor() {
-//   let contenedor = document.createElement("div");
-//   contenedor.innerHTML = `<h3>Usuario: ${user.nombre}</h3>
-//                             <h4>Créditos: ${user.creditos}</h4>`;
-
+}
 //   let seleccionarTienda = document.getElementById("agregarHtml");
 //   document.body.appendChild(contenedor);
 // }
