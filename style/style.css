@@ -150,22 +150,12 @@
     background-color: #2a2a2a;
     color: #fafafa;
     border-radius: 10px;
-    margin: 1rem;
     padding: 1rem;
     box-shadow: 0px 10px 5px #1b1b1b;
     text-align: center;
     max-width: 20%;
   }
-  .carta__pl {
-    display: flex;
-    flex-direction: row;
-  }
-  .carta__pl--id {
-    font-size: 1rem;
-    font-weight: 600;
-    padding-right: 3rem;
-  }
-  .carta__pl--nombre {
+  .carta__nombre {
     font-size: 1.5rem;
     font-weight: 800;
   }
@@ -175,57 +165,55 @@
   }
   .carta__efecto {
     text-align: left;
-    margin-left: 2em;
     margin-bottom: 0.5em;
-  }
-
-  .carta:hover {
-    background-color: #1d1d1d;
-    color: #cccccc;
-    border-radius: 10px;
-    margin: 1rem;
-    padding: 1rem;
-    box-shadow: 0px 10px 5px #1b1b1b;
-    text-align: center;
-    max-width: 40%;
-  }
-  .carta:hover__nombre {
-    font-size: 1.5rem;
-    font-weight: 800;
-  }
-  .carta:hover img {
     max-width: 100%;
-    border-radius: 5px;
   }
-  .carta:hover__efecto {
-    text-align: left;
-    margin-left: 2em;
-    margin-bottom: 0.5em;
-  }
+}
+.carta:hover {
+  background-color: #1d1d1d;
+  color: #cccccc;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 10px 5px #1b1b1b;
+  text-align: center;
+  max-width: 40%;
+}
+.carta:hover__nombre {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.carta:hover img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.carta:hover__efecto {
+  text-align: left;
+  margin-bottom: 0.5em;
+  font-size: 1.7rem;
+}
 
-  .login {
-    padding-top: 2rem;
-    text-align: center;
-  }
-  .login__bienvenida {
-    padding-bottom: 1rem;
-  }
-  .login__datosUsuario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 1.3rem;
-  }
-  .login__datosUsuario--nombre {
-    margin-bottom: 1rem;
-  }
-  .login__botones {
-    align-items: center;
-    padding-bottom: 1rem;
-  }
-  .login__mensajeError {
-    color: #f74141;
-    font-weight: 800;
-    padding: 1rem;
-  }
+.login {
+  padding-top: 2rem;
+  text-align: center;
+}
+.login__bienvenida {
+  padding-bottom: 1rem;
+}
+.login__datosUsuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1.3rem;
+}
+.login__datosUsuario--nombre {
+  margin-bottom: 1rem;
+}
+.login__botones {
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.login__mensajeError {
+  color: #f74141;
+  font-weight: 800;
+  padding: 1rem;
 }/*# sourceMappingURL=style.css.map */
