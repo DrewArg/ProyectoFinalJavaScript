@@ -155,6 +155,21 @@ if (usuarioActivo !== null) {
 let btnBuscarNombre = document.getElementById("btnNombre");
 btnBuscarNombre.addEventListener("click", filtrarNombre);
 
+let i = 1;
+
+for (const carta of cartas) {
+  $(".carta").append(
+    `<div class=carta__contorno">
+        <div class="carta__nombre">${carta.getNombre()}</div>
+        <div class="carta__imagen"><img src ="../img/${carta.getImagen()}"></div>
+        <div class="carta__efecto">${carta.getEfecto()}</div>
+        <div class="carta__boton"><button class="carta__boton--btn">Agregar al Carrito</button></div>
+        <div class="carta__id">${carta.getId()}</div>
+    </div>`
+  );
+  i++;
+}
+
 function filtrarNombre() {
   let cartaBuscada = $("#cartaBuscada").val();
 

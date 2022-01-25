@@ -147,51 +147,49 @@
   }
 
   .carta {
-    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .carta__contorno {
+    display: flex;
+    flex-direction: column;
+    max-width: 15%;
+    background-color: #971515;
     color: #fafafa;
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 0px 10px 5px #1b1b1b;
-    text-align: center;
-    max-width: 20%;
+    align-items: center;
+    justify-content: center;
   }
   .carta__nombre {
     font-size: 1.5rem;
     font-weight: 800;
+    text-align: center;
   }
-  .carta img {
-    max-width: 100%;
+  .carta__imagen {
+    text-align: center;
     border-radius: 5px;
   }
   .carta__efecto {
     text-align: left;
+    margin-left: 23%;
+    margin-right: 23%;
     margin-bottom: 0.5em;
     max-width: 100%;
   }
+  .carta__boton {
+    text-align: center;
+  }
+  .carta__boton--btn {
+    background-color: red;
+    position: relative;
+  }
+  .carta__id {
+    text-align: center;
+  }
 }
-.carta:hover {
-  background-color: #1d1d1d;
-  color: #cccccc;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0px 10px 5px #1b1b1b;
-  text-align: center;
-  max-width: 40%;
-}
-.carta:hover__nombre {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-.carta:hover img {
-  max-width: 100%;
-  border-radius: 5px;
-}
-.carta:hover__efecto {
-  text-align: left;
-  margin-bottom: 0.5em;
-  font-size: 1.7rem;
-}
-
 .login {
   padding-top: 2rem;
   text-align: center;
