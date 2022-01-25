@@ -133,22 +133,24 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
 
         &__contorno {
             display: flex;
             flex-direction: column;
-            width: 20%;
-            max-width: 300px;
+            width: 300px;
+            height: 400px;
             background-color: rgb(83, 57, 57);
             color: rgb(241, 233, 233);
             border-radius: 10px;
-            padding: 0.3rem;
+            padding: 0.4rem;
             margin: 1rem;
             align-items: center;
             justify-content: center;
         }
         &__superior {
-            height: 65%;
+            height: 58%;
 
             &--nombre {
                 font-size: 1.5rem;
@@ -163,13 +165,17 @@
         }
 
         &__inferior {
-            height: 35%;
-            padding: 0.2rem;
+            height: 42%;
+            padding-top: 0.4rem;
+            padding-left: 0.9rem;
+            padding-right: 0.9rem;
+            padding-bottom: 0.4rem;
 
             &--efecto {
                 text-align: left;
-                
+                padding-bottom: 0.3rem;
                 max-width: 100%;
+                height: 70%;
             }
 
             &--boton {
@@ -182,37 +188,12 @@
             }
 
             &--id {
+                height: 15%;
                 text-align: center;
             }
         }
     }
 }
-
-// .carta:hover {
-//     background-color: rgb(29, 29, 29);
-//     color: rgb(204, 204, 204);
-//     border-radius: 10px;
-//     padding: 1rem;
-//     box-shadow: 0px 10px 5px rgb(27, 27, 27);
-//     text-align: center;
-//     max-width: 40%;
-
-//     &__nombre {
-//         font-size: 1.5rem;
-//         font-weight: 800;
-//     }
-
-//     & img {
-//         max-width: 100%;
-//         border-radius: 5px;
-//     }
-
-//     &__efecto {
-//         text-align: left;
-//         margin-bottom: 0.5em;
-//         font-size: 1.7rem;
-//     }
-// }
 
 .login {
     padding-top: 2rem;
