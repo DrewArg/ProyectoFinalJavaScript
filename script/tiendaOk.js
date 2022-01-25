@@ -159,12 +159,16 @@ let i = 1;
 
 for (const carta of cartas) {
   $(".carta").append(
-    `<div class=carta__contorno">
-        <div class="carta__nombre">${carta.getNombre()}</div>
-        <div class="carta__imagen"><img src ="../img/${carta.getImagen()}"></div>
-        <div class="carta__efecto">${carta.getEfecto()}</div>
-        <div class="carta__boton"><button class="carta__boton--btn">Agregar al Carrito</button></div>
-        <div class="carta__id">${carta.getId()}</div>
+    `<div class="carta__contorno">
+      <div class="carta__superior">
+            <div class="carta__superior--nombre">${carta.getNombre()}</div>
+            <div class="carta__superior--imagen"><img src ="../img/${carta.getImagen()}"></div>
+        </div>
+        <div class="carta__inferior">
+            <div class="carta__inferior--efecto">${carta.getEfecto()}</div>
+            <div class="carta__inferior--boton"><button class="carta__inferior--boton-_-btn">Agregar al Carrito</button></div>
+            <div class="carta__inferior--id">[${carta.getId()}]</div>
+        </div>
     </div>`
   );
   i++;
