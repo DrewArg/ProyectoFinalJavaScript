@@ -159,6 +159,8 @@ if (usuarioActivo !== null) {
 let btnBuscarNombre = document.getElementById("btnNombre");
 btnBuscarNombre.addEventListener("click", filtrarNombre);
 
+$(`#btnRefresh`).click(actualizarPagina);
+
 for (const carta of cartas) {
   $(".carta").append(
     `<div class="carta__contorno${carta.getTipo()}">
@@ -178,21 +180,29 @@ for (const carta of cartas) {
 function filtrarNombre() {
   let cartaBuscada = $("#cartaBuscada").val();
 
-  console.log(cartaBuscada);
-
   for (const carta of cartas) {
+    let contornoCarta = $(`.carta__contorno${carta.getTipo()}`)[0];
+    let nombreCarta = $(".carta__superior--nombre");
+    let imgCarta = $(".carta__superior--imagen");
+    let efectoCarta = $(".carta__inferior--efecto");
+    let idCarta = $(".carta__inferior--id");
+
     if (cartaBuscada.toUpperCase() === carta.getNombre().toUpperCase()) {
-      let nombreCarta = $(".carta__superior--nombre")[0];
-      nombreCarta.innerHTML = `${carta.getNombre()}`;
+      nombreCarta.text(`${carta.getNombre()}`);
+      imgCarta.html(`<img src ="../img/${carta.getImagen()}">`);
+      efectoCarta.text(`${carta.getEfecto()}`);
+      idCarta.text(`[${carta.getId()}]`);
 
-      let imgCarta = $(".carta__superior--imagen")[0];
-      imgCarta.innerHTML = `<img src ="../img/${carta.getImagen()}">`;
-
-      let efectoCarta = $(".carta__inferior--efecto")[0];
-      efectoCarta.innerHTML = `${carta.getEfecto()}`;
-
-      let idCarta = $(".carta__inferior--id")[0];
-      idCarta.innerHTML = `[${carta.getId()}]`;
+    } else {
+      contornoCarta.remove();
     }
   }
+}
+
+function actualizarPagina() {
+  window.location.reload();
+}
+
+function filtrarTipo(){
+  
 }
