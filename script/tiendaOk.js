@@ -156,20 +156,22 @@ let btnBuscarNombre = document.getElementById("btnNombre");
 btnBuscarNombre.addEventListener("click", filtrarNombre);
 
 function filtrarNombre() {
-  let cartaBuscada = document.getElementById("cartaBuscada").value;
+  let cartaBuscada = $("#cartaBuscada").val();
+
+  console.log(cartaBuscada);
 
   for (const carta of cartas) {
     if (cartaBuscada.toUpperCase() === carta.getNombre().toUpperCase()) {
-      let nombreCarta = document.getElementsByClassName("carta__nombre")[0];
+      let nombreCarta = $(".carta__nombre")[0];
       nombreCarta.innerHTML = `${carta.getNombre()}`;
 
-      let imgCarta = document.getElementsByClassName("carta__imagen")[0];
+      let imgCarta = $(".carta__imagen")[0];
       imgCarta.innerHTML = `<img src ="../img/${carta.getImagen()}">`;
 
-      let efectoCarta = document.getElementsByClassName("carta__efecto")[0];
+      let efectoCarta = $(".carta__efecto")[0];
       efectoCarta.innerHTML = `${carta.getEfecto()}`;
 
-      let idCarta = document.getElementsByClassName("carta__id")[0];
+      let idCarta = $(".carta__id")[0];
       idCarta.innerHTML = `[${carta.getId()}]`;
     }
   }
