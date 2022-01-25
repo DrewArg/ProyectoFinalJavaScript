@@ -161,19 +161,21 @@ btnBuscarNombre.addEventListener("click", filtrarNombre);
 
 $(`#btnRefresh`).click(actualizarPagina);
 
+$(`#btnTipo`).click(filtrarTipo);
+
 for (const carta of cartas) {
   $(".carta").append(
     `<div class="carta__contorno${carta.getTipo()}">
-            <div class="carta__superior">
-                <div class="carta__superior--nombre">${carta.getNombre()}</div>
-                <div class="carta__superior--imagen"><img src ="../img/${carta.getImagen()}"></div>
-            </div>
-            <div class="carta__inferior">
-                <div class="carta__inferior--efecto">${carta.getEfecto()}</div>
-                <div class="carta__inferior--boton"><button class="carta__inferior--boton-_-btn">Agregar al Carrito</button></div>
-                <div class="carta__inferior--id">[${carta.getId()}]</div>
-            </div>
-      </div>`
+                <div class="carta__superior">
+                    <div class="carta__superior--nombre">${carta.getNombre()}</div>
+                    <div class="carta__superior--imagen"><img src ="../img/${carta.getImagen()}"></div>
+                </div>
+                <div class="carta__inferior">
+                    <div class="carta__inferior--efecto">${carta.getEfecto()}</div>
+                    <div class="carta__inferior--boton"><button class="carta__inferior--boton-_-btn">Agregar al Carrito</button></div>
+                    <div class="carta__inferior--id">[${carta.getId()}]</div>
+                </div>
+          </div>`
   );
 }
 
@@ -192,7 +194,6 @@ function filtrarNombre() {
       imgCarta.html(`<img src ="../img/${carta.getImagen()}">`);
       efectoCarta.text(`${carta.getEfecto()}`);
       idCarta.text(`[${carta.getId()}]`);
-
     } else {
       contornoCarta.remove();
     }
@@ -203,6 +204,60 @@ function actualizarPagina() {
   window.location.reload();
 }
 
-function filtrarTipo(){
-  
+function filtrarTipo() {
+  let tipoCarta = $(`#tipoCarta`).val();
+
+  for (const carta of cartas) {
+    let contornoCarta = $(`.carta__contorno${carta.getTipo()}`)[0];
+    let nombreCarta = $(".carta__superior--nombre");
+    let imgCarta = $(".carta__superior--imagen");
+    let efectoCarta = $(".carta__inferior--efecto");
+    let idCarta = $(".carta__inferior--id");
+
+    if (tipoCarta.toUpperCase() === carta.getTipo().toUpperCase()) {
+      nombreCarta.text(`${carta.getNombre()}`);
+      imgCarta.html(`<img src ="../img/${carta.getImagen()}">`);
+      efectoCarta.text(`${carta.getEfecto()}`);
+      idCarta.text(`[${carta.getId()}]`);
+    } else {
+      contornoCarta.remove();
+    }
+  }
+}
+
+function filtrarTipoMal() {
+  let tipoCarta = $(`#tipoCarta`).val();
+  switch (tipoCarta) {
+    case "Alimento":
+      const alimentos = cartas.filter(
+        (carta) => carta.getTipo() === "Alimento"
+      );
+
+      mostrarCartas(alimentos);
+
+      break;
+
+    case "Animal":
+      const animales = cartas.filter((carta) => carta.getTipo() === "Animal");
+      mostrarCartas(animales);
+      console.log(animales);
+      break;
+
+    case "Habilidad":
+      const habilidades = cartas.filter(
+        (carta) => carta.getTipo() === "Habilidad"
+      );
+      mostrarCartas(habilidades);
+
+      break;
+
+    case "Habitat":
+      const habitats = cartas.filter((carta) => carta.getTipo() === "Habitat");
+      mostrarCartas(habitats);
+
+      break;
+
+    default:
+      break;
+  }
 }
