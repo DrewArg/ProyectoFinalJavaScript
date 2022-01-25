@@ -36,6 +36,10 @@ class Carta {
     this.efecto = efecto;
   }
 
+  getTipo() {
+    return this.tipo;
+  }
+
   getNombre() {
     return this.nombre;
   }
@@ -112,7 +116,7 @@ cartas.push(
 );
 cartas.push(
   new Carta(
-    "Habilidada",
+    "Habilidad",
     "Aullido",
     2,
     8,
@@ -122,7 +126,7 @@ cartas.push(
 );
 cartas.push(
   new Carta(
-    "Hábitat",
+    "Habitat",
     "Alcantarilla",
     3,
     9,
@@ -132,7 +136,7 @@ cartas.push(
 );
 cartas.push(
   new Carta(
-    "Hábitat",
+    "Habitat",
     "Costa",
     6,
     10,
@@ -155,23 +159,20 @@ if (usuarioActivo !== null) {
 let btnBuscarNombre = document.getElementById("btnNombre");
 btnBuscarNombre.addEventListener("click", filtrarNombre);
 
-let i = 1;
-
 for (const carta of cartas) {
   $(".carta").append(
-    `<div class="carta__contorno">
-      <div class="carta__superior">
-            <div class="carta__superior--nombre">${carta.getNombre()}</div>
-            <div class="carta__superior--imagen"><img src ="../img/${carta.getImagen()}"></div>
-        </div>
-        <div class="carta__inferior">
-            <div class="carta__inferior--efecto">${carta.getEfecto()}</div>
-            <div class="carta__inferior--boton"><button class="carta__inferior--boton-_-btn">Agregar al Carrito</button></div>
-            <div class="carta__inferior--id">[${carta.getId()}]</div>
-        </div>
-    </div>`
+    `<div class="carta__contorno${carta.getTipo()}">
+            <div class="carta__superior">
+                <div class="carta__superior--nombre">${carta.getNombre()}</div>
+                <div class="carta__superior--imagen"><img src ="../img/${carta.getImagen()}"></div>
+            </div>
+            <div class="carta__inferior">
+                <div class="carta__inferior--efecto">${carta.getEfecto()}</div>
+                <div class="carta__inferior--boton"><button class="carta__inferior--boton-_-btn">Agregar al Carrito</button></div>
+                <div class="carta__inferior--id">[${carta.getId()}]</div>
+            </div>
+      </div>`
   );
-  i++;
 }
 
 function filtrarNombre() {
@@ -181,16 +182,16 @@ function filtrarNombre() {
 
   for (const carta of cartas) {
     if (cartaBuscada.toUpperCase() === carta.getNombre().toUpperCase()) {
-      let nombreCarta = $(".carta__nombre")[0];
+      let nombreCarta = $(".carta__superior--nombre")[0];
       nombreCarta.innerHTML = `${carta.getNombre()}`;
 
-      let imgCarta = $(".carta__imagen")[0];
+      let imgCarta = $(".carta__superior--imagen")[0];
       imgCarta.innerHTML = `<img src ="../img/${carta.getImagen()}">`;
 
-      let efectoCarta = $(".carta__efecto")[0];
+      let efectoCarta = $(".carta__inferior--efecto")[0];
       efectoCarta.innerHTML = `${carta.getEfecto()}`;
 
-      let idCarta = $(".carta__id")[0];
+      let idCarta = $(".carta__inferior--id")[0];
       idCarta.innerHTML = `[${carta.getId()}]`;
     }
   }

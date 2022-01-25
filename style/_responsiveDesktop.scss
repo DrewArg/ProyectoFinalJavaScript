@@ -136,12 +136,39 @@
         align-items: center;
         justify-content: center;
 
-        &__contorno {
+        &__color {
             display: flex;
             flex-direction: column;
             width: 300px;
             height: 400px;
-            background-color: rgb(83, 57, 57);
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            padding: 0.4rem;
+
+            &Animal {
+                background-color: rgb(168, 87, 54);
+            }
+
+            &Alimento {
+                background-color: rgb(86, 148, 71);
+            }
+
+            &Habilidad {
+                background-color: rgb(128, 90, 123);
+            }
+
+            &Habitat {
+                background-color: rgb(106, 150, 158);
+            }
+        }
+
+        &__contornoAnimal {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 400px;
+            background-color: rgb(136, 53, 53);
             color: rgb(241, 233, 233);
             border-radius: 10px;
             padding: 0.4rem;
@@ -149,6 +176,49 @@
             align-items: center;
             justify-content: center;
         }
+
+        &__contornoAlimento {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 400px;
+            background-color: rgb(79, 128, 69);
+            color: rgb(241, 233, 233);
+            border-radius: 10px;
+            padding: 0.4rem;
+            margin: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__contornoHabilidad {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 400px;
+            background-color: rgb(95, 61, 117);
+            color: rgb(241, 233, 233);
+            border-radius: 10px;
+            padding: 0.4rem;
+            margin: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__contornoHabitat {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 400px;
+            background-color: rgb(113, 149, 158);
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            padding: 0.4rem;
+            margin: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
         &__superior {
             height: 58%;
 

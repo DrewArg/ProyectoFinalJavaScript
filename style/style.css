@@ -153,13 +153,74 @@
     align-items: center;
     justify-content: center;
   }
-  .carta__contorno {
+  .carta__color {
     display: flex;
     flex-direction: column;
     width: 300px;
     height: 400px;
-    background-color: #533939;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 0.4rem;
+  }
+  .carta__colorAnimal {
+    background-color: #a85736;
+  }
+  .carta__colorAlimento {
+    background-color: #569447;
+  }
+  .carta__colorHabilidad {
+    background-color: #805a7b;
+  }
+  .carta__colorHabitat {
+    background-color: #6a969e;
+  }
+  .carta__contornoAnimal {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #883535;
     color: #f1e9e9;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .carta__contornoAlimento {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #4f8045;
+    color: #f1e9e9;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .carta__contornoHabilidad {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #5f3d75;
+    color: #f1e9e9;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .carta__contornoHabitat {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #71959e;
+    color: black;
     border-radius: 10px;
     padding: 0.4rem;
     margin: 1rem;
