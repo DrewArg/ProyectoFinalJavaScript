@@ -55,8 +55,8 @@ if (usuarioActivo !== null) {
 }
 
 function crearUsuario() {
-  if (existeElementoPorClase("login__mensajeError")) {
-    removerElementoPorClase("login__mensajeError");
+  if (existeElementoPorClase("mensajeError")) {
+    removerElementoPorClase("mensajeError");
   }
 
   let usuarioActual = document
@@ -93,15 +93,15 @@ function crearUsuario() {
   } else {
     let login = document.getElementsByClassName("login")[0];
     let mensajeError = document.createElement("div");
-    mensajeError.innerHTML = `<p class="login__mensajeError">Usuario ya existente.</p>`;
+    mensajeError.innerHTML = `<p class="mensajeError">Usuario ya existente.</p>`;
 
     login.appendChild(mensajeError);
   }
 }
 
 function validarUsuario() {
-  if (existeElementoPorClase("login__mensajeError")) {
-    removerElementoPorClase("login__mensajeError");
+  if (existeElementoPorClase("mensajeError")) {
+    removerElementoPorClase("mensajeError");
   }
 
   let usuarioActual = document
@@ -137,7 +137,7 @@ function validarUsuario() {
     if (usuarioLogeado === null) {
       let login = document.getElementsByClassName("login")[0];
       let mensajeError = document.createElement("div");
-      mensajeError.innerHTML = `<p class="login__mensajeError">Usuario y/o Contraseña incorrectos.</p>`;
+      mensajeError.innerHTML = `<p class="mensajeError">Usuario y/o Contraseña incorrectos.</p>`;
 
       login.appendChild(mensajeError);
     }

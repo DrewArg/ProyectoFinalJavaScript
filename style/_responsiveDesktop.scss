@@ -7,71 +7,7 @@
         margin: 0px;
     }
 
-    .header {
-        &__nav {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-
-            &--banner {
-                grid-area: lis;
-
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-
-                & li {
-                    display: inline-block;
-                    padding: 0.2rem;
-                }
-
-                & a {
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    color: $Font-Color-Secundario;
-                    background-color: $Fondo-Secundario;
-                    font-size: $FontSize-NavBar-Desktop;
-                    padding-top: 0.5rem;
-                    padding-bottom: 1.6rem;
-                    padding-left: 0.25rem;
-                    padding-right: 0.25rem;
-                }
-
-                & a:hover {
-                    background-color: $Font-Color-Secundario;
-                    color: $Fondo-Secundario;
-                    font-weight: 600;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    padding-top: 0.5rem;
-                    padding-bottom: 1.6rem;
-                    padding-left: 0.25rem;
-                    padding-right: 0.25rem;
-                }
-            }
-        }
-    }
-
-    #header__nav--currentMenu {
-        background-color: $Font-Color-Secundario;
-        color: $Fondo-Secundario;
-        font-weight: 600;
-        text-transform: uppercase;
-        text-decoration: none;
-        padding-top: 0.5rem;
-        padding-bottom: 1.6rem;
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
-    }
-
     .titulo {
-        padding: 1rem;
         &__h1 {
             font-size: $FontSize-Title-Desktop;
             text-align: center;
@@ -81,14 +17,12 @@
             font-size: 2.3rem;
             font-weight: 800;
             text-align: center;
-            padding-top: 2rem;
         }
 
         & h3 {
             font-size: 1.7rem;
             font-weight: 600;
             text-align: center;
-            padding-top: 1.5rem;
         }
         &__subtitulo {
             text-align: center;
@@ -103,7 +37,7 @@
             text-align: center;
             font-size: 2.3rem;
             padding-top: 1rem;
-            color: red;
+            color: $Color-Cuarto;
         }
 
         &__btnTienda {
@@ -117,7 +51,7 @@
 
     .filtro {
         text-align: center;
-        padding: 1.2rem;
+        padding: 0px;
 
         &__nombre {
             display: flex;
@@ -125,7 +59,6 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            padding-bottom: 1.5rem;
         }
     }
 
@@ -288,10 +221,62 @@
         align-items: center;
         padding-bottom: 1rem;
     }
+}
 
-    &__mensajeError {
-        color: rgb(247, 65, 65);
-        font-weight: 800;
-        padding: 1rem;
+.topNav {
+    background-color: $Color-Secundario;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: center;
+    width: 100%;
+
+    & a {
+        color: white;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+
+        &:hover {
+            background-color: $Color-Terciario;
+            color: white;
+        }
     }
+}
+
+button {
+    border-radius: 4px;
+    color: black;
+    border: 2px solid #c4c0c0;
+    background-color: rgb(148, 139, 139);
+    padding: 0.1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.1rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: white;
+    }
+}
+
+.mensajeError {
+    color: rgb(247, 65, 65);
+    font-weight: 800;
+    padding: 1rem;
+}
+
+#btnRefresh {
+    margin: 1rem;
+    font-size: 1.3rem;
 }

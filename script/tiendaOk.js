@@ -180,6 +180,7 @@ for (const carta of cartas) {
 }
 
 function filtrarNombre() {
+  let cartaEncontrada = false;
   let cartaBuscada = $("#cartaBuscada").val();
 
   for (const carta of cartas) {
@@ -194,9 +195,16 @@ function filtrarNombre() {
       imgCarta.html(`<img src ="../img/${carta.getImagen()}">`);
       efectoCarta.text(`${carta.getEfecto()}`);
       idCarta.text(`[${carta.getId()}]`);
+      cartaEncontrada = true;
     } else {
       contornoCarta.remove();
     }
+  }
+
+  if (!cartaEncontrada) {
+    $(`.filtro__nombre`).append(
+      `<p class="mensajeError">No existe ninguna carta con ese nombre.</p>`
+    );
   }
 }
 
@@ -207,57 +215,59 @@ function actualizarPagina() {
 function filtrarTipo() {
   let tipoCarta = $(`#tipoCarta`).val();
 
-  for (const carta of cartas) {
-    let contornoCarta = $(`.carta__contorno${carta.getTipo()}`)[0];
+  for (let cartaActual of cartas) {
+    let contornoCarta = $(`.carta__contorno${cartaActual.getTipo()}`);
     let nombreCarta = $(".carta__superior--nombre");
     let imgCarta = $(".carta__superior--imagen");
     let efectoCarta = $(".carta__inferior--efecto");
     let idCarta = $(".carta__inferior--id");
 
-    if (tipoCarta.toUpperCase() === carta.getTipo().toUpperCase()) {
-      nombreCarta.text(`${carta.getNombre()}`);
-      imgCarta.html(`<img src ="../img/${carta.getImagen()}">`);
-      efectoCarta.text(`${carta.getEfecto()}`);
-      idCarta.text(`[${carta.getId()}]`);
+    if (tipoCarta.toUpperCase() === cartaActual.getTipo().toUpperCase()) {
+      //se pisa la variable
+      nombreCarta.text(`${cartaActual.getNombre()}`);
+      imgCarta.html(`<img src ="../img/${cartaActual.getImagen()}">`);
+      efectoCarta.text(`${cartaActual.getEfecto()}`);
+      idCarta.text(`[${cartaActual.getId()}]`);
+      console.log(cartaActual.getNombre());
     } else {
       contornoCarta.remove();
     }
   }
 }
 
-function filtrarTipoMal() {
-  let tipoCarta = $(`#tipoCarta`).val();
-  switch (tipoCarta) {
-    case "Alimento":
-      const alimentos = cartas.filter(
-        (carta) => carta.getTipo() === "Alimento"
-      );
+// function filtrarTipoMal() {
+//   let tipoCarta = $(`#tipoCarta`).val();
+//   switch (tipoCarta) {
+//     case "Alimento":
+//       const alimentos = cartas.filter(
+//         (carta) => carta.getTipo() === "Alimento"
+//       );
 
-      mostrarCartas(alimentos);
+//       mostrarCartas(alimentos);
 
-      break;
+//       break;
 
-    case "Animal":
-      const animales = cartas.filter((carta) => carta.getTipo() === "Animal");
-      mostrarCartas(animales);
-      console.log(animales);
-      break;
+//     case "Animal":
+//       const animales = cartas.filter((carta) => carta.getTipo() === "Animal");
+//       mostrarCartas(animales);
+//       console.log(animales);
+//       break;
 
-    case "Habilidad":
-      const habilidades = cartas.filter(
-        (carta) => carta.getTipo() === "Habilidad"
-      );
-      mostrarCartas(habilidades);
+//     case "Habilidad":
+//       const habilidades = cartas.filter(
+//         (carta) => carta.getTipo() === "Habilidad"
+//       );
+//       mostrarCartas(habilidades);
 
-      break;
+//       break;
 
-    case "Habitat":
-      const habitats = cartas.filter((carta) => carta.getTipo() === "Habitat");
-      mostrarCartas(habitats);
+//     case "Habitat":
+//       const habitats = cartas.filter((carta) => carta.getTipo() === "Habitat");
+//       mostrarCartas(habitats);
 
-      break;
+//       break;
 
-    default:
-      break;
-  }
-}
+//     default:
+//       break;
+//   }
+// }

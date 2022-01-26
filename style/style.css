@@ -1,6 +1,6 @@
 @media (max-width: 576px) {
   body {
-    background-color: black;
+    background-color: #000000;
     color: white;
   }
 
@@ -15,7 +15,7 @@
 }
 @media (min-width: 577px) and (max-width: 991px) {
   body {
-    background-color: black;
+    background-color: #000000;
     color: white;
   }
 
@@ -30,71 +30,12 @@
 }
 @media (min-width: 992px) {
   .body {
-    background-color: black;
+    background-color: #000000;
     color: white;
     padding: 0px;
     margin: 0px;
   }
 
-  .header__nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-  .header__nav--banner {
-    grid-area: lis;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  .header__nav--banner li {
-    display: inline-block;
-    padding: 0.2rem;
-  }
-  .header__nav--banner a {
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #242424;
-    background-color: #e4e4e4;
-    font-size: 1.45rem;
-    padding-top: 0.5rem;
-    padding-bottom: 1.6rem;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-  }
-  .header__nav--banner a:hover {
-    background-color: #242424;
-    color: #e4e4e4;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding-top: 0.5rem;
-    padding-bottom: 1.6rem;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-  }
-
-  #header__nav--currentMenu {
-    background-color: #242424;
-    color: #e4e4e4;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding-top: 0.5rem;
-    padding-bottom: 1.6rem;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-  }
-
-  .titulo {
-    padding: 1rem;
-  }
   .titulo__h1 {
     font-size: 3.5rem;
     text-align: center;
@@ -103,13 +44,11 @@
     font-size: 2.3rem;
     font-weight: 800;
     text-align: center;
-    padding-top: 2rem;
   }
   .titulo h3 {
     font-size: 1.7rem;
     font-weight: 600;
     text-align: center;
-    padding-top: 1.5rem;
   }
   .titulo__subtitulo {
     text-align: center;
@@ -124,7 +63,7 @@
     text-align: center;
     font-size: 2.3rem;
     padding-top: 1rem;
-    color: red;
+    color: #FF0000;
   }
   .titulo__btnTienda {
     text-align: center;
@@ -135,7 +74,7 @@
 
   .filtro {
     text-align: center;
-    padding: 1.2rem;
+    padding: 0px;
   }
   .filtro__nombre {
     display: flex;
@@ -143,7 +82,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding-bottom: 1.5rem;
   }
 
   .carta {
@@ -284,8 +222,57 @@
   align-items: center;
   padding-bottom: 1rem;
 }
-.login__mensajeError {
+
+.topNav {
+  background-color: #3D0000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  justify-content: center;
+  width: 100%;
+}
+.topNav a {
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topNav a:hover {
+  background-color: #950101;
+  color: white;
+}
+
+button {
+  border-radius: 4px;
+  color: black;
+  border: 2px solid #c4c0c0;
+  background-color: #948b8b;
+  padding: 0.1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: white;
+}
+
+.mensajeError {
   color: #f74141;
   font-weight: 800;
   padding: 1rem;
+}
+
+#btnRefresh {
+  margin: 1rem;
+  font-size: 1.3rem;
 }/*# sourceMappingURL=style.css.map */
