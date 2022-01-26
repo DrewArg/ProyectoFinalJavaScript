@@ -92,68 +92,83 @@
     padding: 0.4rem;
   }
   .carta__colorAnimal {
-    background-color: #a85736;
+    background-color: #3f4150;
+  }
+  .carta__colorAnimal:hover {
+    text-shadow: 10px #3f4150;
   }
   .carta__colorAlimento {
-    background-color: #569447;
+    background-color: #855e69;
   }
   .carta__colorHabilidad {
-    background-color: #805a7b;
+    background-color: #7e6453;
   }
   .carta__colorHabitat {
-    background-color: #6a969e;
+    background-color: #78814e;
   }
   .carta__contornoAnimal {
     display: flex;
     flex-direction: column;
     width: 300px;
     height: 400px;
-    background-color: #883535;
-    color: #f1e9e9;
+    background-color: #3f4150;
+    color: #f4f4f2;
     border-radius: 10px;
     padding: 0.4rem;
     margin: 1rem;
     align-items: center;
     justify-content: center;
+  }
+  .carta__contornoAnimal:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #6f6fa8, 0 0 5px darkblue;
   }
   .carta__contornoAlimento {
     display: flex;
     flex-direction: column;
     width: 300px;
     height: 400px;
-    background-color: #4f8045;
-    color: #f1e9e9;
+    background-color: #855e69;
+    color: #f4f4f2;
     border-radius: 10px;
     padding: 0.4rem;
     margin: 1rem;
     align-items: center;
     justify-content: center;
+  }
+  .carta__contornoAlimento:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #a16fa8, 0 0 5px darkblue;
   }
   .carta__contornoHabilidad {
     display: flex;
     flex-direction: column;
     width: 300px;
     height: 400px;
-    background-color: #5f3d75;
-    color: #f1e9e9;
+    background-color: #7e6453;
+    color: #f4f4f2;
     border-radius: 10px;
     padding: 0.4rem;
     margin: 1rem;
     align-items: center;
     justify-content: center;
   }
+  .carta__contornoHabilidad:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #af9360, 0 0 5px darkblue;
+  }
   .carta__contornoHabitat {
     display: flex;
     flex-direction: column;
     width: 300px;
     height: 400px;
-    background-color: #71959e;
-    color: black;
+    background-color: #78814e;
+    color: #f4f4f2;
     border-radius: 10px;
     padding: 0.4rem;
     margin: 1rem;
     align-items: center;
     justify-content: center;
+  }
+  .carta__contornoHabitat:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #98a160, 0 0 5px darkblue;
   }
   .carta__superior {
     height: 58%;
