@@ -1,8 +1,8 @@
 @import "_variables.scss";
 @media (min-width: 992px) {
     .body {
-        background-color: $Fondo-Principal;
-        color: $Font-Color-Principal;
+        background-color: $Color-Principal;
+        color: $Font-Principal;
         padding: 0px;
         margin: 0px;
     }
@@ -248,7 +248,7 @@
 
         &:hover {
             background-color: $Color-Terciario;
-            color: white;
+            color: $Font-Secundario;
         }
     }
 }
@@ -257,7 +257,7 @@ button {
     border-radius: 4px;
     color: black;
     border: 2px solid #c4c0c0;
-    background-color: rgb(148, 139, 139);
+    background-color: $Font-Terciario;
     padding: 0.1rem;
     text-align: center;
     text-decoration: none;
@@ -266,7 +266,7 @@ button {
     cursor: pointer;
 
     &:hover {
-        background-color: white;
+        background-color: $Font-Secundario;
     }
 }
 

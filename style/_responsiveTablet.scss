@@ -1,11 +1,6 @@
 @import "_variables.scss";
 
 @media (min-width: 577px) and (max-width: 991px) {
-    body {
-        background-color: $Fondo-Principal;
-        color: $Font-Color-Principal;
-    }
-
     .header {
         &__nav {
             &--banner {

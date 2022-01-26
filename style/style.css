@@ -1,9 +1,4 @@
 @media (max-width: 576px) {
-  body {
-    background-color: #000000;
-    color: white;
-  }
-
   .header__nav--banner li {
     display: list-item;
     list-style: none;
@@ -14,11 +9,6 @@
   }
 }
 @media (min-width: 577px) and (max-width: 991px) {
-  body {
-    background-color: #000000;
-    color: white;
-  }
-
   .header__nav--banner li {
     display: list-item;
     list-style: none;
@@ -30,8 +20,8 @@
 }
 @media (min-width: 992px) {
   .body {
-    background-color: #000000;
-    color: white;
+    background-color: #072227;
+    color: #f4f4f2;
     padding: 0px;
     margin: 0px;
   }
@@ -63,7 +53,7 @@
     text-align: center;
     font-size: 2.3rem;
     padding-top: 1rem;
-    color: #FF0000;
+    color: #AEFEFF;
   }
   .titulo__btnTienda {
     text-align: center;
@@ -224,7 +214,7 @@
 }
 
 .topNav {
-  background-color: #3D0000;
+  background-color: #35858B;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -246,15 +236,15 @@
   font-size: 17px;
 }
 .topNav a:hover {
-  background-color: #950101;
-  color: white;
+  background-color: #4FBDBA;
+  color: #e8e8e8;
 }
 
 button {
   border-radius: 4px;
   color: black;
   border: 2px solid #c4c0c0;
-  background-color: #948b8b;
+  background-color: #bbbfca;
   padding: 0.1rem;
   text-align: center;
   text-decoration: none;
@@ -263,7 +253,7 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-color: white;
+  background-color: #e8e8e8;
 }
 
 .mensajeError {
