@@ -106,6 +106,15 @@
   .carta__colorHabitat {
     background-color: #78814e;
   }
+  .carta__precio {
+    background-color: #9ea2ad;
+    color: #404752;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+  }
   .carta__contornoAnimal {
     display: flex;
     flex-direction: column;
@@ -252,14 +261,14 @@
 }
 .topNav a:hover {
   background-color: #4FBDBA;
-  color: #e8e8e8;
+  color: #ddd6d6;
 }
 
 button {
   border-radius: 4px;
   color: black;
   border: 2px solid #c4c0c0;
-  background-color: #bbbfca;
+  background-color: #9ea2ad;
   padding: 0.1rem;
   text-align: center;
   text-decoration: none;
@@ -268,7 +277,23 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-color: #e8e8e8;
+  background-color: #ddd6d6;
+}
+
+.btnMenos,
+.btnMas {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-weight: 1000;
+}
+
+.btnMenos:hover {
+  background-color: #f37070;
+}
+
+.btnMas:hover {
+  background-color: #77d477;
 }
 
 .mensajeError {

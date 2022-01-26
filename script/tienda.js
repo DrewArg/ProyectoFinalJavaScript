@@ -1,357 +1,262 @@
 //CLASES
+class Usuario {
+  constructor(nombre, contrasena) {
+    this.nombre = nombre.toUpperCase();
+    this.contrasena = contrasena;
+    this.creditos = 0;
+  }
 
-class Producto {
-    constructor(tipo, nombre, coste, id) {
-        this.tipo = tipo;
-        this.nombre = nombre;
-        this.coste = coste;
-        this.id = id;
+  getNombre() {
+    return this.nombre;
+  }
 
-    }
+  getContrasena() {
+    return this.contrasena;
+  }
 
-    getNombre() {
-        return this.nombre;
-    }
+  getCreditos() {
+    return this.creditos;
+  }
 
-    getCoste() {
-        return this.coste;
-    }
+  descontarCredito(descuento) {
+    this.creditos = this.creditos - descuento;
+  }
+
+  agregarCreditos(agregado) {
+    this.creditos = this.creditos + agregado;
+  }
+}
+class Carta {
+  constructor(tipo, nombre, coste, id, imagen, efecto) {
+    this.tipo = tipo;
+    this.nombre = nombre;
+    this.coste = coste;
+    this.id = id;
+    this.imagen = imagen;
+    this.efecto = efecto;
+  }
+
+  getTipo() {
+    return this.tipo;
+  }
+
+  getNombre() {
+    return this.nombre;
+  }
+
+  getCoste() {
+    return this.coste;
+  }
+
+  getId() {
+    return this.id;
+  }
+
+  getImagen() {
+    return this.imagen;
+  }
+
+  getEfecto() {
+    return this.efecto;
+  }
 }
 
-// COMIENZO DE FLUJO
+const cartas = [];
 
-let nombreUsuario = prompt("Ingresa tu nombre de usuario.")
-let creditosDisponibles = 10;
+cartas.push(
+  new Carta(
+    "Animal",
+    "Lobo Gris",
+    3,
+    1,
+    "loboGris.jpg",
+    "Gana +1 de daño por cada Lobo Gris además de este en tu tablero."
+  )
+);
+cartas.push(
+  new Carta(
+    "Animal",
+    "Camaleón",
+    3,
+    2,
+    "camaleon.jpg",
+    "Puede tomar el ataque de un enemigo en reposo y sumarlo al suyo hasta el final del turno."
+  )
+);
+cartas.push(
+  new Carta(
+    "Animal",
+    "Tortuga Marina",
+    3,
+    3,
+    "tortugaMarina.jpg",
+    "Puede sacrificarse para evitar que el enemigo siga atacando este turno."
+  )
+);
+cartas.push(new Carta("Animal", "Pez Payaso", 1, 5, "pezPayaso.jpg", ""));
+cartas.push(
+  new Carta(
+    "Habilidad",
+    "Coraza",
+    2,
+    6,
+    "coraza.png",
+    "Un animal pasa a ser indestructible por este turno."
+  )
+);
+cartas.push(
+  new Carta(
+    "Habilidad",
+    "Captura",
+    3,
+    7,
+    "captura.jpg",
+    "Evita que un enemigo pueda pasar a la línea de batalla por 2 turnos."
+  )
+);
+cartas.push(
+  new Carta(
+    "Habilidad",
+    "Aullido",
+    2,
+    8,
+    "aullido.jpg",
+    "Si tienes un Lobo Gris en juego, puedes jugar a otro desde tu mazo o tu cementerio sin pagar su coste."
+  )
+);
+cartas.push(
+  new Carta(
+    "Habitat",
+    "Alcantarilla",
+    3,
+    9,
+    "alcantarilla.jpg",
+    "Puedes revivir una rata por turno pagando su coste y ponerla en tu línea de reposo."
+  )
+);
+cartas.push(
+  new Carta(
+    "Habitat",
+    "Costa",
+    6,
+    10,
+    "costa.jpg",
+    "Si tienes un Tiburón Blanco en juego, puedes consumir 5 alimentos para activar su efecto una segunda vez este turno."
+  )
+);
+cartas.push(new Carta("Alimento", "Alimento", 0, 11, "alimento.jpg", ""));
 
-alert("Bienvenid@ " + nombreUsuario + " por ser un nuevo usuario, tienes un total de 10 créditos gratis.");
+let usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-localStorage.setItem('prueba: ',20);
+if (usuarioActivo !== null) {
+  let usuario = new Usuario(usuarioActivo.nombre, usuarioActivo.contrasena);
+  usuario.agregarCreditos(usuarioActivo.creditos);
 
-let local = localStorage.getItem('prueba');
+  let titulo = document.getElementById("tituloCambiante");
+  titulo.innerHTML = `${usuario.getNombre()}, tienes ${usuario.getCreditos()} créditos disponibles.`;
+}
 
-console.log(typeof local);
-console.log(local);
+for (const carta of cartas) {
+  $(".carta").append(
+    `<div class="carta__contorno${carta.getTipo()}">
+                <div class="carta__superior">
+                    <div class="carta__superior--nombre">${carta.getNombre()}</div>
+                    <div class="carta__superior--imagen"><img src ="../img/${carta.getImagen()}"></div>
+                </div>
+                <div class="carta__inferior">
+                    <div class="carta__inferior--efecto">${carta.getEfecto()}</div>
+                    <div class="carta__inferior--id">[${carta.getId()}]</div>
+                </div>
 
-let tiposDeCarta = ["Alimento", "Animal", "Habilitad", "Hábitat"];
+                <div class="carta__precio">
+                  <button class="btnMenos" id="btnMenos${carta.getId()}">-</button>
+                  <span class="cantidadRequerida" id="cantidadRequerida${carta.getId()}">0</span>
+                  <button class="btnMas" id="btnMas${carta.getId()}">+</button>
+                </div>
+          </div>`
+  );
+}
 
-let tipoCartaAComprar = parseInt(prompt(`¿Qué deseas comprar? \n1. ${tiposDeCarta[0]}\n2. ${tiposDeCarta[1]}\n3. ${tiposDeCarta[2]}\n4. ${tiposDeCarta[3]}\nIngresa el número de la opción deseada.`));
+let btnBuscarNombre = document.getElementById("btnNombre");
+btnBuscarNombre.addEventListener("click", filtrarNombre);
 
-let opcionCorrecta = false;
-let salir = false;
+$(`#btnRefresh`).click(actualizarPagina);
 
-const productos = [];
-let idProducto = 0;
+$(`#btnTipo`).click(filtrarTipo);
 
-while (!salir) {
+for (const carta of cartas) {
+  $(`#btnMenos${carta.getId()}`).click(()=>{restarCantidad(carta.getId())});
+  $(`#btnMas${carta.getId()}`).click(() => {
+    agregarCantidad(carta.getId());
+  });
+}
 
-    while (!opcionCorrecta) {
-        if (tipoCartaAComprar === 1 || tipoCartaAComprar === 2 || tipoCartaAComprar === 3 || tipoCartaAComprar === 4) {
-            opcionCorrecta = true;
-        } else {
-            tipoCartaAComprar = parseInt(prompt(`Opción incorrecta, intenta nuevamente. \n1. ${tiposDeCarta[0]}\n2. ${tiposDeCarta[1]}\n3. ${tiposDeCarta[2]}\n4. ${tiposDeCarta[3]}\nIngresa el número de la opción deseada.`));
-        }
-    }
+function restarCantidad(idCarta) {
+  let cantidadCarta = parseInt($(`#cantidadRequerida${idCarta}`).text());
+  if (cantidadCarta > 0) {
+    cantidadCarta = cantidadCarta - 1;
+    $(`#cantidadRequerida${idCarta}`).text(cantidadCarta);
+  }
+}
 
-    switch (tipoCartaAComprar) {
+function agregarCantidad(idCarta) {
+  let cantidadCarta = parseInt($(`#cantidadRequerida${idCarta}`).text());
+  cantidadCarta = cantidadCarta + 1;
+  $(`#cantidadRequerida${idCarta}`).text(cantidadCarta);
+}
 
-        case 1:
+function filtrarNombre() {
+  let cartaEncontrada = false;
+  let cartaBuscada = $("#cartaBuscada").val();
 
-            let nombreAlimento = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
-            let costeAlimento = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreAlimento);
+  for (const carta of cartas) {
+    let contornoCarta = $(`.carta__contorno${carta.getTipo()}`)[0];
+    let nombreCarta = $(".carta__superior--nombre");
+    let imgCarta = $(".carta__superior--imagen");
+    let efectoCarta = $(".carta__inferior--efecto");
+    let idCarta = $(".carta__inferior--id");
 
-            if (verificarCreditosDisponibles(creditosDisponibles, costeAlimento)) {
-
-                productos.push(new Producto(tipoCartaAComprar, nombreAlimento, costeAlimento, idProducto));
-
-                const alimento = devolverProductoPorId(productos, idProducto);
-
-                creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, alimento.getCoste());
-                alert("Has comprado un: " + alimento.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
-
-            } else {
-                alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
-            }
-
-            idProducto++;
-            break;
-
-        case 2:
-
-            let nombreAnimal = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
-            let costeAnimal = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreAnimal);
-
-            if (verificarCreditosDisponibles(creditosDisponibles, costeAnimal)) {
-
-                productos.push(new Producto(tipoCartaAComprar, nombreAnimal, costeAnimal, idProducto));
-
-                const animal = devolverProductoPorId(productos, idProducto);
-
-                creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, animal.getCoste());
-                alert("Has comprado un: " + animal.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
-
-            } else {
-                alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
-            }
-
-            idProducto++;
-            break;
-
-
-        case 3:
-
-            let nombreHabilidad = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
-            let costeHabilidad = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreHabilidad);
-
-            if (verificarCreditosDisponibles(creditosDisponibles, costeHabilidad)) {
-                productos.push(new Producto(tipoCartaAComprar, nombreHabilidad, costeHabilidad, idProducto));
-
-                const habilidad = devolverProductoPorId(productos, idProducto);
-
-                creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, habilidad.getCoste());
-                alert("Has comprado un: " + habilidad.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
-
-            } else {
-                alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
-            }
-
-            idProducto++;
-            break;
-
-
-
-        case 4:
-
-            let nombreHabitat = mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar);
-            let costeHabitat = devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreHabitat);
-
-            if (verificarCreditosDisponibles(creditosDisponibles, costeHabitat)) {
-                productos.push(new Producto(tipoCartaAComprar, nombreHabitat, costeHabitat, idProducto));
-
-                const habitat = devolverProductoPorId(productos, idProducto);
-
-                creditosDisponibles = descontarYDevolverCreditosDisponibles(creditosDisponibles, habitat.getCoste());
-                alert("Has comprado un: " + habitat.getNombre() + ".\nTe quedan " + creditosDisponibles + " créditos disponibles.");
-
-            } else {
-                alert("Actulamente no tienes créditos suficientes para comprar esta carta.")
-            }
-
-            idProducto++;
-            break;
-
-    }
-
-    if (creditosDisponibles === 0) {
-        alert("Te has quedado sin créditos.")
-        salir = true;
+    if (cartaBuscada.toUpperCase() === carta.getNombre().toUpperCase()) {
+      nombreCarta.text(`${carta.getNombre()}`);
+      imgCarta.html(`<img src ="../img/${carta.getImagen()}">`);
+      efectoCarta.text(`${carta.getEfecto()}`);
+      idCarta.text(`[${carta.getId()}]`);
+      cartaEncontrada = true;
     } else {
-        let continuarCompra = parseInt(prompt("¿Quiéres seguir comprando?\n1. Sí\n2. No"));
-
-        if (continuarCompra === 1) {
-            opcionCorrecta = false;
-            tipoCartaAComprar = parseInt(prompt("¿Qué deseas comprar? \n1. Alimento\n2. Animal\n3. Habilidad\n4. Hábitat\nIngresa el número de la opción deseada."));
-        } else {
-            salir = true;
-        }
+      contornoCarta.remove();
     }
+  }
 
+  if (!cartaEncontrada) {
+    $(`.filtro__nombre`).append(
+      `<p class="mensajeError">No existe ninguna carta con ese nombre.</p>`
+    );
+  }
 }
 
-alert("En esta oportunidad has comprado los siguientes productos: ");
-
-for (const producto of productos) {
-    alert("Nombre: " + producto.getNombre() + " \nCréditos Gastados: " + producto.getCoste())
+function actualizarPagina() {
+  window.location.reload();
 }
 
-alert("¡Gracias por tu compra " + nombreUsuario + "!");
+function filtrarTipo() {
+  let tipoCarta = $(`#tipoCarta`).val();
 
-//FUNCIONES
+  for (let cartaActual of cartas) {
+    let contornoCarta = $(`.carta__contorno${cartaActual.getTipo()}`);
+    let nombreCarta = $(".carta__superior--nombre");
+    let imgCarta = $(".carta__superior--imagen");
+    let efectoCarta = $(".carta__inferior--efecto");
+    let idCarta = $(".carta__inferior--id");
 
-function mostrarOpcionesPorTipoYDevolverNombreSeleccion(tipoCartaAComprar) {
-    let seleccionCorrecta = false;
-
-    switch (tipoCartaAComprar) {
-        case 1:
-            let alimentos = ["Alimento Común", "Alimento Raro", "Alimento Épico", "Alimento Legendario"];
-            let alimentoSeleccionado = parseInt(prompt(`¿Qué alimento deseas comprar?\n1. ${alimentos[0]}\n2. ${alimentos[1]}\n3. ${alimentos[2]}\n4. ${alimentos[3]}`));
-
-            while (!seleccionCorrecta) {
-                alimentoSeleccionado -= 1;
-
-                if (verificarExistenciaProducto(alimentos, alimentoSeleccionado)) {
-                    seleccionCorrecta = true;
-                } else {
-                    alimentoSeleccionado = parseInt(prompt(`Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué alimento deseas comprar?\n1. ${alimentos[0]}\n2. ${alimentos[1]}\n3. ${alimentos[2]}\n4. ${alimentos[3]}`));
-                }
-            }
-            return alimentos[alimentoSeleccionado];
-
-        case 2:
-
-            let animales = ["Foca", "Liebre", "Lobo", "Oso Polar"];
-            let animalSeleccionado = parseInt(prompt(`¿Qué animal deseas comprar?\n1. ${animales[0]}\n2. ${animales[1]}\n3. ${animales[2]}\n4. ${animales[3]}`));
-
-            while (!seleccionCorrecta) {
-                animalSeleccionado -= 1;
-
-                if (verificarExistenciaProducto(animales, animalSeleccionado)) {
-                    seleccionCorrecta = true;
-                } else {
-                    animalSeleccionado = parseInt(prompt(`Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué animal deseas comprar?\n1. ${animales[0]}\n2. ${animales[1]}\n3. ${animales[2]}\n4. ${animales[3]}`));
-                }
-            }
-            return animales[animalSeleccionado];
-
-        case 3:
-            let habilidades = ["Buceo", "Salto", "Aullido", "Rugido"];
-            let habilidadSeleccionada = parseInt(prompt(`¿Qué habilidad deseas comprar?\n1. ${habilidades[0]}\n2. ${habilidades[1]}\n3. ${habilidades[2]}\n4. ${habilidades[3]}`));
-
-            while (!seleccionCorrecta) {
-                habilidadSeleccionada -= 1;
-
-                if (verificarExistenciaProducto(habilidades, habilidadSeleccionada)) {
-                    seleccionCorrecta = true;
-                } else {
-                    habilidadSeleccionada = parseInt(prompt(`Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué habilidad deseas comprar?\n1. ${habilidades[0]}\n2. ${habilidades[1]}\n3. ${habilidades[2]}\n4. ${habilidades[3]}`));
-                }
-            }
-            return habilidades[habilidadSeleccionada];
-
-        case 4:
-            let habitats = ["Glaciar", "Madrigera", "Cueva", "Polo Norte"];
-            let habitatSeleccionado = parseInt(prompt(`¿Qué hábitat deseas comprar?\n1. ${habitats[0]}\n2. ${habitats[1]}\n3. ${habitats[2]}\n4. ${habitats[3]}`));
-
-            while (!seleccionCorrecta) {
-                habitatSeleccionado -= 1;
-
-                if (verificarExistenciaProducto(habitats, habitatSeleccionado)) {
-                    seleccionCorrecta = true;
-                } else {
-                    habitatSeleccionado = parseInt(prompt(`Has ingresado una opción incorrecta, intenta nuevamente.\n¿Qué hábitat deseas comprar?\n1. ${habitats[0]}\n2. ${habitats[1]}\n3. ${habitats[2]}\n4. ${habitats[3]}`));
-                }
-            }
-            return habitats[habitatSeleccionado];
-
-        default:
-            break;
-    }
-
-}
-
-function devolverNombreProductoPorId(productos, id) {
-    return productos[id].getNombre();
-
-}
-
-function devolverProductoPorId(productos, id) {
-    const producto = productos.find(p => p.id === id);
-    return producto;
-}
-
-function devolverCosteCartaPorNombreYTipo(tipoCartaAComprar, nombreCarta) {
-
-    let tiposAlimento = ["Alimento Común", "Alimento Raro", "Alimento Épico", "Alimento Legendario"];
-    let tiposAnimal = ["Foca", "Liebre", "Lobo", "Oso Polar"];
-    let tiposHabilidad = ["Buceo", "Salto", "Aullido", "Rugido"];
-    let tiposHabitat = ["Glaciar", "Madrigera", "Cueva", "Polo Norte"];
-
-    let costeCartaComun = 1;
-    let costeCartaRara = 3;
-    let costeCartaEpica = 6;
-    let costeCartaLegendaria = 10;
-
-    switch (tipoCartaAComprar) {
-        case 1:
-            switch (nombreCarta) {
-                case tiposAlimento[0]:
-                    return costeCartaComun;
-
-                case tiposAlimento[1]:
-                    return costeCartaRara;
-
-                case tiposAlimento[2]:
-                    return costeCartaEpica;
-
-                case tiposAlimento[3]:
-                    return costeCartaLegendaria;
-
-            }
-        case 2:
-            switch (nombreCarta) {
-                case tiposAnimal[0]:
-                    return costeCartaComun;
-
-                case tiposAnimal[1]:
-                    return costeCartaRara;
-
-                case tiposAnimal[2]:
-                    return costeCartaEpica;
-
-                case tiposAnimal[3]:
-                    return costeCartaLegendaria;
-            }
-
-        case 3:
-            switch (nombreCarta) {
-                case tiposHabilidad[0]:
-                    return costeCartaComun;
-
-                case tiposHabilidad[1]:
-                    return costeCartaRara;
-
-                case tiposHabilidad[2]:
-                    return costeCartaEpica;
-
-                case tiposHabilidad[3]:
-                    return costeCartaLegendaria;
-            }
-
-        case 4:
-            switch (nombreCarta) {
-                case tiposHabitat[0]:
-                    return costeCartaComun;
-
-                case tiposHabitat[1]:
-                    return costeCartaRara;
-
-                case tiposHabitat[2]:
-                    return costeCartaEpica;
-
-                case tiposHabitat[3]:
-                    return costeCartaLegendaria;
-            }
-    }
-}
-
-function descontarYDevolverCreditosDisponibles(creditosDisponibles, costeCarta) {
-    creditosDisponibles = creditosDisponibles - costeCarta;
-    return creditosDisponibles;
-}
-
-function verificarExistenciaProducto(productos, seleccion) {
-    for (let index = 0; index < productos.length; index++) {
-        if (seleccion === index) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-function verificarCreditosDisponibles(creditosDisponibles, costeCarta) {
-    if (creditosDisponibles >= costeCarta) {
-        return true;
+    if (tipoCarta.toUpperCase() === cartaActual.getTipo().toUpperCase()) {
+      //se pisa la variable
+      nombreCarta.text(`${cartaActual.getNombre()}`);
+      imgCarta.html(`<img src ="../img/${cartaActual.getImagen()}">`);
+      efectoCarta.text(`${cartaActual.getEfecto()}`);
+      idCarta.text(`[${cartaActual.getId()}]`);
+      console.log(cartaActual.getNombre());
     } else {
-        return false;
+      contornoCarta.remove();
     }
-
+  }
 }
-
-
-
-
-
-
-
-
-
