@@ -158,14 +158,14 @@ if (usuarioActivo !== null) {
 
 for (const carta of cartas) {
   $(".carta").append(
-    `<div class="carta__contorno${carta.getTipo()}">
+    `<div class="carta__contorno${carta.getTipo()}" id="tipo${carta.getId()}">
                 <div class="carta__superior">
-                    <div class="carta__superior--nombre">${carta.getNombre()}</div>
-                    <div class="carta__superior--imagen"><img src ="../img/${carta.getImagen()}"></div>
+                    <div class="carta__superior--nombre" id="nombreCarta${carta.getId()}">${carta.getNombre()}</div>
+                    <div class="carta__superior--imagen" id="imagenCarta${carta.getId()}"><img src ="../img/${carta.getImagen()}"></div>
                 </div>
                 <div class="carta__inferior">
-                    <div class="carta__inferior--efecto">${carta.getEfecto()}</div>
-                    <div class="carta__inferior--id">[${carta.getId()}]</div>
+                    <div class="carta__inferior--efecto" id="efectoCarta${carta.getId()}">${carta.getEfecto()}</div>
+                    <div class="carta__inferior--id" id="idCarta${carta.getId()}">[${carta.getId()}]</div>
                 </div>
 
                 <div class="carta__precio">
@@ -185,10 +185,18 @@ $(`#btnRefresh`).click(actualizarPagina);
 $(`#btnTipo`).click(filtrarTipo);
 
 for (const carta of cartas) {
-  $(`#btnMenos${carta.getId()}`).click(()=>{restarCantidad(carta.getId())});
+  $(`#btnMenos${carta.getId()}`).click(() => {
+    restarCantidad(carta.getId());
+  });
   $(`#btnMas${carta.getId()}`).click(() => {
     agregarCantidad(carta.getId());
   });
+}
+
+function agregarCantidad(idCarta) {
+  let cantidadCarta = parseInt($(`#cantidadRequerida${idCarta}`).text());
+  cantidadCarta = cantidadCarta + 1;
+  $(`#cantidadRequerida${idCarta}`).text(cantidadCarta);
 }
 
 function restarCantidad(idCarta) {
@@ -199,31 +207,17 @@ function restarCantidad(idCarta) {
   }
 }
 
-function agregarCantidad(idCarta) {
-  let cantidadCarta = parseInt($(`#cantidadRequerida${idCarta}`).text());
-  cantidadCarta = cantidadCarta + 1;
-  $(`#cantidadRequerida${idCarta}`).text(cantidadCarta);
-}
-
 function filtrarNombre() {
   let cartaEncontrada = false;
   let cartaBuscada = $("#cartaBuscada").val();
 
   for (const carta of cartas) {
-    let contornoCarta = $(`.carta__contorno${carta.getTipo()}`)[0];
-    let nombreCarta = $(".carta__superior--nombre");
-    let imgCarta = $(".carta__superior--imagen");
-    let efectoCarta = $(".carta__inferior--efecto");
-    let idCarta = $(".carta__inferior--id");
+    let contornoCarta = $(`.carta__contorno${carta.getTipo()}`);
 
     if (cartaBuscada.toUpperCase() === carta.getNombre().toUpperCase()) {
-      nombreCarta.text(`${carta.getNombre()}`);
-      imgCarta.html(`<img src ="../img/${carta.getImagen()}">`);
-      efectoCarta.text(`${carta.getEfecto()}`);
-      idCarta.text(`[${carta.getId()}]`);
       cartaEncontrada = true;
     } else {
-      contornoCarta.remove();
+      $(`#tipo${carta.getId()}`).remove();
     }
   }
 
@@ -233,30 +227,19 @@ function filtrarNombre() {
     );
   }
 }
-
-function actualizarPagina() {
-  window.location.reload();
-}
-
 function filtrarTipo() {
   let tipoCarta = $(`#tipoCarta`).val();
 
-  for (let cartaActual of cartas) {
-    let contornoCarta = $(`.carta__contorno${cartaActual.getTipo()}`);
-    let nombreCarta = $(".carta__superior--nombre");
-    let imgCarta = $(".carta__superior--imagen");
-    let efectoCarta = $(".carta__inferior--efecto");
-    let idCarta = $(".carta__inferior--id");
+  for (const cartaActual of cartas) {
 
     if (tipoCarta.toUpperCase() === cartaActual.getTipo().toUpperCase()) {
-      //se pisa la variable
-      nombreCarta.text(`${cartaActual.getNombre()}`);
-      imgCarta.html(`<img src ="../img/${cartaActual.getImagen()}">`);
-      efectoCarta.text(`${cartaActual.getEfecto()}`);
-      idCarta.text(`[${cartaActual.getId()}]`);
-      console.log(cartaActual.getNombre());
+      
     } else {
-      contornoCarta.remove();
+     $(`#tipo${cartaActual.getId()}`).remove();
     }
   }
+}
+
+function actualizarPagina() {
+  window.location.reload();
 }
