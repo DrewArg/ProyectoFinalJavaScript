@@ -78,35 +78,6 @@
             justify-content: center;
             border-radius: 10px;
             padding: 0.4rem;
-
-            &Animal {
-                background-color: $Cartas-Primero;
-                &:hover {
-                    text-shadow: 10px $Cartas-Primero;
-                }
-            }
-
-            &Alimento {
-                background-color: $Cartas-Secundario;
-            }
-
-            &Habilidad {
-                background-color: $Cartas-Terciario;
-            }
-
-            &Habitat {
-                background-color: $Cartas-Cuarto;
-            }
-        }
-
-        &__precio {
-            background-color: $Font-Terciario;
-            color: $Font-Cuarto;
-            font-weight: 600;
-            border: none;
-            width: 100%;
-            border-radius: 8px;
-            text-align: center;
         }
 
         &__contornoAnimal {
@@ -120,7 +91,6 @@
             padding: 0.4rem;
             margin: 1rem;
             align-items: center;
-            justify-content: center;
 
             &:hover {
                 box-shadow: 1px 1px 2px black, 0 0 25px rgb(111, 111, 168), 0 0 5px darkblue;
@@ -138,7 +108,6 @@
             padding: 0.4rem;
             margin: 1rem;
             align-items: center;
-            justify-content: center;
 
             &:hover {
                 box-shadow: 1px 1px 2px black, 0 0 25px rgb(161, 111, 168), 0 0 5px darkblue;
@@ -156,7 +125,6 @@
             padding: 0.4rem;
             margin: 1rem;
             align-items: center;
-            justify-content: center;
 
             &:hover {
                 box-shadow: 1px 1px 2px black, 0 0 25px rgb(175, 147, 96), 0 0 5px darkblue;
@@ -174,7 +142,6 @@
             padding: 0.4rem;
             margin: 1rem;
             align-items: center;
-            justify-content: center;
 
             &:hover {
                 box-shadow: 1px 1px 2px black, 0 0 25px rgb(152, 161, 96), 0 0 5px darkblue;
@@ -182,8 +149,19 @@
         }
 
         &__superior {
-            height: 58%;
+            height: 15px;
+            width: 300px;
 
+            &--tipo {
+                text-align: center;
+                font-size: 0.9rem;
+            }
+        }
+        &__cartaReal {
+            height: 350px;
+            width: 300px;
+        }
+        &__medio {
             &--nombre {
                 font-size: 1.5rem;
                 font-weight: 800;
@@ -197,32 +175,28 @@
         }
 
         &__inferior {
-            height: 42%;
-            padding-top: 0.4rem;
-            padding-left: 0.9rem;
-            padding-right: 0.9rem;
-            padding-bottom: 0.4rem;
+            width: 300px;
+            height: 127px;
+            padding-left: 1.3rem;
+            padding-right: 1.3rem;
+            padding-top: 0.5rem;
 
             &--efecto {
                 text-align: left;
-                padding-bottom: 0.3rem;
-                max-width: 100%;
-                height: 70%;
-            }
 
-            &--boton {
-                text-align: center;
-
-                &-_-btn {
-                    background-color: red;
-                    position: relative;
-                }
+                width: 85%;
+                height: 100%;
             }
+        }
 
-            &--id {
-                height: 15%;
-                text-align: center;
-            }
+        &__precio {
+            background-color: $Font-Terciario;
+            color: $Font-Cuarto;
+            font-weight: 600;
+            border: none;
+            width: 100%;
+            border-radius: 8px;
+            text-align: center;
         }
     }
 }

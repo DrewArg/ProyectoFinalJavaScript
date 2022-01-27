@@ -91,30 +91,6 @@
     border-radius: 10px;
     padding: 0.4rem;
   }
-  .carta__colorAnimal {
-    background-color: #3f4150;
-  }
-  .carta__colorAnimal:hover {
-    text-shadow: 10px #3f4150;
-  }
-  .carta__colorAlimento {
-    background-color: #855e69;
-  }
-  .carta__colorHabilidad {
-    background-color: #7e6453;
-  }
-  .carta__colorHabitat {
-    background-color: #78814e;
-  }
-  .carta__precio {
-    background-color: #9ea2ad;
-    color: #404752;
-    font-weight: 600;
-    border: none;
-    width: 100%;
-    border-radius: 8px;
-    text-align: center;
-  }
   .carta__contornoAnimal {
     display: flex;
     flex-direction: column;
@@ -126,7 +102,6 @@
     padding: 0.4rem;
     margin: 1rem;
     align-items: center;
-    justify-content: center;
   }
   .carta__contornoAnimal:hover {
     box-shadow: 1px 1px 2px black, 0 0 25px #6f6fa8, 0 0 5px darkblue;
@@ -142,7 +117,6 @@
     padding: 0.4rem;
     margin: 1rem;
     align-items: center;
-    justify-content: center;
   }
   .carta__contornoAlimento:hover {
     box-shadow: 1px 1px 2px black, 0 0 25px #a16fa8, 0 0 5px darkblue;
@@ -158,7 +132,6 @@
     padding: 0.4rem;
     margin: 1rem;
     align-items: center;
-    justify-content: center;
   }
   .carta__contornoHabilidad:hover {
     box-shadow: 1px 1px 2px black, 0 0 25px #af9360, 0 0 5px darkblue;
@@ -174,45 +147,50 @@
     padding: 0.4rem;
     margin: 1rem;
     align-items: center;
-    justify-content: center;
   }
   .carta__contornoHabitat:hover {
     box-shadow: 1px 1px 2px black, 0 0 25px #98a160, 0 0 5px darkblue;
   }
   .carta__superior {
-    height: 58%;
+    height: 15px;
+    width: 300px;
   }
-  .carta__superior--nombre {
+  .carta__superior--tipo {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .carta__cartaReal {
+    height: 350px;
+    width: 300px;
+  }
+  .carta__medio--nombre {
     font-size: 1.5rem;
     font-weight: 800;
     text-align: center;
   }
-  .carta__superior--imagen {
+  .carta__medio--imagen {
     text-align: center;
     border-radius: 5px;
   }
   .carta__inferior {
-    height: 42%;
-    padding-top: 0.4rem;
-    padding-left: 0.9rem;
-    padding-right: 0.9rem;
-    padding-bottom: 0.4rem;
+    width: 300px;
+    height: 127px;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    padding-top: 0.5rem;
   }
   .carta__inferior--efecto {
     text-align: left;
-    padding-bottom: 0.3rem;
-    max-width: 100%;
-    height: 70%;
+    width: 85%;
+    height: 100%;
   }
-  .carta__inferior--boton {
-    text-align: center;
-  }
-  .carta__inferior--boton-_-btn {
-    background-color: red;
-    position: relative;
-  }
-  .carta__inferior--id {
-    height: 15%;
+  .carta__precio {
+    background-color: #9ea2ad;
+    color: #404752;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
     text-align: center;
   }
 }

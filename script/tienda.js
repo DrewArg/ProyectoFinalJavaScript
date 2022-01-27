@@ -160,14 +160,17 @@ for (const carta of cartas) {
   $(".carta").append(
     `<div class="carta__contorno${carta.getTipo()}" id="tipo${carta.getId()}">
                 <div class="carta__superior">
-                    <div class="carta__superior--nombre" id="nombreCarta${carta.getId()}">${carta.getNombre()}</div>
-                    <div class="carta__superior--imagen" id="imagenCarta${carta.getId()}"><img src ="../img/${carta.getImagen()}"></div>
+                    <div class="carta__superior--tipo" id="tipoCarta${carta.getId()}">[${carta.getTipo()}]</div>
                 </div>
-                <div class="carta__inferior">
-                    <div class="carta__inferior--efecto" id="efectoCarta${carta.getId()}">${carta.getEfecto()}</div>
-                    <div class="carta__inferior--id" id="idCarta${carta.getId()}">[${carta.getId()}]</div>
-                </div>
-
+                <div class="carta__cartaReal">
+                    <div class="carta__medio">
+                        
+                        <div class="carta__medio--nombre" id="nombreCarta${carta.getId()}">${carta.getNombre()}</div>
+                        <div class="carta__medio--imagen" id="imagenCarta${carta.getId()}"><img src ="../img/${carta.getImagen()}"></div>
+                    </div>
+                    <div class="carta__inferior">
+                        <div class="carta__inferior--efecto" id="efectoCarta${carta.getId()}">${carta.getEfecto()}</div>
+                </div>                   
                 <div class="carta__precio">
                   <button class="btnMenos" id="btnMenos${carta.getId()}">-</button>
                   <span class="cantidadRequerida" id="cantidadRequerida${carta.getId()}">0</span>
@@ -231,11 +234,9 @@ function filtrarTipo() {
   let tipoCarta = $(`#tipoCarta`).val();
 
   for (const cartaActual of cartas) {
-
     if (tipoCarta.toUpperCase() === cartaActual.getTipo().toUpperCase()) {
-      
     } else {
-     $(`#tipo${cartaActual.getId()}`).remove();
+      $(`#tipo${cartaActual.getId()}`).remove();
     }
   }
 }
