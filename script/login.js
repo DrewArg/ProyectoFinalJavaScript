@@ -183,7 +183,7 @@ function mostrarMensajeLoginExitoso(usuarioIngresado) {
 
   let btnAccesoTienda = document.createElement("div");
 
-  btnAccesoTienda.innerHTML = `<a href="./pages/tiendaOk.html"><button class = "titulo__btnTienda">Tienda</button></a>`;
+  btnAccesoTienda.innerHTML = `<a href="./pages/tienda.html"><button class = "titulo__btnTienda">Tienda</button></a>`;
 
   titulo.appendChild(btnAccesoTienda);
 
