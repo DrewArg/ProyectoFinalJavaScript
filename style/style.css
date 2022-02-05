@@ -283,4 +283,77 @@ button:hover {
 #btnRefresh {
   margin: 1rem;
   font-size: 1.3rem;
+}
+
+.accion {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: #4FBDBA;
+  border-radius: 50%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.accion span {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 800;
+  font-size: 2rem;
+  transition: 0.3s ease-in;
+}
+
+.accion.active span {
+  transform: rotate(50deg);
+}
+
+.icono {
+  background: url("../img/carritoDeCompras.png") no-repeat 50% 50%;
+  background-size: 28px 28px;
+  display: inline-block;
+  height: 28px;
+  width: 50px;
+}
+
+.accion ul {
+  position: absolute;
+  bottom: 55px;
+  background-color: white;
+  min-width: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.accion.active ul {
+  bottom: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.accion ul li {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+  transition: 0.3s;
+}
+
+.accion ul li:hover {
+  font-weight: 600;
+}
+
+.accion ul li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=style.css.map */

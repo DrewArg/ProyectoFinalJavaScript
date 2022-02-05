@@ -19,10 +19,7 @@ if (usuarioActivo !== null) {
     titulo.innerHTML = `${usuario.nombre}, tienes ${usuario.creditos} créditos disponibles.`;
 }
 
-
-
 usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
-
 
 $(`#btnRefresh`).on('click', actualizarPagina);
 

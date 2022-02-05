@@ -16,7 +16,6 @@ const urlJSONCartas = "../cartas/cartas.json";
 
 })();
 
-
 let btnBuscarNombre = document.getElementById("btnNombre");
 btnBuscarNombre.addEventListener("click", filtrarNombre);
 
