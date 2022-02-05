@@ -20,55 +20,8 @@ if (usuarioActivo !== null) {
 }
 
 
-const cartas = [];
-
-const urlJSONCartas = "../cartas/cartas.json";
-
-$.getJSON(urlJSONCartas, (respuesta, estado) => {
-    if (estado === "success") {
-
-        let cartasJson = respuesta;
-        console.log("json:" + cartasJson.length);
-        for (const carta of cartasJson) {
-            cartas.push(carta);
-
-        }
-
-        mostrarCartas();
-    }
-
-
-});
 
 usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
-
-function mostrarCartas() {
-    for (const carta of cartas) {
-        console.log(carta.nombre);
-        console.log(carta.id);
-        $(".carta").append(
-            `<div class="carta__contorno${carta.tipo}" id="tipo${carta.id}">
-                    <div class="carta__superior">
-                        <div class="carta__superior--tipo" id="tipoCarta${carta.id}">[${carta.tipo}]</div>
-                    </div>
-                    <div class="carta__cartaReal">
-                        <div class="carta__medio">
-                            
-                            <div class="carta__medio--nombre" id="nombreCarta${carta.id}">${carta.nombre}</div>
-                            <div class="carta__medio--imagen" id="imagenCarta${carta.id}"><img src ="../img/${carta.imagen}"></div>
-                        </div>
-                        <div class="carta__inferior">
-                            <div class="carta__inferior--efecto" id="efectoCarta${carta.id}">${carta.efecto}</div>
-                    </div>                   
-                    <div class="carta__precio">
-                      <button class="btnMenos" id="btnMenos${carta.id}">-</button>
-                      <span class="cantidadRequerida" id="cantidadRequerida${carta.id}">0</span>
-                      <button class="btnMas" id="btnMas${carta.id}">+</button>
-                    </div>
-              </div>`
-        );
-    }
-}
 
 
 $(`#btnRefresh`).on('click', actualizarPagina);
