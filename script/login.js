@@ -5,18 +5,6 @@ class Usuario {
     this.creditos = 0;
   }
 
-  getNombre() {
-    return this.nombre;
-  }
-
-  getContrasena() {
-    return this.contrasena;
-  }
-
-  getCreditos() {
-    return this.creditos;
-  }
-
   descontarCredito(descuento) {
     this.creditos = this.creditos - descuento;
   }
@@ -74,7 +62,7 @@ function crearUsuario() {
   }
   let usuarioDisponible = true;
   for (const usuario of listaValidada) {
-    if (usuario.getNombre() === usuarioActual) {
+    if (usuario.nombre === usuarioActual) {
       usuarioDisponible = false;
       break;
     }
@@ -121,8 +109,8 @@ function validarUsuario() {
   if (listaValidada.length > 0) {
     for (const usuario of listaValidada) {
       if (
-        usuario.getNombre() === usuarioActual &&
-        usuario.getContrasena() === contrasenaActual
+        usuario.nombre === usuarioActual &&
+        usuario.contrasena === contrasenaActual
       ) {
         //usuario validado
         usuarioLogeado = usuario;
@@ -172,12 +160,12 @@ function mostrarMensajeLoginExitoso(usuarioIngresado) {
 
   let mensajeBienvenida = document.createElement("div");
 
-  mensajeBienvenida.innerHTML = `<h3 class="titulo__bienvenida">¡Bienvenid@ ${usuarioIngresado.getNombre()}!`;
+  mensajeBienvenida.innerHTML = `<h3 class="titulo__bienvenida">¡Bienvenid@ ${usuarioIngresado.nombre}!`;
   titulo.appendChild(mensajeBienvenida);
 
   let mensajeCreditos = document.createElement("div");
 
-  mensajeCreditos.innerHTML = `<h3 class = "titulo__creditos">Créditos disponibles: ${usuarioIngresado.getCreditos()}`;
+  mensajeCreditos.innerHTML = `<h3 class = "titulo__creditos">Créditos disponibles: ${usuarioIngresado.creditos}`;
 
   titulo.appendChild(mensajeCreditos);
 

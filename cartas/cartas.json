@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "tipo": "Animal",
+        "nombre": "Lobo Gris",
+        "coste": 3,
+        "imagen": "loboGris.jpg",
+        "efecto": "Gana +1 de daño por cada Lobo Gris además de este en tu tablero."
+    },
+    {
+        "id": 2,
+        "tipo": "Animal",
+        "nombre": "Camaleón",
+        "coste": 3,
+        "imagen": "camaleon.jpg",
+        "efecto": "Puede tomar el ataque de un enemigo en reposo y sumarlo al suyo hasta el final del turno."
+    },
+    {
+        "id": 3,
+        "tipo": "Animal",
+        "nombre": "Tortuga Marina",
+        "coste": 3,
+        "imagen": "tortugaMarina.jpg",
+        "efecto": "Puede sacrificarse para evitar que el enemigo siga atacando este turno."
+    },
+    {
+        "id": 4,
+        "tipo": "Animal",
+        "nombre": "Pez Payaso",
+        "coste": 1,
+        "imagen": "pezPayaso.jpg",
+        "efecto": ""
+    },
+    {
+        "id": 5,
+        "tipo": "Habilidad",
+        "nombre": "Coraza",
+        "coste": 2,
+        "imagen": "coraza.png",
+        "efecto": "Un animal pasa a ser indestructible por este turno."
+    },
+    {
+        "id": 6,
+        "tipo": "Habilidad",
+        "nombre": "Captura",
+        "coste": 3,
+        "imagen": "captura.jpg",
+        "efecto": "Evita que un enemigo pueda pasar a la línea de batalla por 2 turnos."
+    },
+    {
+        "id": 7,
+        "tipo": "Habilidad",
+        "nombre": "Aullido",
+        "coste": 2,
+        "imagen": "aullido.jpg",
+        "efecto": "Si tienes un Lobo Gris en juego, puedes jugar a otro desde tu mazo o tu cementerio sin pagar su coste."
+    },
+    {
+        "id": 8,
+        "tipo": "Habitat",
+        "nombre": "Alcantarilla",
+        "coste": 3,
+        "imagen": "alcantarilla.jpg",
+        "efecto": "Puedes revivir una rata por turno pagando su coste y ponerla en tu línea de reposo.."
+    },
+    {
+        "id": 9,
+        "tipo": "Habitat",
+        "nombre": "Costa",
+        "coste": 6,
+        "imagen": "costa.jpg",
+        "efecto": "Si tienes un Tiburón Blanco en juego, puedes consumir 5 alimentos para activar su efecto una segunda vez este turno."
+    },
+    {
+        "id": 10,
+        "tipo": "Alimento",
+        "nombre": "Alimento",
+        "coste": 0,
+        "imagen": "alimento.jpg",
+        "efecto": ""
+    }
+]
