@@ -29,17 +29,20 @@ if (usuarioActivo !== null) {
 
   mostrarMensajeLoginExitoso(usuario);
 } else {
-  let btnIngreso = document.getElementById("btnIngreso");
-  btnIngreso.addEventListener("click", validarUsuario);
+  let titulo = document.getElementsByClassName("titulo")[0];
+  if (titulo !== undefined) {
+    let btnIngreso = document.getElementById("btnIngreso");
+    btnIngreso.addEventListener("click", validarUsuario);
 
-  let btnCrearCuenta = document.getElementById("btnCrearCuenta");
-  btnCrearCuenta.addEventListener("click", crearUsuario);
+    let btnCrearCuenta = document.getElementById("btnCrearCuenta");
+    btnCrearCuenta.addEventListener("click", crearUsuario);
 
-  let btnVerificar = document.getElementById("btnVerificar");
-  btnVerificar.addEventListener("click", recorrerLocalStorage);
+    let btnVerificar = document.getElementById("btnVerificar");
+    btnVerificar.addEventListener("click", recorrerLocalStorage);
 
-  let btnReiniciar = document.getElementById("btnReiniciar");
-  btnReiniciar.addEventListener("click", reiniciarLocalStorage);
+    let btnReiniciar = document.getElementById("btnReiniciar");
+    btnReiniciar.addEventListener("click", reiniciarLocalStorage);
+  }
 }
 
 function crearUsuario() {
@@ -156,11 +159,9 @@ function removerTodosLosElementosPorClase(nombreClase) {
 function mostrarMensajeLoginExitoso(usuarioIngresado) {
   removerTodosLosElementosPorClase("login");
 
-  try {
+  let titulo = document.getElementsByClassName("titulo")[0];
 
-
-    let titulo = document.getElementsByClassName("titulo")[0];
-
+  if (titulo !== undefined) {
     let mensajeBienvenida = document.createElement("div");
 
     mensajeBienvenida.innerHTML = `<h3 class="titulo__bienvenida">¡Bienvenid@ ${usuarioIngresado.nombre}!`;
@@ -184,8 +185,6 @@ function mostrarMensajeLoginExitoso(usuarioIngresado) {
     titulo.appendChild(btnSalir);
 
     btnSalir.addEventListener("click", deslogueo);
-  } catch (e) {
-    console.log(e);
   }
 }
 

@@ -21,7 +21,7 @@ if (usuarioActivo !== null) {
     titulo.innerHTML = `${usuario.nombre}, tienes ${usuario.creditos} créditos disponibles.`;
 }
 
-$(`#btnRefresh`).on('click', actualizarPagina);
+$(`#btnRefresh`).on('click', reiniciarFiltros);
 
 $(`#btnTipo`).on('click', filtrarTipo);
 
@@ -63,6 +63,11 @@ function confirmarAgregados(carta) {
 
 }
 
-function actualizarPagina() {
-    window.location.reload();
+function reiniciarFiltros() {
+    $(`#tipoCarta`).prop('selectedIndex', 0);
+    filtrarTipo();
+
+    $(`#cartaBuscada`).val('');
+    filtrarNombre();
 }
+    
