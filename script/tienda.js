@@ -47,13 +47,9 @@ function confirmarAgregados(carta) {
     let flagIdEncontrado = false;
 
     for (const producto of carrito) {
-
-        let cantidadProducto = producto.cantidadCarta;
-
         if (carta.id === producto.id) {
-            let cartasTotales = cantidadCarta + cantidadProducto;
-            carrito.pop(producto);
-            carrito.push(new Producto(producto.id, producto.nombre, producto.precio, cartasTotales));
+
+            producto.cantidadCarta = producto.cantidadCarta + cantidadCarta;
             flagIdEncontrado = true;
         }
     }

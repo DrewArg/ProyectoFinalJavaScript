@@ -156,31 +156,37 @@ function removerTodosLosElementosPorClase(nombreClase) {
 function mostrarMensajeLoginExitoso(usuarioIngresado) {
   removerTodosLosElementosPorClase("login");
 
-  let titulo = document.getElementsByClassName("titulo")[0];
+  try {
 
-  let mensajeBienvenida = document.createElement("div");
 
-  mensajeBienvenida.innerHTML = `<h3 class="titulo__bienvenida">¡Bienvenid@ ${usuarioIngresado.nombre}!`;
-  titulo.appendChild(mensajeBienvenida);
+    let titulo = document.getElementsByClassName("titulo")[0];
 
-  let mensajeCreditos = document.createElement("div");
+    let mensajeBienvenida = document.createElement("div");
 
-  mensajeCreditos.innerHTML = `<h3 class = "titulo__creditos">Créditos disponibles: ${usuarioIngresado.creditos}`;
+    mensajeBienvenida.innerHTML = `<h3 class="titulo__bienvenida">¡Bienvenid@ ${usuarioIngresado.nombre}!`;
+    titulo.appendChild(mensajeBienvenida);
 
-  titulo.appendChild(mensajeCreditos);
+    let mensajeCreditos = document.createElement("div");
 
-  let btnAccesoTienda = document.createElement("div");
+    mensajeCreditos.innerHTML = `<h3 class = "titulo__creditos">Créditos disponibles: ${usuarioIngresado.creditos}`;
 
-  btnAccesoTienda.innerHTML = `<a href="./pages/tienda.html"><button class = "titulo__btnTienda">Tienda</button></a>`;
+    titulo.appendChild(mensajeCreditos);
 
-  titulo.appendChild(btnAccesoTienda);
+    let btnAccesoTienda = document.createElement("div");
 
-  let btnSalir = document.createElement("div");
-  btnSalir.innerHTML = `<button class = "titulo__btnSalir">Salir</button>`;
+    btnAccesoTienda.innerHTML = `<a href="./pages/tienda.html"><button class = "titulo__btnTienda">Tienda</button></a>`;
 
-  titulo.appendChild(btnSalir);
+    titulo.appendChild(btnAccesoTienda);
 
-  btnSalir.addEventListener("click", deslogueo);
+    let btnSalir = document.createElement("div");
+    btnSalir.innerHTML = `<button class = "titulo__btnSalir">Salir</button>`;
+
+    titulo.appendChild(btnSalir);
+
+    btnSalir.addEventListener("click", deslogueo);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function deslogueo() {
