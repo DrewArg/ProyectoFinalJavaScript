@@ -75,7 +75,7 @@ function mostrarCartas(cartas) {
 
     for (const carta of cartas) {
         $(`#btnMenos${carta.id}`).on("click", () => {
-            restarCantidad(carta.id);
+            restarCantidad(carta);
         });
         $(`#btnMas${carta.id}`).on("click", () => {
             agregarCantidad(carta);
