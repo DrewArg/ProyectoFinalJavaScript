@@ -11,7 +11,6 @@ class Carta {
 
 }
 
-
 usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
 
 if (usuarioActivo !== null) {
@@ -42,32 +41,28 @@ function restarCantidad(carta) {
 
 function confirmarAgregados(carta) {
     let cantidadCarta = parseInt($(`#cantidadRequerida${carta.id}`).text());
-
     $(`#cantidadRequerida${carta.id}`).text(0);
 
     carrito = JSON.parse(localStorage.getItem("carritoCompras"));
+    let flagIdEncontrado = false;
 
-    const agregadoCarrito = [];
+    for (const producto of carrito) {
 
-    if (carrito.length > 0) {
-        for (const producto of carrito) {
-            for (let i = 0; i < carrito.length; i++) {
-                console.log(producto.id);
-                console.log(carrito[i].id);
-                console.log("");
-                if (producto.id === carrito[i].id) {
-                    carrito[i].cantidadCarta += producto.cantidadCarta;
-                } else {
-                    agregadoCarrito.push(new Producto(producto.id, producto.nombre, producto.precio, producto.cantidadCarta));
-                }
-            }
+        let cantidadProducto = producto.cantidadCarta;
 
+        if (carta.id === producto.id) {
+            let cartasTotales = cantidadCarta + cantidadProducto;
+            carrito.pop(producto);
+            carrito.push(new Producto(producto.id, producto.nombre, producto.precio, cartasTotales));
+            flagIdEncontrado = true;
         }
     }
 
-    agregadoCarrito.push(new Producto(carta.id, carta.nombre, carta.coste, cantidadCarta));
+    if (!flagIdEncontrado) {
+        carrito.push(new Producto(carta.id, carta.nombre, carta.coste, cantidadCarta));
+    }
 
-    localStorage.setItem("carritoCompras", JSON.stringify(agregadoCarrito));
+    localStorage.setItem("carritoCompras", JSON.stringify(carrito));
     actualizarCarrito();
 
 }
