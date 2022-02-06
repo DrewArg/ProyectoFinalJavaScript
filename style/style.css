@@ -289,6 +289,16 @@ button:hover {
   background-color: #77d477;
 }
 
+.btnQuitarItem {
+  height: 25px;
+  width: 25px;
+  border-radius: 0%;
+  font-weight: 1000;
+}
+.btnQuitarItem:hover {
+  background-color: #f37070;
+}
+
 .mensajeError {
   color: #f74141;
   font-weight: 800;
@@ -298,6 +308,28 @@ button:hover {
 #btnRefresh {
   margin: 1rem;
   font-size: 1.3rem;
+}
+
+.itemCarrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  align-content: space-around;
+  gap: 10px;
+  width: 100%;
+}
+.itemCarrito1 {
+  width: 10%;
+}
+.itemCarrito2 {
+  width: 40%;
+}
+.itemCarrito3 {
+  width: 20%;
+}
+.itemCarrito4 {
+  width: 5%;
 }
 
 .accion {

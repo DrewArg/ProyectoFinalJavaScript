@@ -307,6 +307,17 @@ button {
     background-color: rgb(119, 212, 119);
 }
 
+.btnQuitarItem {
+    height: 25px;
+    width: 25px;
+    border-radius: 0%;
+    font-weight: 1000;
+
+    &:hover {
+        background-color: rgb(243, 112, 112);
+    }
+}
+
 .mensajeError {
     color: rgb(247, 65, 65);
     font-weight: 800;
@@ -316,6 +327,32 @@ button {
 #btnRefresh {
     margin: 1rem;
     font-size: 1.3rem;
+}
+
+.itemCarrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    align-content: space-around;
+    gap: 10px;
+    width: 100%;
+
+    &1{
+        width: 10%;
+    }
+
+    &2 {
+        width: 40%;
+    }
+
+    &3 {
+        width: 20%;
+    }
+
+    &4 {
+        width: 5%;
+    }
 }
 
 .accion {
