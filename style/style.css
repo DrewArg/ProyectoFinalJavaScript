@@ -296,7 +296,6 @@ button:hover {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-
 .accion span {
   position: relative;
   width: 100%;
@@ -309,19 +308,6 @@ button:hover {
   font-size: 2rem;
   transition: 0.3s ease-in;
 }
-
-.accion.active span {
-  transform: rotate(50deg);
-}
-
-.icono {
-  background: url("../img/carritoDeCompras.png") no-repeat 50% 50%;
-  background-size: 28px 28px;
-  display: inline-block;
-  height: 28px;
-  width: 50px;
-}
-
 .accion ul {
   position: absolute;
   bottom: 55px;
@@ -333,14 +319,6 @@ button:hover {
   opacity: 0;
   transition: 0.3s;
 }
-
-.accion.active ul {
-  bottom: 70px;
-  opacity: 1;
-  visibility: visible;
-  transition: 0.3s;
-}
-
 .accion ul li {
   list-style: none;
   display: flex;
@@ -348,12 +326,28 @@ button:hover {
   align-items: center;
   padding: 10px 0;
   transition: 0.3s;
+  color: #404752;
 }
-
 .accion ul li:hover {
   font-weight: 600;
 }
-
 .accion ul li:not(:last-child) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.accion.active span {
+  transform: rotate(50deg);
+}
+.accion.active ul {
+  bottom: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.icono {
+  background: url("../img/carritoDeCompras.png") no-repeat 50% 50%;
+  background-size: 28px 28px;
+  display: inline-block;
+  height: 28px;
+  width: 50px;
 }/*# sourceMappingURL=style.css.map */

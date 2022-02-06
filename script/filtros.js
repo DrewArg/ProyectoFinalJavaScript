@@ -1,20 +1,20 @@
 const cartas = [];
 
-const urlJSONCartas = "../cartas/cartas.json";
+const JSonCartas = "../cartas/cartas.json";
 
 (async () => {
-    await $.getJSON(urlJSONCartas, async (respuesta, estado) => {
+    await $.getJSON(JSonCartas, async (respuesta, estado) => {
         if (estado === "success") {
             let cartasJson = respuesta;
             for (const carta of cartasJson) {
                 cartas.push(carta);
             }
-            mostrarCartas(cartas);
+
         }
-
     });
-
+    mostrarCartas(cartas);
 })();
+
 
 let btnBuscarNombre = document.getElementById("btnNombre");
 btnBuscarNombre.addEventListener("click", filtrarNombre);
@@ -29,7 +29,6 @@ function filtrarNombre() {
             `<p class="mensajeError">No existe ninguna carta con ese nombre.</p>`
         );
     }
-
     mostrarCartas(filtroNombre);
 }
 
@@ -67,8 +66,24 @@ function mostrarCartas(cartas) {
                       <button class="btnMenos" id="btnMenos${carta.id}">-</button>
                       <span class="cantidadRequerida" id="cantidadRequerida${carta.id}">0</span>
                       <button class="btnMas" id="btnMas${carta.id}">+</button>
+                      <button class="btnCheck" id="btnCheck${carta.id}">✓</button>
                     </div>
               </div>`
         );
     }
+
+    for (const carta of cartas) {
+        $(`#btnMenos${carta.id}`).on("click", () => {
+            restarCantidad(carta.id);
+        });
+        $(`#btnMas${carta.id}`).on("click", () => {
+            agregarCantidad(carta);
+        });
+
+        $(`#btnCheck${carta.id}`).on("click", () => {
+            confirmarAgregados(carta);
+        })
+    }
+
 }
+
