@@ -1,6 +1,6 @@
 const cartas = [];
 
-const JSonCartas = "../cartas/cartas.json";
+const JSonCartas = "../JSON/cartas.json";
 
 (async () => {
     await $.getJSON(JSonCartas, async (respuesta, estado) => {
