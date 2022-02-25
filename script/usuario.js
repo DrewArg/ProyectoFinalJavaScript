@@ -1,7 +1,8 @@
 class Usuario {
-    constructor(nombre, contrasena) {
+    constructor(nombre, contrasena, recordar) {
         this.nombre = nombre.toUpperCase();
         this.contrasena = contrasena;
+        this.recordar = recordar;
         this.creditos = 0;
     }
 
@@ -12,12 +13,4 @@ class Usuario {
     agregarCreditos(agregado) {
         this.creditos = this.creditos + agregado;
     }
-}
-
-const usuarios = [];
-const baseDatosUsuarios = localStorage.getItem("listaUsuarios");
-let usuarioLogueado = null;
-
-if (baseDatosUsuarios === null || baseDatosUsuarios.length === 0) {
-    localStorage.setItem("listaUsuarios",JSON.stringify(usuarios));
 }

@@ -5,9 +5,13 @@
 @import "_variables.scss";
 @media (min-width: 992px) {
     .body {
-        background-image: url("../img/puenteBosque.jpg");
-        background-repeat: no-repeat, repeat;
+        background-image: url("../img/puenteBosque.jpg"); 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
         background-size: cover;
+        // background-repeat: no-repeat;
+        // background-size: cover;
         color: $Font-Principal;
         padding: 0px;
         margin: 0px;
@@ -219,7 +223,7 @@
 
         &__inferior {
             width: 300px;
-            height: 127px;
+            height: 120px;
             padding-left: 1.3rem;
             padding-right: 1.3rem;
             padding-top: 0.5rem;
@@ -526,7 +530,7 @@ h1 {
     text-align: center;
     color: #222;
     margin: 10px 0px 20px;
-    font-size: 25px;
+    font-size: 2rem;
 }
 
 .popup .form .form__element {
@@ -534,7 +538,7 @@ h1 {
 }
 
 .popup .form .form__element label {
-    font-size: 14px;
+    font-size: 1.2rem;
     color: #222;
 }
 
@@ -554,10 +558,9 @@ h1 {
     height: 40px;
     border: none;
     outline: none;
-    font-size: 15px;
+    font-size: 1.1rem;
     color: rgb(237, 244, 245);
     background: #2c7a6a;
-
     border-radius: 10px;
     cursor: pointer;
 }
@@ -572,8 +575,8 @@ h1 {
 .popup .form .form__element a {
     display: block;
     text-align: right;
-    font-size: 15px;
-    color: #1a79ca;
+    font-size: 1rem;
+    color: #22978d;
     text-decoration: none;
     font-weight: 600;
 }
@@ -584,7 +587,7 @@ h1 {
 
 #showLogin {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: 600;
     color: rgb(237, 244, 245);
     background: #2c7a6a;
@@ -592,4 +595,5 @@ h1 {
     outline: none;
     cursor: pointer;
     border-radius: 5px;
+    
 }

@@ -20,6 +20,10 @@ let btnBuscarNombre = document.getElementById("btnNombre");
 btnBuscarNombre.addEventListener("click", filtrarNombre);
 
 function filtrarNombre() {
+    mostrarCartas(cartas);
+    if (existeElementoPorClase("mensajeError")) {
+        removerElementoPorClase("mensajeError");
+    }
     let cartaBuscada = $("#cartaBuscada").val();
 
     const filtroNombre = cartas.filter(x => x.nombre.toUpperCase().includes(cartaBuscada.toUpperCase()));
@@ -28,19 +32,32 @@ function filtrarNombre() {
         $(`.filtro__nombre`).append(
             `<p class="mensajeError">No existe ninguna carta con ese nombre.</p>`
         );
+    } else {
+        mostrarCartas(filtroNombre);
     }
-    mostrarCartas(filtroNombre);
+
 }
 
 function filtrarTipo() {
+    if (existeElementoPorClase("mensajeError")) {
+        removerElementoPorClase("mensajeError");
+    }
+    $("#cartaBuscada").val('');
+    mostrarCartas(cartas);
     let tipoCarta = $(`#tipoCarta`).val();
 
-    for (const cartaActual of cartas) {
-        if (tipoCarta.toUpperCase() === cartaActual.tipo.toUpperCase()) {
-        } else {
-            $(`#tipo${cartaActual.id}`).remove();
+    if (tipoCarta !== 'Todos') {
+        for (const cartaActual of cartas) {
+            if (tipoCarta.toUpperCase() === cartaActual.tipo.toUpperCase()) {
+            } else {
+                $(`#tipo${cartaActual.id}`).remove();
+            }
         }
     }
+
+
+
+
 }
 
 function mostrarCartas(cartas) {
@@ -63,7 +80,7 @@ function mostrarCartas(cartas) {
                             <div class="carta__inferior--efecto" id="efectoCarta${carta.id}">${carta.efecto}</div>
                     </div>                   
                     <div class="carta__precio">
-                    <span>$ unitario: ${carta.coste}</span>
+                    <span>$: ${carta.coste}</span>
                       <button class="btnMenos" id="btnMenos${carta.id}">-</button>
                       <span class="cantidadRequerida" id="cantidadRequerida${carta.id}">0</span>
                       <button class="btnMas" id="btnMas${carta.id}">+</button>

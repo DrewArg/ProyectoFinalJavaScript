@@ -1,19 +1,3 @@
-class Usuario {
-    constructor(nombre, contrasena, recordar) {
-        this.nombre = nombre.toUpperCase();
-        this.contrasena = contrasena;
-        this.recordar = recordar;
-        this.creditos = 0;
-    }
-
-    descontarCredito(descuento) {
-        this.creditos = this.creditos - descuento;
-    }
-
-    agregarCreditos(agregado) {
-        this.creditos = this.creditos + agregado;
-    }
-}
 
 document.querySelector("#showLogin").addEventListener("click", function () {
     document.querySelector(".popup").classList.add("active");
@@ -166,28 +150,6 @@ function validarUsuario() {
 
 }
 
-function existeElementoPorClase(nombreClase) {
-    let elemento = document.body.contains(
-        document.getElementsByClassName(nombreClase)[0]
-    );
-
-    return elemento;
-}
-
-
-function removerElementoPorClase(nombreClase) {
-    let elemento = document.getElementsByClassName(nombreClase);
-    elemento[0].parentNode.removeChild(elemento[0]);
-
-}
-
-function removerTodosLosElementosPorClase(nombreClase) {
-    let elementos = document.getElementsByClassName(nombreClase);
-
-    for (let i = 0; i < elementos.length; i++) {
-        elementos[i].parentNode.removeChild(elementos[i]);
-    }
-}
 
 
 function mostrarMensajeLoginExitoso(usuarioIngresado) {
@@ -228,23 +190,6 @@ function mostrarMensajeLoginExitoso(usuarioIngresado) {
         botonesContenedorMensaje.appendChild(btnSalir);
 
         btnSalir.addEventListener("click", deslogueo);
-    }
-}
-
-function deslogueo() {
-    localStorage.removeItem("usuarioActivo");
-    window.location.reload();
-}
-
-function reiniciarLocalStorage() {
-    localStorage.clear();
-}
-
-function recorrerLocalStorage() {
-    for (let i = 0; i < localStorage.length; i++) {
-        let clave = localStorage.key(i);
-        console.log("Clave: " + clave);
-        console.log("Valor: " + localStorage.getItem(clave));
     }
 }
 
@@ -305,7 +250,7 @@ function resetearLogin() {
     let h2 = "<h2>Ingresa</h2>";
     let nombreUsuario = '<div class="form__element"><label for="text"> Usuario</label> <input type="text" id="nombreUsuario" placeholder="Ingresa tu usuario"></div>';
     let contrasena = '<div class="form__element"><label for="password"> Contraseña</label> <input type="password" id="contrasena" placeholder="Ingresa tu contraseña"></div>';
-    let checkbox = '<div clas="form__element"><input type="checkbox" id="recordar><label for="recordar">Recordar</label></div>';
+    let checkbox = '<div clas="form__element"><input type="checkbox" id="recordar"><label for="recordar">Recordar</label></div>';
     let botonIngreso = '<div class="form__element">    <button class="btnIngreso" id="btnIngreso">Ingresar</button></div>';
     let formFooter = '<div class="form__footer"><div class="form__element">    <a href="#" onclick="recordarContrasena()">Olvidé mi contraseña</a></div>   <div class="form__element"><a href="#" onclick="crearUsuario()">Crear Usuario</a> </div></div>';
 
