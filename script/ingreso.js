@@ -146,10 +146,7 @@ function validarUsuario() {
             popup.appendChild(mensajeError);
         }
     }
-
-
 }
-
 
 
 function mostrarMensajeLoginExitoso(usuarioIngresado) {
@@ -239,7 +236,7 @@ function buscarContrasena() {
 
     let contrasenaNoEncontrada = `<div class="mensajeError">Tu usuario no existe en el sistema.</div>`;
 
-    if ($("#contrasenaEncontrada") === undefined) {
+    if ($("#contrasenaEncontrada") === undefined || listaUsuarios.length === 0) {
         $("#form").append(contrasenaNoEncontrada);
     }
 }
@@ -261,5 +258,5 @@ function resetearLogin() {
     $("#form").append(botonIngreso);
     $("#form").append(formFooter);
 
-    $("#btnIngreso").on("click",validarUsuario);
+    $("#btnIngreso").on("click", validarUsuario);
 }

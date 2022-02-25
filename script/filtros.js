@@ -54,10 +54,6 @@ function filtrarTipo() {
             }
         }
     }
-
-
-
-
 }
 
 function mostrarCartas(cartas) {
@@ -67,7 +63,7 @@ function mostrarCartas(cartas) {
     for (const carta of cartas) {
         $(".carta").append(
             `<div class="carta__contorno${carta.tipo}" id="tipo${carta.id}">
-                    <div class="carta__superior">
+            <div class = "linkCarta" id="linkCarta${carta.id}"> <div class="carta__superior">
                         <div class="carta__superior--tipo" id="tipoCarta${carta.id}">[${carta.tipo}]</div>
                     </div>
                     <div class="carta__cartaReal">
@@ -78,7 +74,7 @@ function mostrarCartas(cartas) {
                         </div>
                         <div class="carta__inferior">
                             <div class="carta__inferior--efecto" id="efectoCarta${carta.id}">${carta.efecto}</div>
-                    </div>                   
+                    </div>      </div>             
                     <div class="carta__precio">
                     <span>$: ${carta.coste}</span>
                       <button class="btnMenos" id="btnMenos${carta.id}">-</button>
@@ -86,7 +82,7 @@ function mostrarCartas(cartas) {
                       <button class="btnMas" id="btnMas${carta.id}">+</button>
                       <button class="btnCheck" id="btnCheck${carta.id}">✓</button>
                     </div>
-              </div>`
+              </div></a>`
         );
     }
 
@@ -100,8 +96,20 @@ function mostrarCartas(cartas) {
 
         $(`#btnCheck${carta.id}`).on("click", () => {
             confirmarAgregados(carta);
-        })
-    }
+        });
 
+        $(function () {
+            $(`#linkCarta${carta.id}`).on("click", () => {
+                let cartaInspeccionada = new Carta(carta.tipo, carta.nombre, carta.coste, carta.dano, carta.id, carta.imagen, carta.efecto);
+
+                localStorage.setItem("cartaInspeccionada", JSON.stringify(cartaInspeccionada));
+
+                window.location.href = "../pages/informacionCarta.html"
+            })
+        });
+
+
+
+    }
 }
 

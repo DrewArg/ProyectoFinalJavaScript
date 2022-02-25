@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media (max-width: 576px) {
   .header__nav--banner li {
     display: list-item;
@@ -231,6 +232,11 @@
     text-align: center;
   }
 }
+.linkCarta {
+  text-decoration: none;
+  color: #dfedf6;
+}
+
 .login {
   padding-top: 2rem;
   text-align: center;
@@ -559,4 +565,34 @@ h1 {
   outline: none;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.inspeccionCarta {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  margin: 2rem;
+}
+
+.contenedorDescripcion {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: baseline;
+  padding-left: 1.5rem;
+}
+
+.tituloDescripción {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.descripcionGeneral {
+  padding-top: 1.4rem;
+  padding-right: 1.4rem;
+  font-size: 1.1rem;
 }/*# sourceMappingURL=style.css.map */

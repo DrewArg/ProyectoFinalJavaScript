@@ -5,7 +5,7 @@
 @import "_variables.scss";
 @media (min-width: 992px) {
     .body {
-        background-image: url("../img/puenteBosque.jpg"); 
+        background-image: url("../img/puenteBosque.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -246,6 +246,11 @@
             text-align: center;
         }
     }
+}
+
+.linkCarta {
+    text-decoration: none;
+    color: rgb(223, 237, 246);
 }
 
 .login {
@@ -595,5 +600,34 @@ h1 {
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    
+}
+
+.inspeccionCarta {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    margin: 2rem;
+}
+
+.contenedorDescripcion {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: baseline;
+    padding-left: 1.5rem;
+}
+
+.tituloDescripción {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.descripcionGeneral {
+    padding-top: 1.4rem;
+    padding-right: 1.4rem;
+    font-size: 1.1rem;
 }
