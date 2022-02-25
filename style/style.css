@@ -8,7 +8,580 @@
     text-transform: uppercase;
     text-decoration: none;
   }
+
+  .body {
+    background-image: url("../img/puenteBosque.jpg");
+    background-size: cover;
+    color: #f4f4f2;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .titulo__tienda__h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  .titulo__tienda h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  .titulo__tienda h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .titulo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .titulo__contenedorMensaje {
+    display: flex;
+    flex-direction: column;
+  }
+  .titulo__contenedorMensaje--botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .titulo__h1 {
+    font-size: 3.5rem;
+    text-shadow: red;
+    text-align: center;
+  }
+  .titulo h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  .titulo h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  .titulo__subtitulo {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  .titulo__bienvenida {
+    text-align: center;
+    font-size: 2.3rem;
+    padding-top: 2rem;
+  }
+  .titulo__creditos {
+    text-align: center;
+    font-size: 2.3rem;
+    padding-top: 1rem;
+    color: #AEFEFF;
+  }
+  .titulo__btnTienda {
+    text-align: center;
+  }
+  .titulo__btnSalir {
+    text-align: center;
+  }
+
+  .filtro {
+    text-align: center;
+    padding: 0px;
+  }
+  .filtro__nombre {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .carta__color {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 0.4rem;
+  }
+  .carta__contornoAnimal {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #3f4150;
+    color: #f4f4f2;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+  }
+  .carta__contornoAnimal:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #6f6fa8, 0 0 5px darkblue;
+  }
+  .carta__contornoAlimento {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #855e69;
+    color: #f4f4f2;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+  }
+  .carta__contornoAlimento:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #a16fa8, 0 0 5px darkblue;
+  }
+  .carta__contornoHabilidad {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #7e6453;
+    color: #f4f4f2;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+  }
+  .carta__contornoHabilidad:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #af9360, 0 0 5px darkblue;
+  }
+  .carta__contornoHabitat {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #78814e;
+    color: #f4f4f2;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+  }
+  .carta__contornoHabitat:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #98a160, 0 0 5px darkblue;
+  }
+  .carta__superior {
+    height: 15px;
+    width: 300px;
+  }
+  .carta__superior--tipo {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .carta__cartaReal {
+    height: 350px;
+    width: 300px;
+  }
+  .carta__medio--nombre {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  .carta__medio--imagen {
+    text-align: center;
+    border-radius: 5px;
+  }
+  .carta__inferior {
+    width: 300px;
+    height: 120px;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    padding-top: 0.5rem;
+  }
+  .carta__inferior--efecto {
+    text-align: left;
+    width: 85%;
+    height: 100%;
+  }
+  .carta__precio {
+    background-color: #9ea2ad;
+    color: #404752;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+  }
 }
+.linkCarta {
+  text-decoration: none;
+  color: #dfedf6;
+}
+
+.login {
+  padding-top: 2rem;
+  text-align: center;
+}
+.login__bienvenida {
+  padding-bottom: 1rem;
+}
+.login__datosUsuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1.3rem;
+}
+.login__datosUsuario--nombre {
+  margin-bottom: 1rem;
+}
+.login__botones {
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.topNav {
+  background-color: #35858B;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.topNav a {
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topNav a:hover {
+  background-color: #4FBDBA;
+  color: #ddd6d6;
+}
+
+button {
+  padding: 0.1rem;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  background: #f5f5f5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.3rem;
+}
+button:hover {
+  background-color: #ddd6d6;
+}
+
+.btnMenos,
+.btnMas {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-weight: 1000;
+}
+
+.btnMenos:hover {
+  background-color: #f37070;
+}
+
+.btnMas:hover {
+  background-color: #77d477;
+}
+
+.btnQuitarItem {
+  height: 25px;
+  width: 25px;
+  border-radius: 0%;
+  font-weight: 1000;
+}
+.btnQuitarItem:hover {
+  background-color: #f37070;
+}
+
+.mensajeError {
+  color: #f74141;
+  font-weight: 800;
+  padding: 1rem;
+  align-items: center;
+}
+
+.mensajePositivo {
+  color: #415cf7;
+  font-weight: 800;
+  padding: 1rem;
+  align-items: center;
+}
+
+#btnRefresh {
+  margin: 1rem;
+  font-size: 1.3rem;
+}
+
+.itemCarrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  align-content: space-around;
+  gap: 10px;
+  width: 100%;
+}
+.itemCarrito1 {
+  width: 10%;
+}
+.itemCarrito2 {
+  width: 40%;
+}
+.itemCarrito3 {
+  width: 20%;
+}
+.itemCarrito4 {
+  width: 5%;
+}
+
+.accion {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: #4FBDBA;
+  border-radius: 50%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.accion span {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 800;
+  font-size: 2rem;
+  transition: 0.3s ease-in;
+}
+.accion ul {
+  position: absolute;
+  bottom: 55px;
+  background-color: white;
+  min-width: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+.accion ul li {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+  transition: 0.3s;
+  color: #404752;
+}
+.accion ul li:hover {
+  font-weight: 600;
+}
+.accion ul li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.accion.active span {
+  transform: rotate(50deg);
+}
+.accion.active ul {
+  bottom: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.icono {
+  background: url("../img/carritoDeCompras.png") no-repeat 50% 50%;
+  background-size: 28px 28px;
+  display: inline-block;
+  height: 28px;
+  width: 50px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  background: #f5f5f5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popup {
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 20rem;
+  padding: 20px 30px;
+  background: #daf3ea;
+  box-shadow: 2px 2px 5px 5px rga rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms;
+}
+
+.popup.active {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms;
+}
+
+.popup .closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  background: #f05b5b;
+  color: #fbf5f5;
+  line-height: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+}
+
+.popup .form h2 {
+  text-align: center;
+  color: #222;
+  margin: 10px 0px 20px;
+  font-size: 2rem;
+}
+
+.popup .form .form__element {
+  margin: 15px 0px;
+}
+
+.popup .form .form__element label {
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.popup .form .form__element input[type=text],
+.popup .form .form__element input[type=password] {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.popup .form .form__element button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  color: #edf4f5;
+  background: #2c7a6a;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.form__footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.popup .form .form__element a {
+  display: block;
+  text-align: right;
+  font-size: 1rem;
+  color: #22978d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.popup .form .form__element input[type=checkbox] {
+  margin-right: 5px;
+}
+
+#showLogin {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #edf4f5;
+  background: #2c7a6a;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.inspeccionCarta {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  margin: 2rem;
+}
+
+.contenedorDescripcion {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: baseline;
+  padding-left: 1.5rem;
+}
+
+.tituloDescripción {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.descripcionGeneral {
+  padding-top: 1.4rem;
+  padding-right: 1.4rem;
+  font-size: 1.1rem;
+}
+
 @media (min-width: 577px) and (max-width: 991px) {
   .header__nav--banner li {
     display: list-item;
@@ -18,7 +591,580 @@
     text-transform: uppercase;
     text-decoration: none;
   }
+
+  .body {
+    background-image: url("../img/puenteBosque.jpg");
+    background-size: cover;
+    color: #f4f4f2;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .titulo__tienda__h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  .titulo__tienda h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  .titulo__tienda h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .titulo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .titulo__contenedorMensaje {
+    display: flex;
+    flex-direction: column;
+  }
+  .titulo__contenedorMensaje--botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .titulo__h1 {
+    font-size: 3.5rem;
+    text-shadow: red;
+    text-align: center;
+  }
+  .titulo h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  .titulo h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  .titulo__subtitulo {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  .titulo__bienvenida {
+    text-align: center;
+    font-size: 2.3rem;
+    padding-top: 2rem;
+  }
+  .titulo__creditos {
+    text-align: center;
+    font-size: 2.3rem;
+    padding-top: 1rem;
+    color: #AEFEFF;
+  }
+  .titulo__btnTienda {
+    text-align: center;
+  }
+  .titulo__btnSalir {
+    text-align: center;
+  }
+
+  .filtro {
+    text-align: center;
+    padding: 0px;
+  }
+  .filtro__nombre {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .carta__color {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 0.4rem;
+  }
+  .carta__contornoAnimal {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #3f4150;
+    color: #f4f4f2;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+  }
+  .carta__contornoAnimal:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #6f6fa8, 0 0 5px darkblue;
+  }
+  .carta__contornoAlimento {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #855e69;
+    color: #f4f4f2;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+  }
+  .carta__contornoAlimento:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #a16fa8, 0 0 5px darkblue;
+  }
+  .carta__contornoHabilidad {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #7e6453;
+    color: #f4f4f2;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+  }
+  .carta__contornoHabilidad:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #af9360, 0 0 5px darkblue;
+  }
+  .carta__contornoHabitat {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #78814e;
+    color: #f4f4f2;
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+  }
+  .carta__contornoHabitat:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px #98a160, 0 0 5px darkblue;
+  }
+  .carta__superior {
+    height: 15px;
+    width: 300px;
+  }
+  .carta__superior--tipo {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .carta__cartaReal {
+    height: 350px;
+    width: 300px;
+  }
+  .carta__medio--nombre {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  .carta__medio--imagen {
+    text-align: center;
+    border-radius: 5px;
+  }
+  .carta__inferior {
+    width: 300px;
+    height: 120px;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    padding-top: 0.5rem;
+  }
+  .carta__inferior--efecto {
+    text-align: left;
+    width: 85%;
+    height: 100%;
+  }
+  .carta__precio {
+    background-color: #9ea2ad;
+    color: #404752;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+  }
 }
+.linkCarta {
+  text-decoration: none;
+  color: #dfedf6;
+}
+
+.login {
+  padding-top: 2rem;
+  text-align: center;
+}
+.login__bienvenida {
+  padding-bottom: 1rem;
+}
+.login__datosUsuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1.3rem;
+}
+.login__datosUsuario--nombre {
+  margin-bottom: 1rem;
+}
+.login__botones {
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.topNav {
+  background-color: #35858B;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.topNav a {
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topNav a:hover {
+  background-color: #4FBDBA;
+  color: #ddd6d6;
+}
+
+button {
+  padding: 0.1rem;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  background: #f5f5f5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.3rem;
+}
+button:hover {
+  background-color: #ddd6d6;
+}
+
+.btnMenos,
+.btnMas {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-weight: 1000;
+}
+
+.btnMenos:hover {
+  background-color: #f37070;
+}
+
+.btnMas:hover {
+  background-color: #77d477;
+}
+
+.btnQuitarItem {
+  height: 25px;
+  width: 25px;
+  border-radius: 0%;
+  font-weight: 1000;
+}
+.btnQuitarItem:hover {
+  background-color: #f37070;
+}
+
+.mensajeError {
+  color: #f74141;
+  font-weight: 800;
+  padding: 1rem;
+  align-items: center;
+}
+
+.mensajePositivo {
+  color: #415cf7;
+  font-weight: 800;
+  padding: 1rem;
+  align-items: center;
+}
+
+#btnRefresh {
+  margin: 1rem;
+  font-size: 1.3rem;
+}
+
+.itemCarrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  align-content: space-around;
+  gap: 10px;
+  width: 100%;
+}
+.itemCarrito1 {
+  width: 10%;
+}
+.itemCarrito2 {
+  width: 40%;
+}
+.itemCarrito3 {
+  width: 20%;
+}
+.itemCarrito4 {
+  width: 5%;
+}
+
+.accion {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: #4FBDBA;
+  border-radius: 50%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.accion span {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 800;
+  font-size: 2rem;
+  transition: 0.3s ease-in;
+}
+.accion ul {
+  position: absolute;
+  bottom: 55px;
+  background-color: white;
+  min-width: 250px;
+  padding: 20px;
+  border-radius: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+.accion ul li {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+  transition: 0.3s;
+  color: #404752;
+}
+.accion ul li:hover {
+  font-weight: 600;
+}
+.accion ul li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.accion.active span {
+  transform: rotate(50deg);
+}
+.accion.active ul {
+  bottom: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.icono {
+  background: url("../img/carritoDeCompras.png") no-repeat 50% 50%;
+  background-size: 28px 28px;
+  display: inline-block;
+  height: 28px;
+  width: 50px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  background: #f5f5f5;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popup {
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.25);
+  width: 20rem;
+  padding: 20px 30px;
+  background: #daf3ea;
+  box-shadow: 2px 2px 5px 5px rga rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms;
+}
+
+.popup.active {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms;
+}
+
+.popup .closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  background: #f05b5b;
+  color: #fbf5f5;
+  line-height: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+}
+
+.popup .form h2 {
+  text-align: center;
+  color: #222;
+  margin: 10px 0px 20px;
+  font-size: 2rem;
+}
+
+.popup .form .form__element {
+  margin: 15px 0px;
+}
+
+.popup .form .form__element label {
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.popup .form .form__element input[type=text],
+.popup .form .form__element input[type=password] {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.popup .form .form__element button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  color: #edf4f5;
+  background: #2c7a6a;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.form__footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.popup .form .form__element a {
+  display: block;
+  text-align: right;
+  font-size: 1rem;
+  color: #22978d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.popup .form .form__element input[type=checkbox] {
+  margin-right: 5px;
+}
+
+#showLogin {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #edf4f5;
+  background: #2c7a6a;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.inspeccionCarta {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  margin: 2rem;
+}
+
+.contenedorDescripcion {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: baseline;
+  padding-left: 1.5rem;
+}
+
+.tituloDescripción {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.descripcionGeneral {
+  padding-top: 1.4rem;
+  padding-right: 1.4rem;
+  font-size: 1.1rem;
+}
+
 :root {
   --colorTextos: #49454567;
 }
