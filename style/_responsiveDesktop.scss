@@ -33,7 +33,23 @@
     }
 
     .titulo {
-        
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        &__contenedorMensaje {
+            display: flex;
+            flex-direction: column;
+
+            &--botones {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
         &__h1 {
             font-size: $FontSize-Title-Desktop;
             text-shadow: rgb(255, 0, 0);
@@ -282,16 +298,19 @@
 }
 
 button {
-    border-radius: 4px;
-    color: black;
-    border: 2px solid #c4c0c0;
-    background-color: $Font-Terciario;
     padding: 0.1rem;
+    display: inline-block;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    margin: 0.1rem;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    background: #f5f5f5;
+    border: none;
+    outline: none;
     cursor: pointer;
+    border-radius: 5px;
+    margin: 0.3rem;
 
     &:hover {
         background-color: $Font-Secundario;
@@ -328,6 +347,14 @@ button {
     color: rgb(247, 65, 65);
     font-weight: 800;
     padding: 1rem;
+    align-items: center;
+}
+
+.mensajePositivo {
+    color: rgb(65, 92, 247);
+    font-weight: 800;
+    padding: 1rem;
+    align-items: center;
 }
 
 #btnRefresh {
@@ -466,7 +493,7 @@ h1 {
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.25);
-    width: 380px;
+    width: 20rem;
     padding: 20px 30px;
     background: rgb(218, 243, 234);
     box-shadow: 2px 2px 5px 5px rga rgba(0, 0, 0, 0.15);
@@ -492,7 +519,7 @@ h1 {
     border-radius: 15px;
     cursor: pointer;
     text-align: center;
-    justify-content:center;
+    justify-content: center;
 }
 
 .popup .form h2 {
@@ -566,4 +593,3 @@ h1 {
     cursor: pointer;
     border-radius: 5px;
 }
-

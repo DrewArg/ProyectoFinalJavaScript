@@ -34,7 +34,7 @@
         </div>
         <div class="popup">
             <div class="closeBtn">&times;</div>
-            <div class="form">
+            <div class="form" id="form">
                 <h2>Ingresa</h2>
                 <div class="form__element">
                     <label for="text">Usuario</label>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="form__footer">
                     <div class="form__element">
-                        <a>Olvidé mi contraseña</a>
+                        <a href="#" onclick="recordarContrasena()">Olvidé mi contraseña</a>
                     </div>
                     <div class="form__element">
                         <a href="#" onclick="crearUsuario()">Crear usuario</a>
@@ -64,26 +64,8 @@
 
             </div>
         </div>
-        <!-- 
-        <div class="login">
-            <h3 class="login__bienvenida">¡Hola! Ingresá tu nombre de Usuario y Contraseña</h3>
-            <div class="login__datosUsuario">
-                <input type="text" id="nombreUsuario" placeholder="Usuario" class="login__datosUsuario--nombre">
-                <input type="password" id="contrasena" placeholder="Contraseña" class="login__datosUsuario--contrasena">
-            </div>
-
-            <div class="login__botones">
-                <button id="btnIngreso">Ingresar</button>
-                <button id="btnCrearCuenta">Crear Cuenta</button>
-            </div>
-            <div class="login_agregados">
-                <button id="btnVerificar">Verificar</button>
-                <button id="btnReiniciar">Reiniciar</button>
-            </div> -->
 
 
-
-        </div>
     </main>
 
     <footer>
@@ -92,7 +74,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./script/carrito.js"></script>
-    <!-- <script src="./script/login.js"></script> -->
     <script src="./script/ingreso.js"></script>
 </body>
 
