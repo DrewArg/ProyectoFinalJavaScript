@@ -24,7 +24,9 @@
 
 @media (min-width: 992px) {
   .body {
-    background-color: #072227;
+    background-image: url("../img/puenteBosque.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
     color: #f4f4f2;
     padding: 0px;
     margin: 0px;
@@ -47,6 +49,7 @@
 
   .titulo__h1 {
     font-size: 3.5rem;
+    text-shadow: red;
     text-align: center;
   }
   .titulo h2 {
@@ -401,10 +404,6 @@ button:hover {
   width: 50px;
 }
 
-body {
-  background-color: salmon;
-}
-
 h1 {
   text-align: center;
   font-weight: 700;
@@ -437,7 +436,7 @@ h1 {
   transform: translate(-50%, -50%) scale(1.25);
   width: 380px;
   padding: 20px 30px;
-  background: #fff;
+  background: #daf3ea;
   box-shadow: 2px 2px 5px 5px rga rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 20ms ease-in-out 0ms;
@@ -456,12 +455,13 @@ h1 {
   right: 10px;
   width: 15px;
   height: 15px;
-  background: #888;
-  color: #eee;
+  background: #f05b5b;
+  color: #fbf5f5;
   line-height: 15px;
   border-radius: 15px;
   cursor: pointer;
   text-align: center;
+  justify-content: center;
 }
 
 .popup .form h2 {
@@ -497,10 +497,17 @@ h1 {
   border: none;
   outline: none;
   font-size: 15px;
-  background: #222;
-  color: #f5f5f5;
+  color: #edf4f5;
+  background: #2c7a6a;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.form__footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .popup .form .form__element a {
@@ -520,8 +527,8 @@ h1 {
   padding: 10px 20px;
   font-size: 15px;
   font-weight: 600;
-  color: #222;
-  background: #f5f5f5;
+  color: #edf4f5;
+  background: #2c7a6a;
   border: none;
   outline: none;
   cursor: pointer;

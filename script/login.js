@@ -157,7 +157,7 @@ function removerTodosLosElementosPorClase(nombreClase) {
 }
 
 function mostrarMensajeLoginExitoso(usuarioIngresado) {
-  removerTodosLosElementosPorClase("login");
+  removerTodosLosElementosPorClase("center");
 
   let titulo = document.getElementsByClassName("titulo")[0];
 
