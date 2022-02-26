@@ -559,6 +559,8 @@ h1 {
   outline: none;
   cursor: pointer;
   border-radius: 5px;
+  position: relative;
+  top: 13rem;
 }
 
 .inspeccionCarta {

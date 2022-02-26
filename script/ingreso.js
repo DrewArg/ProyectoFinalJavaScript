@@ -36,6 +36,7 @@ if (usuarioActivo !== null) {
 } else {
     let btnIngreso = document.getElementById("btnIngreso");
     btnIngreso.addEventListener("click", validarUsuario);
+    localStorage.setItem("carritoCompras", JSON.stringify([]));
 }
 
 function crearUsuario() {
