@@ -8,9 +8,6 @@
     margin: 0px;
   }
 
-  .titulo__tienda {
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  }
   .titulo__tienda__h1 {
     font-size: 3.5rem;
     text-align: center;
@@ -29,7 +26,9 @@
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
-  h1, h3, h4 {
+  h1,
+h3,
+h4 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
@@ -564,7 +563,8 @@ h1 {
 
 .inspeccionCarta {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin-left: 10%;
   width: 80%;
   align-items: center;
@@ -582,6 +582,9 @@ h1 {
 }
 
 .tituloDescripción {
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -590,6 +593,50 @@ h1 {
   padding-top: 1.4rem;
   padding-right: 1.4rem;
   font-size: 1.1rem;
+}
+
+.carritoUsuario {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+}
+
+.informacionCarrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+
+.informacionInterna {
+  padding-top: 0.4rem;
+  align-items: left;
+  justify-content: left;
+  width: 100%;
+}
+
+.botonesCarrito {
+  padding: 1.5rem;
+}
+
+.btnSi:hover {
+  background-color: #77d477;
+}
+
+.btnNo:hover {
+  background-color: #f37070;
+}
+
+.reglamento {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
 
 @media (min-width: 577px) and (max-width: 991px) {
@@ -601,9 +648,6 @@ h1 {
     margin: 0px;
   }
 
-  .titulo__tienda {
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  }
   .titulo__tienda__h1 {
     font-size: 3.5rem;
     text-align: center;
@@ -622,7 +666,9 @@ h1 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
-  h1, h3, h4 {
+  h1,
+h3,
+h4 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
@@ -1157,7 +1203,8 @@ h1 {
 
 .inspeccionCarta {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin-left: 10%;
   width: 80%;
   align-items: center;
@@ -1175,6 +1222,9 @@ h1 {
 }
 
 .tituloDescripción {
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -1183,6 +1233,50 @@ h1 {
   padding-top: 1.4rem;
   padding-right: 1.4rem;
   font-size: 1.1rem;
+}
+
+.carritoUsuario {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+}
+
+.informacionCarrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+
+.informacionInterna {
+  padding-top: 0.4rem;
+  align-items: left;
+  justify-content: left;
+  width: 100%;
+}
+
+.botonesCarrito {
+  padding: 1.5rem;
+}
+
+.btnSi:hover {
+  background-color: #77d477;
+}
+
+.btnNo:hover {
+  background-color: #f37070;
+}
+
+.reglamento {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }
 
 :root {
@@ -1198,9 +1292,6 @@ h1 {
     margin: 0px;
   }
 
-  .titulo__tienda {
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  }
   .titulo__tienda__h1 {
     font-size: 3.5rem;
     text-align: center;
@@ -1219,7 +1310,9 @@ h1 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
-  h1, h3, h4 {
+  h1,
+h3,
+h4 {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
@@ -1780,4 +1873,48 @@ h1 {
   padding-top: 1.4rem;
   padding-right: 1.4rem;
   font-size: 1.1rem;
+}
+
+.carritoUsuario {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+}
+
+.informacionCarrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+
+.informacionInterna {
+  padding-top: 0.4rem;
+  align-items: left;
+  justify-content: left;
+  width: 100%;
+}
+
+.botonesCarrito {
+  padding: 1.5rem;
+}
+
+.btnSi:hover {
+  background-color: #77d477;
+}
+
+.btnNo:hover {
+  background-color: #f37070;
+}
+
+.reglamento {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
 }/*# sourceMappingURL=style.css.map */

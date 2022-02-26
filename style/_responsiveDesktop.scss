@@ -16,7 +16,6 @@
     }
 
     .titulo__tienda {
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         &__h1 {
             font-size: $FontSize-Title-Desktop;
             text-align: center;
@@ -38,7 +37,9 @@
         }
     }
 
-     h1, h3, h4{
+    h1,
+    h3,
+    h4 {
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
 
@@ -646,3 +647,49 @@ h1 {
     padding-right: 1.4rem;
     font-size: 1.1rem;
 }
+
+.carritoUsuario {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+}
+
+.informacionCarrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
+
+.informacionInterna {
+    padding-top: 0.4rem;
+    align-items: left;
+    justify-content: left;
+    width: 100%;
+}
+
+.botonesCarrito {
+    padding: 1.5rem;
+}
+
+.btnSi:hover {
+    background-color: rgb(119, 212, 119);
+}
+
+.btnNo:hover {
+    background-color: rgb(243, 112, 112);
+}
+
+.reglamento {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+}
+

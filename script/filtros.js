@@ -19,6 +19,20 @@ const JSonCartas = "../JSON/cartas.json";
 let btnBuscarNombre = document.getElementById("btnNombre");
 btnBuscarNombre.addEventListener("click", filtrarNombre);
 
+
+$(`#btnRefresh`).on('click', reiniciarFiltros);
+
+$(`#btnTipo`).on('click', filtrarTipo);
+
+function reiniciarFiltros() {
+    $(`#tipoCarta`).prop('selectedIndex', 0);
+    filtrarTipo();
+
+    $(`#cartaBuscada`).val('');
+    filtrarNombre();
+}
+
+
 function filtrarNombre() {
     mostrarCartas(cartas);
     if (existeElementoPorClase("mensajeError")) {

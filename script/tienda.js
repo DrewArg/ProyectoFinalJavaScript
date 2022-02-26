@@ -9,16 +9,3 @@ if (usuarioActivo !== null) {
     let titulo = document.getElementById("tituloCambiante");
     titulo.innerHTML = `${usuario.nombre}, tienes ${usuario.creditos} créditos disponibles.`;
 }
-
-$(`#btnRefresh`).on('click', reiniciarFiltros);
-
-$(`#btnTipo`).on('click', filtrarTipo);
-
-function reiniciarFiltros() {
-    $(`#tipoCarta`).prop('selectedIndex', 0);
-    filtrarTipo();
-
-    $(`#cartaBuscada`).val('');
-    filtrarNombre();
-}
-    
