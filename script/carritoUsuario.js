@@ -99,6 +99,8 @@ if (usuarioActivo !== null) {
             $(".carritoUsuario").append(`<div class="mensajeCompraRealizada">¿Qué método de pago prefieres ${usuario.nombre}?</div><div class="botonesPago"><button class="btnTarjeta" id="btnTarjeta">Tarjeta de Crédito</button><button class="btnTransferencia" id="btnTransferencia">Transferencia</button><button class="btnCrypto" id="btnCrypto">Cryptomonedas</button></div>`);
 
             $("#btnTarjeta").on("click", () => {
+                $(".carritoUsuario").children().remove();
+
                 $(".carritoUsuario").append(`<div class="mensajeCompraRealizada">En esta simulación el pago con tarjeta de crédito no está habilitado. A modo de disculpas, te regalamos 10 nuevos créditos.</div>`);
 
                 usuario.agregarCreditos(10);
@@ -130,6 +132,8 @@ if (usuarioActivo !== null) {
 
 
             $("#btnTransferencia").on("click", () => {
+                $(".carritoUsuario").children().remove();
+
                 $(".carritoUsuario").append(`<div class="mensajeCompraRealizada">En esta simulación el pago por transferencia bancaria no está habilitado. A modo de disculpas, te regalamos 20 nuevos créditos.</div>`);
 
                 usuario.agregarCreditos(20);
@@ -161,6 +165,8 @@ if (usuarioActivo !== null) {
 
 
             $("#btnCrypto").on("click", () => {
+                $(".carritoUsuario").children().remove();
+
                 $(".carritoUsuario").append(`<div class="mensajeCompraRealizada">En esta simulación el pago de cryptomonedas no está habilitado. Por al menos intentarlo, te regalamos 100 nuevos créditos.</div>`);
 
                 usuario.agregarCreditos(100);
