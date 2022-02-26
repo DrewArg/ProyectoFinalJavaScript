@@ -26,16 +26,12 @@ if (baseDatosUsuarios === null || baseDatosUsuarios.length === 0) {
 
 let usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
 if (usuarioActivo !== null) {
-    if (usuarioActivo.recordar) {
-        let usuario = new Usuario(usuarioActivo.nombre, usuarioActivo.contrasena, usuarioActivo.recordar);
-        usuario.agregarCreditos(usuarioActivo.creditos);
 
-        mostrarMensajeLoginExitoso(usuario);
-    } else {
-        let btnIngreso = document.getElementById("btnIngreso");
-        btnIngreso.addEventListener("click", validarUsuario);
+    let usuario = new Usuario(usuarioActivo.nombre, usuarioActivo.contrasena, usuarioActivo.recordar);
+    usuario.agregarCreditos(usuarioActivo.creditos);
 
-    }
+    mostrarMensajeLoginExitoso(usuario);
+
 
 } else {
     let btnIngreso = document.getElementById("btnIngreso");
