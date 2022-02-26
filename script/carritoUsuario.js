@@ -114,15 +114,8 @@ if (usuarioActivo !== null) {
 
             for (user of usuarios) {
                 if (user.nombre === usuario.nombre) {
-                    let usuarioComprador = new Usuario(user.nombre, user.contrasena, user.recordar);
-                    usuarioComprador.agregarCreditos(user.creditos)
-                    if (usuarioComprador.creditos < totalPrecio) {
-                        usuarioComprador.descontarCredito(usuarioComprador.creditos);
-                    } else {
-                        usuarioComprador.descontarCredito(totalPrecio);
-                    }
                     usuarios.pop(user);
-                    usuarios.push(usuarioComprador);
+                    usuarios.push(usuario);
                 }
             }
 
@@ -157,15 +150,8 @@ if (usuarioActivo !== null) {
 
             for (user of usuarios) {
                 if (user.nombre === usuario.nombre) {
-                    let usuarioComprador = new Usuario(user.nombre, user.contrasena, user.recordar);
-                    usuarioComprador.agregarCreditos(user.creditos)
-                    if (usuarioComprador.creditos < totalPrecio) {
-                        usuarioComprador.descontarCredito(usuarioComprador.creditos);
-                    } else {
-                        usuarioComprador.descontarCredito(totalPrecio);
-                    }
                     usuarios.pop(user);
-                    usuarios.push(usuarioComprador);
+                    usuarios.push(usuario);
                 }
             }
 
@@ -198,18 +184,11 @@ if (usuarioActivo !== null) {
             localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
 
             let usuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
-
+            
             for (user of usuarios) {
                 if (user.nombre === usuario.nombre) {
-                    let usuarioComprador = new Usuario(user.nombre, user.contrasena, user.recordar);
-                    usuarioComprador.agregarCreditos(user.creditos)
-                    if (usuarioComprador.creditos < totalPrecio) {
-                        usuarioComprador.descontarCredito(usuarioComprador.creditos);
-                    } else {
-                        usuarioComprador.descontarCredito(totalPrecio);
-                    }
                     usuarios.pop(user);
-                    usuarios.push(usuarioComprador);
+                    usuarios.push(usuario);
                 }
             }
 
