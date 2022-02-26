@@ -129,6 +129,17 @@ if (usuarioActivo !== null) {
             localStorage.removeItem("listaUsuarios");
             localStorage.setItem("listaUsuarios", JSON.stringify(usuarios));
 
+            botones = `<div class="botonesCarrito"><button class="btnNo" id="btnNo">Seguir comprando</button></div>`
+
+
+            $(".informacionCarrito").append(botones);
+
+            $(function () {
+                $("#btnNo").on("click", () => {
+                    window.location.href = "../pages/tienda.html";
+                });
+            })
+
         });
 
 
@@ -162,6 +173,17 @@ if (usuarioActivo !== null) {
             localStorage.removeItem("listaUsuarios");
             localStorage.setItem("listaUsuarios", JSON.stringify(usuarios));
 
+            botones = `<div class="botonesCarrito"><button class="btnNo" id="btnNo">Seguir comprando</button></div>`
+
+
+            $(".informacionCarrito").append(botones);
+
+            $(function () {
+                $("#btnNo").on("click", () => {
+                    window.location.href = "../pages/tienda.html";
+                });
+            })
+
         });
 
 
@@ -190,6 +212,20 @@ if (usuarioActivo !== null) {
                     usuarios.push(usuarioComprador);
                 }
             }
+
+            localStorage.removeItem("listaUsuarios");
+            localStorage.setItem("listaUsuarios", JSON.stringify(usuarios));
+
+            botones = `<div class="botonesCarrito"><button class="btnNo" id="btnNo">Seguir comprando</button></div>`
+
+
+            $(".informacionCarrito").append(botones);
+
+            $(function () {
+                $("#btnNo").on("click", () => {
+                    window.location.href = "../pages/tienda.html";
+                });
+            })
 
         });
     }
