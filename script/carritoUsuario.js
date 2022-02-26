@@ -66,6 +66,9 @@ if (usuarioActivo !== null) {
             localStorage.removeItem("listaUsuarios");
             localStorage.setItem("listaUsuarios", JSON.stringify(usuarios));
 
+            let carrito = JSON.parse(localStorage.getItem("carritoCompras"));
+            $(".accion__ul").children().remove();
+
         });
 
     }

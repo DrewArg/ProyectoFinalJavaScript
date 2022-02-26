@@ -234,7 +234,6 @@ function buscarContrasena() {
             let contrasenaEncontrada = `<div class="mensajePositivo" id="contrasenaEncontrada">Como actualmente esto es una simulación, te dejaremos tu contraseña aquí: "${usuario.contrasena}", anotala y guardala.</div>`;
             $("#form").append(contrasenaEncontrada);
             flagUsuarioEncontrado = true;
-
         }
     }
 
