@@ -639,6 +639,11 @@ h1 {
   justify-content: left;
 }
 
+.mensajeCompraRealizada {
+  margin: 2rem;
+  font-size: 2rem;
+}
+
 @media (min-width: 577px) and (max-width: 991px) {
   .body {
     background-image: url("../img/puenteBosque.jpg");
@@ -1277,6 +1282,11 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: left;
+}
+
+.mensajeCompraRealizada {
+  margin: 2rem;
+  font-size: 2rem;
 }
 
 :root {

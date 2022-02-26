@@ -686,11 +686,14 @@ h1 {
     background-color: rgb(243, 112, 112);
 }
 
-
 .reglamento {
     margin: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: left;
+}
 
+.mensajeCompraRealizada {
+    margin: 2rem;
+    font-size: 2rem;
 }
