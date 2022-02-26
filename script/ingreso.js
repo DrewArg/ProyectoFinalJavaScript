@@ -203,9 +203,9 @@ function recordarContrasena() {
 
     $("#form").empty();
 
-    let h2 = "<h2>Recordar Usuario</h2>";
+    let h2 = "<h2>Recordar Contraseña</h2>";
     let recordarUsuario = '<div class="form__element"><label for="text"> Usuario</label> <input type="text" id="recordarUsuario" placeholder="Ingresa tu usuario"></div>';
-    let botones = '  <div class="form__footer"> <div class="form__element"><a href="#" onclick="buscarContrasena()">Buscar</a></div><div class="form__element"><a href="#" onclick="resetearLogin()">Volver</a></div></div>';
+    let botones = '<div class="form__footer"> <div class="form__element"><a href="#" onclick="buscarContrasena()">Buscar</a></div><div class="form__element"><a href="#" onclick="resetearLogin()">Volver</a></div></div>';
 
     $("#form").append(h2);
     $("#form").append(recordarUsuario);
@@ -227,16 +227,21 @@ function buscarContrasena() {
         .getElementById("recordarUsuario")
         .value.toUpperCase();
 
+    let flagUsuarioEncontrado = false;
 
     for (const usuario of listaUsuarios) {
         if (usuario.nombre === usuarioARecordar) {
             let contrasenaEncontrada = `<div class="mensajePositivo" id="contrasenaEncontrada">Como actualmente esto es una simulación, te dejaremos tu contraseña aquí: "${usuario.contrasena}", anotala y guardala.</div>`;
             $("#form").append(contrasenaEncontrada);
-            break;
+            flagUsuarioEncontrado = true;
+
         }
     }
 
-    let contrasenaNoEncontrada = `<div class="mensajeError">Tu usuario no existe en el sistema.</div>`;
+    if (!flagUsuarioEncontrado) {
+        let contrasenaNoEncontrada = `<div class="mensajeError">Tu usuario no existe en el sistema.</div>`;
+        $("#form").append(contrasenaNoEncontrada);
+    }
 
     if ($("#contrasenaEncontrada") === undefined || listaUsuarios.length === 0) {
         $("#form").append(contrasenaNoEncontrada);
