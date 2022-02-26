@@ -9,15 +9,11 @@ $(`body`).append("<div class='accion' onclick='toggleAccion();'><span class='ico
 
 actualizarCarrito();
 
-
 function actualizarCarrito() {
     let carrito = JSON.parse(localStorage.getItem("carritoCompras"));
 
     if (carrito.length === 0) {
-        for (const producto of carrito) {
-            $(`.accion__ul`).append(`<li id="itemCarrito${producto.id}"><div class = "itemCarrito"><div class="itemCarrito1"><button class="btnQuitarItem" id="btnQuitarItem${producto.id}">-</button></div> <div class="itemCarrito2">${producto.nombre}</div>  <div class="itemCarrito3">${producto.cantidadCarta}</div> <div class="itemCarrito4">$${multiplicar(producto.cantidadCarta, producto.precio)}</div></div></li>`)
 
-        }
     } else {
         $(".accion__ul").children().remove();
         for (const producto of carrito) {
@@ -35,13 +31,17 @@ function actualizarCarrito() {
         window.location.href = "../pages/carritoCompras.html";
     });
 
+    let removerCarrito = [];
+
     for (const producto of carrito) {
         $(`#btnQuitarItem${producto.id}`).on("click", () => {
             $(`#itemCarrito${producto.id}`).remove();
-            //CORREGIR ESTO PARA QUE SE ELIMINEN DEL LOCAL STORAGE LOS ITEMS
+            removerCarrito.push(producto);
+            carrito = carrito.filter((item) => !removerCarrito.includes(item));
+            localStorage.setItem("carritoCompras", JSON.stringify(carrito));
+            actualizarCarrito();
         });
     }
-
 }
 
 function toggleAccion() {

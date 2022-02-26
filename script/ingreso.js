@@ -5,6 +5,8 @@ document.querySelector("#showLogin").addEventListener("click", function () {
     if (existeElementoPorClase("mensajeError")) {
         removerElementoPorClase("mensajeError");
     }
+    $('.body').css("background-color", "blur(2px)");
+
 });
 
 document.querySelector(".popup .closeBtn").addEventListener("click", function () {

@@ -4,7 +4,7 @@
         "tipo": "Animal",
         "nombre": "Lobo Gris",
         "coste": 3,
-        "daño": 3,
+        "dano": 3,
         "imagen": "loboGris.jpg",
         "efecto": "Gana +1 de daño por cada Lobo Gris además de este en tu tablero."
     },
@@ -13,7 +13,7 @@
         "tipo": "Animal",
         "nombre": "Camaleón",
         "coste": 3,
-        "daño": 2,
+        "dano": 2,
         "imagen": "camaleon.jpg",
         "efecto": "Puede tomar el ataque de un enemigo en reposo y sumarlo al suyo hasta el final del turno."
     },
@@ -22,7 +22,7 @@
         "tipo": "Animal",
         "nombre": "Tortuga Marina",
         "coste": 3,
-        "daño": 2,
+        "dano": 2,
         "imagen": "tortugaMarina.jpg",
         "efecto": "Puede sacrificarse para evitar que el enemigo siga atacando este turno."
     },
@@ -31,7 +31,7 @@
         "tipo": "Animal",
         "nombre": "Pez Payaso",
         "coste": 1,
-        "daño": 1,
+        "dano": 1,
         "imagen": "pezPayaso.jpg",
         "efecto": ""
     },
@@ -40,7 +40,7 @@
         "tipo": "Habilidad",
         "nombre": "Coraza",
         "coste": 2,
-        "daño": 0,
+        "dano": 0,
         "imagen": "coraza.png",
         "efecto": "Un animal pasa a ser indestructible por este turno."
     },
@@ -49,7 +49,7 @@
         "tipo": "Habilidad",
         "nombre": "Captura",
         "coste": 3,
-        "daño": 0,
+        "dano": 0,
         "imagen": "captura.jpg",
         "efecto": "Evita que un enemigo pueda pasar a la línea de batalla por 2 turnos."
     },
@@ -58,7 +58,7 @@
         "tipo": "Habilidad",
         "nombre": "Aullido",
         "coste": 2,
-        "daño": 0,
+        "dano": 0,
         "imagen": "aullido.jpg",
         "efecto": "Si tienes un Lobo Gris en juego, puedes jugar a otro desde tu mazo o tu cementerio sin pagar su coste."
     },
@@ -67,7 +67,7 @@
         "tipo": "Habitat",
         "nombre": "Alcantarilla",
         "coste": 3,
-        "daño": 0,
+        "dano": 0,
         "imagen": "alcantarilla.jpg",
         "efecto": "Puedes revivir una rata por turno pagando su coste y ponerla en tu línea de reposo.."
     },
@@ -76,7 +76,7 @@
         "tipo": "Habitat",
         "nombre": "Costa",
         "coste": 6,
-        "daño": 0,
+        "dano": 0,
         "imagen": "costa.jpg",
         "efecto": "Si tienes un Tiburón Blanco en juego, puedes consumir 5 alimentos para activar su efecto una segunda vez este turno."
     },
@@ -85,7 +85,7 @@
         "tipo": "Alimento",
         "nombre": "Alimento",
         "coste": 0,
-        "daño": 0,
+        "dano": 0,
         "imagen": "alimento.jpg",
         "efecto": ""
     }

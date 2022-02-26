@@ -26,6 +26,17 @@ $(".informacionCarta").append(`<div class="carta__contorno${cartaAVer.tipo}" id=
         </div>
   </div></a>`);
 
+$(`#btnMenos${cartaAVer.id}`).on("click", () => {
+    restarCantidad(cartaAVer);
+});
+$(`#btnMas${cartaAVer.id}`).on("click", () => {
+    agregarCantidad(cartaAVer);
+});
+
+$(`#btnCheck${cartaAVer.id}`).on("click", () => {
+    confirmarAgregados(cartaAVer);
+});
+
 switch (cartaAVer.tipo) {
     case "Animal":
         $(".descripcionCarta").append(`<div class="contenedorDescripcion"><div class="tituloDescripción">${cartaAVer.nombre}</div><div class="descripcionGeneral"><div>Los animales son las cartas que se utilizan en la batalla. Todos los animales poseen un coste y un daño.

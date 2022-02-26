@@ -1,14 +1,5 @@
 @charset "UTF-8";
 @media (max-width: 576px) {
-  .header__nav--banner li {
-    display: list-item;
-    list-style: none;
-  }
-  .header__nav--banner a {
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-
   .body {
     background-image: url("../img/puenteBosque.jpg");
     background-size: cover;
@@ -17,19 +8,29 @@
     margin: 0px;
   }
 
+  .titulo__tienda {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
   .titulo__tienda__h1 {
     font-size: 3.5rem;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo__tienda h2 {
     font-size: 2.3rem;
     font-weight: 800;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo__tienda h3 {
     font-size: 1.7rem;
     font-weight: 600;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  h1, h3, h4 {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   .titulo {
@@ -38,6 +39,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
   }
   .titulo__contenedorMensaje {
     display: flex;
@@ -52,20 +54,28 @@
     font-size: 3.5rem;
     text-shadow: red;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo h2 {
     font-size: 2.3rem;
     font-weight: 800;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo h3 {
     font-size: 1.7rem;
     font-weight: 600;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo__subtitulo {
     text-align: center;
     font-size: 1.3rem;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .titulo__subtitulo a {
+    text-decoration: none;
+    color: #b7e9eb;
   }
   .titulo__bienvenida {
     text-align: center;
@@ -555,12 +565,12 @@ h1 {
 .inspeccionCarta {
   display: flex;
   flex-direction: row;
+  margin-left: 10%;
   width: 80%;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
-  margin: 2rem;
 }
 
 .contenedorDescripcion {
@@ -583,15 +593,6 @@ h1 {
 }
 
 @media (min-width: 577px) and (max-width: 991px) {
-  .header__nav--banner li {
-    display: list-item;
-    list-style: none;
-  }
-  .header__nav--banner a {
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-
   .body {
     background-image: url("../img/puenteBosque.jpg");
     background-size: cover;
@@ -600,19 +601,29 @@ h1 {
     margin: 0px;
   }
 
+  .titulo__tienda {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
   .titulo__tienda__h1 {
     font-size: 3.5rem;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo__tienda h2 {
     font-size: 2.3rem;
     font-weight: 800;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo__tienda h3 {
     font-size: 1.7rem;
     font-weight: 600;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  h1, h3, h4 {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   .titulo {
@@ -621,6 +632,7 @@ h1 {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
   }
   .titulo__contenedorMensaje {
     display: flex;
@@ -635,20 +647,28 @@ h1 {
     font-size: 3.5rem;
     text-shadow: red;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo h2 {
     font-size: 2.3rem;
     font-weight: 800;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo h3 {
     font-size: 1.7rem;
     font-weight: 600;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo__subtitulo {
     text-align: center;
     font-size: 1.3rem;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .titulo__subtitulo a {
+    text-decoration: none;
+    color: #b7e9eb;
   }
   .titulo__bienvenida {
     text-align: center;
@@ -1138,12 +1158,12 @@ h1 {
 .inspeccionCarta {
   display: flex;
   flex-direction: row;
+  margin-left: 10%;
   width: 80%;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
-  margin: 2rem;
 }
 
 .contenedorDescripcion {
@@ -1178,19 +1198,29 @@ h1 {
     margin: 0px;
   }
 
+  .titulo__tienda {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
   .titulo__tienda__h1 {
     font-size: 3.5rem;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo__tienda h2 {
     font-size: 2.3rem;
     font-weight: 800;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo__tienda h3 {
     font-size: 1.7rem;
     font-weight: 600;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  h1, h3, h4 {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
 
   .titulo {
@@ -1199,6 +1229,7 @@ h1 {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
   }
   .titulo__contenedorMensaje {
     display: flex;
@@ -1213,20 +1244,28 @@ h1 {
     font-size: 3.5rem;
     text-shadow: red;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo h2 {
     font-size: 2.3rem;
     font-weight: 800;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo h3 {
     font-size: 1.7rem;
     font-weight: 600;
     text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   }
   .titulo__subtitulo {
     text-align: center;
     font-size: 1.3rem;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  .titulo__subtitulo a {
+    text-decoration: none;
+    color: #b7e9eb;
   }
   .titulo__bienvenida {
     text-align: center;
@@ -1716,12 +1755,12 @@ h1 {
 .inspeccionCarta {
   display: flex;
   flex-direction: row;
+  margin-left: 10%;
   width: 80%;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
-  margin: 2rem;
 }
 
 .contenedorDescripcion {

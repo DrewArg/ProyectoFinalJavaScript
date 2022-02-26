@@ -10,30 +10,36 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        // background-repeat: no-repeat;
-        // background-size: cover;
         color: $Font-Principal;
         padding: 0px;
         margin: 0px;
     }
 
     .titulo__tienda {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         &__h1 {
             font-size: $FontSize-Title-Desktop;
             text-align: center;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
 
         & h2 {
             font-size: 2.3rem;
             font-weight: 800;
             text-align: center;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
 
         & h3 {
             font-size: 1.7rem;
             font-weight: 600;
             text-align: center;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
+    }
+
+     h1, h3, h4{
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
 
     .titulo {
@@ -42,6 +48,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        background-color: rgba(0, 0, 0, 0.6);
 
         &__contenedorMensaje {
             display: flex;
@@ -58,22 +65,30 @@
             font-size: $FontSize-Title-Desktop;
             text-shadow: rgb(255, 0, 0);
             text-align: center;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
 
         & h2 {
             font-size: 2.3rem;
             font-weight: 800;
             text-align: center;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
 
         & h3 {
             font-size: 1.7rem;
             font-weight: 600;
             text-align: center;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         }
         &__subtitulo {
             text-align: center;
             font-size: 1.3rem;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            & a {
+                text-decoration: none;
+                color: rgb(183, 233, 235);
+            }
         }
         &__bienvenida {
             text-align: center;
@@ -605,12 +620,12 @@ h1 {
 .inspeccionCarta {
     display: flex;
     flex-direction: row;
+    margin-left: 10%;
     width: 80%;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 15px;
-    margin: 2rem;
 }
 
 .contenedorDescripcion {

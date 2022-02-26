@@ -74,7 +74,9 @@ function mostrarCartas(cartas) {
                         </div>
                         <div class="carta__inferior">
                             <div class="carta__inferior--efecto" id="efectoCarta${carta.id}">${carta.efecto}</div>
-                    </div>      </div>             
+                    </div>      
+                    </div>    
+                    </div>         
                     <div class="carta__precio">
                     <span>$: ${carta.coste}</span>
                       <button class="btnMenos" id="btnMenos${carta.id}">-</button>
@@ -82,11 +84,12 @@ function mostrarCartas(cartas) {
                       <button class="btnMas" id="btnMas${carta.id}">+</button>
                       <button class="btnCheck" id="btnCheck${carta.id}">✓</button>
                     </div>
-              </div></a>`
+              </div>`
         );
     }
 
     for (const carta of cartas) {
+
         $(`#btnMenos${carta.id}`).on("click", () => {
             restarCantidad(carta);
         });
@@ -107,9 +110,5 @@ function mostrarCartas(cartas) {
                 window.location.href = "../pages/informacionCarta.html"
             })
         });
-
-
-
     }
 }
-
