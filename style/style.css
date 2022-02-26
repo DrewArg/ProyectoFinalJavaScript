@@ -1933,4 +1933,9 @@ h1 {
 
 .reglamento p {
   font-size: 1.2rem;
+}
+
+.mensajeCompraRealizada {
+  margin: 2rem;
+  font-size: 2rem;
 }/*# sourceMappingURL=style.css.map */

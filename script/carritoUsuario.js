@@ -26,8 +26,6 @@ if (usuarioActivo !== null) {
 
     let opcionCompra, botones;
 
-    console.log(totalPrecio);
-
     if (totalPrecio <= usuarioActivo.creditos) {
         opcionCompra = `<div class="informacionInterna">Tu carrito vale un total de ${totalPrecio} créditos.</div><div class="informacionInterna">¿Quieres finalizar la compra?</div>`
 
@@ -63,11 +61,19 @@ if (usuarioActivo !== null) {
                 }
             }
 
+            localStorage.setItem("carritoCompras", JSON.stringify([]))
             localStorage.removeItem("listaUsuarios");
             localStorage.setItem("listaUsuarios", JSON.stringify(usuarios));
 
-            let carrito = JSON.parse(localStorage.getItem("carritoCompras"));
             $(".accion__ul").children().remove();
+
+            $(".carritoUsuario").children().remove();
+
+            $(".accion").remove();
+
+            $(".carritoUsuario").append(`<div class="mensajeCompraRealizada">¡Muchas gracias por tu compra ${usuario.nombre}!</div>`);
+
+
 
         });
 
